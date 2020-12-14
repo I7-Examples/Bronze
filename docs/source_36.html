@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_35.html">Previous</a><br><a href="source_37.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 6 - Going Nowhere</b>
+<br>
+
+<br>
+
+<br>
+<font color=#404040>[Part of the minimalist flavor of this game is a reserve -- one might even say negligence -- about listing exits in the room descriptions. The regular room descriptions are often quite short, and we don't want them overwhelmed by text about the doorways out. And besides, exits are always shown in full in the status line.
+<br>
+</font><font color=#404040>
+<br>
+</font><font color=#404040>All the same, as a politeness to the player, we will always remind him about exits in the event that he strikes off in the wrong direction. Our exit-listing will follow the same rules as the status line, when it comes to identifying dark and lighted exits.</font>]
+<br>
+
+<br>
+Instead of going nowhere:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[exit description]</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of exiting when the player is in a room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try departing the location. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of departing a room when in darkness:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>By dead reckoning, you head back towards where you think the surface ought to be...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try approaching the Servant Quarters.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say exit description:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count of exits be 0;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with way running through directions
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let place be the room way from location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increase count of exits by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if count of exits is 0 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You appear to be lost in here, except that you recall you came in from [the opposite of the former direction]. If necessary you can always try going to a room you've already visited, or heading roughly out.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>From here, you can head </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let index be count of exits;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with way running through directions
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let place be the room way from location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrease index by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[way]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if index is greater than 1, say &quot;<font color=#000080>, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if index is 1
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the count of exits is greater than 2, say &quot;<font color=#000080>,</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> and </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if index is 0, say &quot;<font color=#000080>.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

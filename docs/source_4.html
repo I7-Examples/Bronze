@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_3.html">Previous</a><br><a href="source_5.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 2 - New Kinds</b>
+<br>
+
+<br>
+A display is a kind of thing. A display is always scenery. <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+A reminder is a kind of thing. A reminder has some text called a memory. Carry out examining an unexamined reminder: say &quot;<font color=#000080>[memory of the noun][paragraph break]You reacquaint yourself with its appearance: </font>&quot;.
+<br>
+
+<br>
+A floor is a kind of thing. Before putting something on a floor: try dropping the noun instead. Before facing down in the presence of a floor (called target): try examining the target instead. A floor is always scenery. Instead of looking under a floor: say &quot;<font color=#000080>Nice idea if you can figure out how.</font>&quot; Understand &quot;<font color=#000080>floor</font>&quot; or &quot;<font color=#000080>ground</font>&quot; as a floor.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+Some generic surroundings are backdrop. It is everywhere. Understand &quot;<font color=#000080>walls</font>&quot; or &quot;<font color=#000080>wall</font>&quot; or &quot;<font color=#000080>ceiling</font>&quot; or &quot;<font color=#000080>ground</font>&quot; or &quot;<font color=#000080>area</font>&quot; or &quot;<font color=#000080>room</font>&quot; or &quot;<font color=#000080>here</font>&quot; as the generic surroundings. Understand &quot;<font color=#000080>floor</font>&quot; or &quot;<font color=#000080>floorboard</font>&quot; or &quot;<font color=#000080>floorboards</font>&quot; as the generic surroundings when the location is not floored. Before putting something on the generic surroundings: try dropping the noun instead. Instead of examining the generic surroundings: say &quot;<font color=#000080>You take another look around.</font>&quot;; try looking. Instead of touching the generic surroundings: say &quot;<font color=#000080>You encounter nothing extraordinary.</font>&quot; Instead of touching the generic surroundings when in darkness: say &quot;<font color=#000080>You try feeling your way around, but the space you are in is too large to allow you to navigate by touch.</font>&quot;
+<br>
+
+<br>
+Definition: a room is floored if it contains a floor.
+<br>
+
+<br>
+After deciding the scope of the player: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;place the generic surroundings in scope;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with item running through handled things in the location
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;place item in scope;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location contains a floor (called the current floor), place the current floor in scope.
+<br>
+
+<br>
+Before touching a direction, try touching the generic surroundings instead. Before pushing or pulling a direction, try pushing the generic surroundings instead. Instead of smelling the generic surroundings, try smelling the location. Instead of listening to the generic surroundings, try listening to the location.
+<br>
+
+<br>
+Rule for supplying a missing noun while searching:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the noun to the generic surroundings.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of searching the generic surroundings: try hinting roomily about the location. Instead of hinting about the generic surroundings: try hinting roomily about the location.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Understand &quot;<font color=#000080>search</font>&quot; as searching.
+<br>
+
+<br>
+A bed is a kind of supporter. A bed is always enterable. A bed is usually scenery. The description of a bed is usually &quot;<font color=#000080>Unrumpled: the service keeps them neat and tidy.</font>&quot; Understand &quot;<font color=#000080>sheets</font>&quot; or &quot;<font color=#000080>sheet</font>&quot; or &quot;<font color=#000080>pillow</font>&quot; or &quot;<font color=#000080>pillows</font>&quot; as the bed. Instead of looking under a bed, say &quot;<font color=#000080>It is clean beneath as above.</font>&quot; The scent of a bed is &quot;<font color=#000080>faint lavender</font>&quot;.
+<br>
+
+<br>
+A view is a kind of backdrop. The view has a property called refusal. The refusal of a view is usually &quot;<font color=#000080>You are too far from [the noun] to do anything but look.</font>&quot; 
+<br>
+
+<br>
+Instead of doing something other than examining to a view:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if listening to the noun and the noun is audible, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if smelling the noun and the noun is scented, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[refusal of the noun]</font>&quot;.
+<br>
+
+<br>
+A staircase is a kind of door. A staircase is usually open. A staircase is seldom openable. Understand &quot;<font color=#000080>stairs</font>&quot; or &quot;<font color=#000080>stair</font>&quot; or &quot;<font color=#000080>staircase</font>&quot; as a staircase. Understand &quot;<font color=#000080>upstairs</font>&quot; or &quot;<font color=#000080>downstairs</font>&quot; as a staircase. The description of a staircase is usually &quot;<font color=#000080>[The item described] leads [item described direction].</font>&quot;
+<br>
+
+<br>
+Instead of climbing a staircase:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try entering the noun. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Understand the commands &quot;<font color=#000080>ascend</font>&quot; and &quot;<font color=#000080>descend</font>&quot; as climb. Understand &quot;<font color=#000080>go down [staircase]</font>&quot; as climbing. Understand &quot;<font color=#000080>go up [staircase]</font>&quot; as climbing.
+<br>
+
+<br>
+A fluid container is a kind of thing. A fluid container can be empty or full. After printing the name of a full fluid container while listing contents: say &quot;<font color=#000080> (full)</font>&quot;. After printing the name of an empty fluid container while listing contents: say &quot;<font color=#000080> (empty)</font>&quot;.
+<br>
+
+<br>
+A ringer is a kind of thing. A ringer has a property called the target locale.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+
+<br>
+Instead of attacking a ringer:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The clapper is resentfully mute. The servants have fulfilled their contract for the day, and cannot be commanded again until tomorrow comes.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of attacking a ringer when location is not the target locale of the noun:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the mirrors, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You ring the bell, but those who might hear and heed it are not close enough.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of attacking the tambourine when the location is not the target locale of the noun:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the mirrors, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You strike the tambourine, but the shoemaker doesn't materialize[if Lucrezia's study is visited]. And now you think about it, didn't that image in Lucrezia's study show where she was being fitted? Hm[end if].</font>&quot;
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  A kind mostly used for the paintings, with special behavior to handle what happens when the player tries to look behind one.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

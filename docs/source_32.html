@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_31.html">Previous</a><br><a href="source_33.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2 - Reading vs Examining</b>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+A thing has some text called printing. The printing of a thing is usually &quot;<font color=#000080>blank</font>&quot;.
+<br>
+
+<br>
+Definition: a thing is legible if the printing of it is not &quot;<font color=#000080>blank</font>&quot;.
+<br>
+
+<br>
+After examining a legible thing: try reading the noun.
+<br>
+
+<br>
+Understand the command &quot;<font color=#000080>read</font>&quot; as something new. Understand &quot;<font color=#000080>read about [text] in [something]</font>&quot; as consulting it about (with nouns reversed). Understand &quot;<font color=#000080>read [something] about/on [text]</font>&quot; as consulting it about. Understand &quot;<font color=#000080>read [text] in [something]</font>&quot; as consulting it about (with nouns reversed).
+<br>
+
+<br>
+Understand &quot;<font color=#000080>read [something]</font>&quot; as reading. Reading is an action applying to one thing, requiring light. Check reading: if the printing of the noun is &quot;<font color=#000080>blank</font>&quot;, say &quot;<font color=#000080>Nothing is written on [the noun].</font>&quot; instead. Carry out reading: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let typing be the printing of the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You read: [italic type][typing][roman type][paragraph break]</font>&quot;. Report reading: do nothing.
+<br>
+
+<br>
+Instead of reading the poison reference books: say &quot;<font color=#000080>You flip idly through some pages in Persian before admitting to yourself that this is fruitless.</font>&quot;
+<br>
+
+<br>
+Instead of reading the papers: say &quot;<font color=#000080>You skim the annals of 1102-1105, and decide that life has really gotten more interesting since the twelfth century. However, if you want to find anything specific here, you're going to have to look it up by name.</font>&quot;
+<br>
+
+<br>
+Instead of reading the contract book:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the Translation Room
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the candle is visible,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You read with interest the indenture of a certain [if a random chance of 1 in 2 succeeds]ostler[otherwise]fighting-man[end if]. Thanks to the neat way the names are written at the top right corner of each page, you could easily look up anyone, though.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The lettering, though now in the vernacular, is too dim and small for you.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The words are in a language you don't understand: even the Beast had to take it to the translation room to make any sense of it.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of reading the notes:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Simply flipping through them with no particular goal in mind is inexplicably disquieting to you, as though you might learn a maddening truth if you are not extremely cautious.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of reading the helmet when the player is not in the Translation Room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Lines of writing arc over each ear, but you do not know the language in question.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before reading or examining the helmet when the player wears the helmet: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You can't, of course, get a good look at the helmet while you're wearing it, so... </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try taking off the helmet;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the helmet, stop the action.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

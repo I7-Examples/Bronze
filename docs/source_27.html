@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_26.html">Previous</a><br><a href="source_28.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 9 - Assigning Rooms to Regions</b>
+<br>
+
+<br>
+<font color=#404040>[It's usually a good idea to define regions and views sometime after the rooms themselves are defined -- this is not strictly necessary, but doing things in this order does reduce the likelihood of confusion and name clashes. So we save the regions for here:</font>]
+<br>
+
+<br>
+Some rain is a view. It is in the Courtyard, the Rose Garden, the Gilded Balcony, Burnt Frame, and the Drawbridge. Understand &quot;<font color=#000080>clouds</font>&quot; or &quot;<font color=#000080>cloud</font>&quot; or &quot;<font color=#000080>sky</font>&quot; or &quot;<font color=#000080>grey</font>&quot; or &quot;<font color=#000080>pattering</font>&quot; as the rain. The description is &quot;<font color=#000080>The raindrops seem to you larger and colder than you remember.</font>&quot; The sound of the rain is &quot;<font color=#000080>pattering</font>&quot;. The scent of the rain is &quot;<font color=#000080>damp earth and electricity</font>&quot;. The refusal of the rain is &quot;<font color=#000080>There is little you can do with the raindrops.</font>&quot; Instead of tasting the rain: say &quot;<font color=#000080>Faintly salty.</font>&quot;
+<br>
+
+<br>
+The Great Outdoors is a region. The Drawbridge is in the Great Outdoors. Understand &quot;<font color=#000080>outside</font>&quot; as the Great Outdoors.
+<br>
+
+<br>
+The Basement is a region. Rocky Chamber, Bear Corridor, Zoo, Rooted Room, Lucrezia's Study, Bell Castings,  Wax Supply, and Tight Passage are in the Basement. Understand &quot;<font color=#000080>underground</font>&quot; as the basement.
+<br>
+
+<br>
+The Haunted Area is a region. Virgin's End, Father's Regret, Debtor's Paradise, Apprentice's Workshop, Central Crypt, the Dank Room, and Press Room are in the Haunted Area. The Haunted Area is in the Basement. 
+<br>
+
+<br>
+Hourglass is a region. Lower Bulb and Upper Bulb are in Hourglass. Instead of going to Hourglass when the player wears the helmet: say &quot;<font color=#000080>You walk far enough in to get a view of sand falling in a huge hourglass. Though it is only a thin stream, it sounds louder than it should: the noise, magnified by your helmet, becomes too much to bear, and you retreat.</font>&quot;
+<br>
+
+<br>
+State Rooms is a region. Law Library, Lie Library, Translation Room, State Rotunda, Parliamentary Chambers, Burnt Frame, Smoke-Damaged Chamber, Black Gallery, Armory, and Records Room are in the State Rooms. Hourglass is in State Rooms.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Apartments is a region. Private Parlor, Guest Bedroom, Upstairs, Green Bedroom, Crystal Bedroom, Gilded Balcony, and Empty Bedroom are in Apartments.
+<br>
+
+<br>
+Stinky is a region. The White Gallery, Bellroom, and Apothecary are in Stinky. Understand &quot;<font color=#000080>control rooms</font>&quot; as stinky.
+<br>
+
+<br>
+The stench is a view in Stinky. Instead of smelling the stench, try examining the stench. The scent of the stench is &quot;<font color=#000080>nauseatingly cloying stink</font>&quot;. The description of the stench is &quot;<font color=#000080>It reminds you of the rose garden -- multiplied several times over.</font>&quot; After going to a room when the player can see the stench: say &quot;<font color=#000080>You get far enough to glimpse [a random mentionable thing which is in the location] before being overcome: you reel back from a smell of roses and death, so powerful that you can't go forward. Until there's a breeze through here, you won't be able to stand being in the place.</font>&quot;; move the player to the last location.
+<br>
+
+<br>
+Definition: a thing is mentionable:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is the player, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is a view, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is the generic surroundings, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;yes.
+<br>
+
+<br>
+Fresh breeze is a scene. Fresh breeze begins when fresh breeze has not happened and the thick door is open and the heavy door is open. Fresh breeze ends when the time since fresh breeze began is 2 minutes. 
+<br>
+
+<br>
+When fresh breeze begins: if the player can see the thick door or the player can see the heavy door, say &quot;<font color=#000080>With both doors open, a breeze begins to blow through the smelly area.</font>&quot;. When fresh breeze ends: remove the stench from play; if the player can see the thick door or the player can see the heavy door, say &quot;<font color=#000080>The worst of rose stink has mostly gone, now.</font>&quot;
+<br>
+
+<br>
+<font color=#404040>[There are a variety of ways to close off part of a game's geography, and Bronze explores many of them: place a whole area behind a single locked or concealed door (as with the ivory door and the Lie Library area, or the trapdoor and the Press Room); make an area that can only be visited while the player is carrying some object (all the dark places, and particularly the haunted area, which requires both the candle and the shoes); or this approach, which is to have multiple entrances and require that the player visit all of them before being allowed in. 
+<br>
+</font><font color=#404040>
+<br>
+</font><font color=#404040>These are all unsubtle pacing mechanisms to make sure that the player experiences the game in the order we intend. In this case, because the player has to open the door to the White Gallery, we are guaranteed he will not get to the Bellroom until he has already solved the State Rooms and probably visited at least some of the Law Library and Translation Room areas. This means he probably won't get the feast before finding the Beast, or discover the bells before he has some inkling what they're for.
+<br>
+</font><font color=#404040>
+<br>
+</font><font color=#404040>Using different pacing tricks in different places makes the game a bit more entertaining (we hope); and besides, it leads to a more interesting geography if single-point-of-access areas are not too numerous. Having a well-connected map means that the place feels more realistic and three-dimensional, and that the minimum number of moves between any two points is kept relatively low.</font>]
+<br>
+
+<br>
+Old Castle is a region. Scarlet Gallery, Treasure Room, Scarlet Tower, Gallery of Historical Paintings, Maze are in Old Castle.
+<br>
+
+<br>
+Enclosed is a region. Rose Garden, Cloister Walk, Scrying Room, and Walk's End are in Enclosed. Understand &quot;<font color=#000080>rose cloister</font>&quot; as Enclosed.
+<br>
+
+<br>
+Main Castle is a region. The Quarters, Guard Tower, Dining Hall, Kitchen, Entrance, Courtyard, and Ground Floor are in the Main Castle.
+<br>
+
+<br>
+To say regional area:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, rule succeeds;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is in Basement, say &quot;<font color=#000080>Basement</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is in Great Outdoors, say &quot;<font color=#000080>Great Outdoors</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is in State Rooms, say &quot;<font color=#000080>[if location is in Hourglass]Hourglass, [end if]State Rooms</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is in Apartments, say &quot;<font color=#000080>Apartments</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is in Stinky, say &quot;<font color=#000080>Control Rooms</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is in Old Castle, say &quot;<font color=#000080>Old Castle</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is in Enclosed, say &quot;<font color=#000080>Rose Cloister</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is in Main Castle, say &quot;<font color=#000080>Main Castle</font>&quot;.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+ 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

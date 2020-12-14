@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_41.html">Previous</a><br><a href="source_43.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3 - Miscellaneous Other Assistance for Novices</b>
+<br>
+
+<br>
+Taking inventory is acting confused. Looking is acting confused. Examining an examined thing is acting confused.
+<br>
+
+<br>
+After acting confused for the sixth turn: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in the Great Dining Hall, do nothing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise remind about assistance.
+<br>
+
+<br>
+To remind about assistance:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>(If you are feeling lost, try typing HELP for complete instructions, HINT for general guidance on what to do next, or THINK ABOUT a specific item that is giving you trouble.)</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+After waiting for more than three turns:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Matters will not mend themselves on their own.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+After waiting for more than six turns: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remind about assistance.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>who</font>&quot; or &quot;<font color=#000080>what</font>&quot; or &quot;<font color=#000080>when</font>&quot; or &quot;<font color=#000080>where</font>&quot; or &quot;<font color=#000080>why</font>&quot; or &quot;<font color=#000080>how</font>&quot; or &quot;<font color=#000080>who's</font>&quot; or &quot;<font color=#000080>what's</font>&quot; or &quot;<font color=#000080>when's</font>&quot; or &quot;<font color=#000080>where's</font>&quot; or &quot;<font color=#000080>why's</font>&quot; or &quot;<font color=#000080>how's</font>&quot; as &quot;<font color=#000080>[query]</font>&quot;. 
+<br>
+
+<br>
+After reading a command:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player's command includes &quot;<font color=#000080>[query]</font>&quot; begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[story title] understands commands, such as '[command prompt]examine [a random thing that can be seen by the player]', but not questions. You can get some information about the current game state with commands such as LOOK, EXAMINE, INVENTORY, PLACES, and OBJECTS; or, for more instructions, type HELP.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reject the player's command;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player's command includes &quot;<font color=#000080>please</font>&quot; begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>(There is no need to say please.)</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cut the matched text;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Understand the command &quot;<font color=#000080>breathe</font>&quot; as &quot;<font color=#000080>smell</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look [something]</font>&quot; as examining. <font color=#404040><sup><a href="#note1">[1]</a></sup></font> 
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>see</font>&quot; and &quot;<font color=#000080>view</font>&quot; as &quot;<font color=#000080>look</font>&quot;. Understand the commands &quot;<font color=#000080>observe</font>&quot; and &quot;<font color=#000080>inspect</font>&quot; as examine.
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>wander</font>&quot; and &quot;<font color=#000080>proceed</font>&quot; and &quot;<font color=#000080>stroll</font>&quot; and &quot;<font color=#000080>stride</font>&quot; and &quot;<font color=#000080>strut</font>&quot; and &quot;<font color=#000080>sneak</font>&quot; and &quot;<font color=#000080>creep</font>&quot; and &quot;<font color=#000080>rush</font>&quot; as &quot;<font color=#000080>walk</font>&quot;.
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>hand</font>&quot; and &quot;<font color=#000080>deliver</font>&quot; as &quot;<font color=#000080>give</font>&quot;.
+<br>
+
+<br>
+Understand the command &quot;<font color=#000080>depart</font>&quot; as &quot;<font color=#000080>leave</font>&quot;.
+<br>
+
+<br>
+Understand the command &quot;<font color=#000080>excavate</font>&quot; as &quot;<font color=#000080>dig</font>&quot;.
+<br>
+
+<br>
+Understand the command &quot;<font color=#000080>carve</font>&quot; as &quot;<font color=#000080>cut</font>&quot;.
+<br>
+ 
+<br>
+Understand the commands &quot;<font color=#000080>grab</font>&quot; and &quot;<font color=#000080>bring</font>&quot; and &quot;<font color=#000080>fetch</font>&quot; and &quot;<font color=#000080>steal</font>&quot; and &quot;<font color=#000080>acquire</font>&quot; and &quot;<font color=#000080>snatch</font>&quot; as &quot;<font color=#000080>take</font>&quot;.
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>place</font>&quot; and &quot;<font color=#000080>stick</font>&quot; and &quot;<font color=#000080>shove</font>&quot; and &quot;<font color=#000080>stuff</font>&quot; as &quot;<font color=#000080>put</font>&quot;.
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>strike</font>&quot; and  &quot;<font color=#000080>smack</font>&quot; and &quot;<font color=#000080>injure</font>&quot; as &quot;<font color=#000080>hit</font>&quot;. 
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>scream</font>&quot; and &quot;<font color=#000080>yodel</font>&quot; and &quot;<font color=#000080>yell</font>&quot; and &quot;<font color=#000080>holler</font>&quot; and &quot;<font color=#000080>roar</font>&quot; as &quot;<font color=#000080>shout</font>&quot;.
+<br>
+
+<br>
+Understand the command &quot;<font color=#000080>board</font>&quot; as enter.
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>toss</font>&quot; and &quot;<font color=#000080>fling</font>&quot; and &quot;<font color=#000080>hurl</font>&quot; as &quot;<font color=#000080>throw</font>&quot;.
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>melt</font>&quot; and &quot;<font color=#000080>ignite</font>&quot; and &quot;<font color=#000080>incinerate</font>&quot; and &quot;<font color=#000080>kindle</font>&quot; as &quot;<font color=#000080>burn</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>bite [something edible]</font>&quot; as eating. Understand &quot;<font color=#000080>bite [something]</font>&quot; as attacking.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>kick [something]</font>&quot; or &quot;<font color=#000080>kick in/down/through [something]</font>&quot; as attacking.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>start [something]</font>&quot; as switching on. Understand the command &quot;<font color=#000080>activate</font>&quot; as &quot;<font color=#000080>start</font>&quot;. Understand &quot;<font color=#000080>start over/again</font>&quot; as restarting the game.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>stop [something]</font>&quot; as switching off. Understand the command &quot;<font color=#000080>deactivate</font>&quot; as &quot;<font color=#000080>stop</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>reach for/towards/to [something]</font>&quot; as taking.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>throw away [something]</font>&quot; as dropping.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>jump on/onto [something]</font>&quot; as entering.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>get down</font>&quot; as exiting.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>around/about/away</font>&quot; as &quot;<font color=#000080>[around]</font>&quot;. Understand &quot;<font color=#000080>castle/palace</font>&quot; as &quot;<font color=#000080>[location name]</font>&quot;. Understand &quot;<font color=#000080>the [location name]</font>&quot; or &quot;<font color=#000080>[location name]</font>&quot; as &quot;<font color=#000080>[castle]</font>&quot;. Understand &quot;<font color=#000080>here/room/space/location</font>&quot; as &quot;<font color=#000080>[locale]</font>&quot;. Understand &quot;<font color=#000080>in/at [locale]</font>&quot; or &quot;<font color=#000080>in/at this [locale]</font>&quot; or &quot;<font color=#000080>this [locale]</font>&quot; or &quot;<font color=#000080>[locale]</font>&quot; as &quot;<font color=#000080>[locally]</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>wait [around]</font>&quot; or &quot;<font color=#000080>wait [locally]</font>&quot; as waiting. Understand &quot;<font color=#000080>wait in [any room]</font>&quot; as waiting within. 
+<br>
+
+<br>
+Waiting within is an action applying to one thing. 
+<br>
+
+<br>
+Carry out waiting within:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the location, try waiting instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try approaching the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the location, try waiting instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise stop the action.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look [around]</font>&quot; as looking.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>go [around]</font>&quot; as going. Understand &quot;<font color=#000080>go [around] [castle]</font>&quot; as going. Understand &quot;<font color=#000080>search [castle]</font>&quot; or &quot;<font color=#000080>look [around] [castle]</font>&quot; as going.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>put out [something]</font>&quot; as extinguishing. Understand &quot;<font color=#000080>blow out [something]</font>&quot; as extinguishing. Understand &quot;<font color=#000080>blow on/in/through [something]</font>&quot; as blowing. Understand &quot;<font color=#000080>extinguish [something]</font>&quot; as extinguishing. Understand the command &quot;<font color=#000080>snuff</font>&quot; as &quot;<font color=#000080>extinguish</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>show inventory/invent/i/inv</font>&quot; as taking inventory.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>pray for/to [text]</font>&quot; as praying to. Praying to is an action applying to one topic. Carry out praying to: say &quot;<font color=#000080>You can see no immediate result.</font>&quot;
+<br>
+
+<br>
+Extinguishing is an action applying to one thing. Carry out extinguishing: say &quot;<font color=#000080>[The noun] would have to be on fire, first.</font>&quot; Instead of extinguishing the candle: try blowing the candle.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>out of/from</font>&quot; or &quot;<font color=#000080>from</font>&quot; as &quot;<font color=#000080>[out of]</font>&quot;. Understand &quot;<font color=#000080>down on</font>&quot; or &quot;<font color=#000080>on</font>&quot; as &quot;<font color=#000080>[on]</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>get [things inside] [out of] [something]</font>&quot; as removing it from.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>set [things held] down</font>&quot; as dropping. Understand &quot;<font color=#000080>set [things held] [on] [something]</font>&quot; as putting it on. Understand &quot;<font color=#000080>set down [things]</font>&quot; as dropping.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>end</font>&quot; as quitting the game.
+<br>
+
+<br>
+<font color=#404040>[Understand &quot;i <font color=#404040>[text</font>]&quot;<font color=#000080> as a mistake (</font>&quot;(Only imperative commands, such as LOOK, EXAMINE, GO WEST, and TAKE THE KEY, are understood. For more instructions, type HELP.)&quot;<font color=#000080>).]
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Understand </font>&quot;finger/fingers/hand/hands/fist/fists/feet/foot/arm/arms/legs/leg/head/face/mouth/eyes/nose/ears/ear/eye&quot;<font color=#000080> as </font>&quot;<font color=#404040>[body part</font>]&quot;<font color=#000080>. Understand </font>&quot;my <font color=#404040>[body part</font>]&quot;<font color=#000080> or </font>&quot;<font color=#404040>[body part</font>]&quot;<font color=#000080> as </font>&quot;<font color=#404040>[specific anatomy</font>]&quot;<font color=#000080>.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Understand </font>&quot;by/with/using&quot;<font color=#000080> as </font>&quot;<font color=#404040>[means</font>]&quot;<font color=#000080>.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>After reading a command:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player's command includes </font>&quot;head <font color=#404040>[a direction</font>]&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player's command includes </font>&quot;head&quot;<font color=#000080>, replace the matched text with </font>&quot;go&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player's command includes </font>&quot;<font color=#404040>[means</font>] <font color=#404040>[specific anatomy</font>]&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;(It is usually not necessary to refer to specific body parts.)&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cut the matched text;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while the player's command includes </font>&quot;<font color=#404040>[means</font>] <font color=#404040>[specific anatomy</font>]&quot;<font color=#000080>, cut the matched text;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player's command includes </font>&quot;<font color=#404040>[specific anatomy</font>]&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;(It is usually not necessary to refer to specific body parts.)&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replace the matched text with </font>&quot;me&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while the player's command includes </font>&quot;<font color=#404040>[specific anatomy</font>]&quot;<font color=#000080>, replace the matched text with </font>&quot;me&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before putting something wearable on the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player does not have the noun, try taking the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player has the noun, try wearing the noun instead. <font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before removing something worn by the player from the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try taking off the noun instead. <font color=#404040><sup><a href="#note3">[3]</a></sup></font>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Understand the command </font>&quot;ransack&quot;<font color=#000080> as </font>&quot;search&quot;<font color=#000080>. Understand </font>&quot;search <font color=#404040>[any visited room</font>]&quot;<font color=#000080> as ransacking. Ransacking is an action applying to one thing. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out ransacking: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the location is not the noun, try approaching the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise try looking.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Understand the commands </font>&quot;wash&quot;<font color=#000080> and </font>&quot;cleanse&quot;<font color=#000080> as </font>&quot;clean&quot;<font color=#000080>.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080></font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  This is not good syntax but has been shown to be used frequently by both novice players and players whose only IF contact is very old IF.</font><p>
+<A name="note2"><font color=#404040>[2].  handles PUT THE HELMET ON MY HEAD</font><p>
+<A name="note3"><font color=#404040>[3].  handles REMOVE THE HELMET FROM MY HEAD, TAKE THE HELMET OFF MY HEAD, etc.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

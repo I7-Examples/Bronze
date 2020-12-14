@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_34.html">Previous</a><br><a href="source_36.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 5 - Go To (any room)</b>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>go to/around/near/by [something]</font>&quot; as walking toward. Walking toward is an action applying to one visible thing. Carry out walking toward: say &quot;<font color=#000080>It is not necessary to specify movement within the room.</font>&quot; Understand &quot;<font color=#000080>go on/through/across/around [a floor]</font>&quot; as walking toward.
+<br>
+
+<br>
+Instead of walking toward the castle when the player is in the Drawbridge:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try going north.
+<br>
+ 
+<br>
+A person can be staid or hurrying. The player is staid.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>go to [any room]</font>&quot; or &quot;<font color=#000080>go back to [any room]</font>&quot; or &quot;<font color=#000080>return to [any room]</font>&quot; or &quot;<font color=#000080>revisit [any room]</font>&quot;  as approaching.  
+<br>
+
+<br>
+Approaching is an action applying to one thing.
+<br>
+
+<br>
+Check approaching:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the location, say &quot;<font color=#000080>You're already in [the location].</font>&quot; instead.
+<br>
+
+<br>
+Carry out approaching:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let initial location be the location; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while the player is not in the noun
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the noun is adjacent to the location
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let heading be the best route from the location to the noun, using doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player carries the candle, let heading be the best route from the location to the noun through visited rooms, using doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise let heading be the best route from the location to the noun through scouted rooms, using doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if heading is not a direction
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player carries the candle, let heading be the best route from the location to the noun through visited rooms, using even locked doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise let heading be the best route from the location to the noun through scouted rooms, using even locked doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if heading is not a direction
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You can't think how to get there from here.</font>&quot; instead; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let destination be the room heading from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is initial location, say &quot;<font color=#000080>You head </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if in darkness
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the location is initial location, say &quot;<font color=#000080>uncertainly in what feels like the right direction, based on dimly apprehended light, and the movements of air[run paragraph on]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is not the initial location
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if destination is the noun, say &quot;<font color=#000080>And [if the initial location is dark]then[otherwise]finally[end if] </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Then </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[heading] to [the destination in lower case]. [run paragraph on]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the destination is not the noun
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the player to hurrying;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;silently try going heading;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[paragraph break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the player to staid;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try going heading;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not in the destination
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the player to staid;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule fails;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if initial location is dark and destination is not dark and destination is not the noun, say &quot;<font color=#000080>, emerging into [the destination in lower case]. [run paragraph on]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end while.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before going through a closed door (called obstacle) when the player is hurrying:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;silently try opening the obstacle.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before opening a locked door when the player is hurrying and the player carries the matching key of the noun:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;silently try unlocking the noun with the matching key of the noun.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+A room can be scouted or unscouted. A room is usually unscouted. After going: now the location is scouted; continue the action. <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<font color=#404040>[And now an even fancier flourish. This is because the descriptions occasionally refer to whole areas of the castle (e.g., the courtyard description mentioning the &quot;state rooms&quot;, so it would be nice if the game understood these titles as input, as well. The basic principle at work here is to make it as easy as possible to return to any area the player has scene and to automate movement to such a degree that mapping is unnecessary and the space-covering trips of the endgame are easy.</font>]
+<br>
+
+<br>
+Understand &quot;<font color=#000080>go to [any region]</font>&quot; or &quot;<font color=#000080>walk [around] [any region]</font>&quot; or &quot;<font color=#000080>search [any region]</font>&quot; as region-seeking. Region-seeking is an action applying to one thing.
+<br>
+
+<br>
+Check region-seeking:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the map region of location is the noun or the map region of the location is in the noun, say &quot;<font color=#000080>You're already in [the noun]; if you'd like to investigate other rooms, you'll have to be more specific about directions.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Carry out region-seeking:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with space running through pivotal rooms
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the map region of the space is the noun, let goal be the space; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the map region of the space is in the noun, let goal be the space; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while the map region of the location is not the noun and the player is not in the goal
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let heading be the best route from the location to the noun through scouted rooms, using doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if heading is not a direction, 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let heading be the best route from the location to the noun through scouted rooms, using even locked doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if heading is not a direction, say &quot;<font color=#000080>You can't think how to get there from here.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let destination be the room heading from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>(heading [heading])[line break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try going heading;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not in the destination, rule fails;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end while.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+A room can be pivotal or outlying. A room is usually outlying. The Courtyard is pivotal. The Scarlet Gallery is pivotal. The State Rotunda is pivotal. The Rose Garden is pivotal. The Bellroom is pivotal. The Parlor is pivotal. The Drawbridge is pivotal. The Upper Bulb is pivotal. The Central Crypt is pivotal.
+<br>
+
+<br>
+<font color=#404040>[This system works only because every room in the map has at least one region, and because regions are not stacked more than two deep; otherwise, a more complicated method would have had to be devised.</font>]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  This is necessary because we want the automatic movement to plot a course through areas the player has passed through, whether or not they were dark at the time. Rooms only traversed in darkness are not marked 'visited', so we have to find another way to keep track: 'scouted' means that the player has entered the room at some time or other but may or may not have seen it in the light. Without this restriction, the pathfinder might take the player through rooms not yet explored, which would be less fun; and it might also try to go through off-limits regions.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

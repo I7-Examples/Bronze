@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_30.html">Previous</a><br><a href="source_32.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Part 4 - Making Play More Friendly</b>
+<br>
+
+<br>
+<b>Chapter 1 - New Commands</b>
+<br>
+
+<br>
+<b>Section 1 - Echo-location</b>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>shout [text] to/at/for [any person]</font>&quot; as answering it that (with nouns reversed). Understand the commands &quot;<font color=#000080>hiss</font>&quot; and &quot;<font color=#000080>whisper</font>&quot; as &quot;<font color=#000080>say</font>&quot;.
+<br>
+ 
+<br>
+Instead of answering the player that something, say &quot;<font color=#000080>Your voice echoes strangely, but no one answers.</font>&quot;  
+<br>
+
+<br>
+Instead of answering the beast that something when the beast is not visible: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, make noise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>You holler as loudly as you are able.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]But no one replies.</font>&quot;
+<br>
+
+<br>
+Instead of answering the player that something in the Basement when in darkness: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;make noise.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To make noise:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is the Crypt
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The sound bounces back from all directions; you would seem to be at the center of an open space.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let way be the best route from the location to the Crypt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The sound echoes[if way is a direction]; if you had to guess, you would say that a larger space lies somewhere to the [way][end if].</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Instead of attacking a ringer in the Basement when in darkness:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;make noise.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Understand the command &quot;<font color=#000080>whistle</font>&quot; or &quot;<font color=#000080>hum</font>&quot; as &quot;<font color=#000080>sing</font>&quot;.
+<br>
+
+<br>
+Instead of singing when in darkness:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;make noise.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of singing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You make a little noise, to cheer yourself. Then stop again, when you remember that it is a song he taught you.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

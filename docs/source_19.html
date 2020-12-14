@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_18.html">Previous</a><br><a href="source_20.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3 - Debtor's Paradise</b>
+<br>
+
+<br>
+The Debtor's Paradise is south of the Central Crypt. &quot;<font color=#000080>The graves of men who died before resolving their debts.</font>&quot; Debtor's Paradise is dark.
+<br>
+
+<br>
+Some stones are a floor in the Paradise. Understand &quot;<font color=#000080>floor</font>&quot; as stones when the player is in Paradise. The description is &quot;<font color=#000080>Seemingly even[if trapdoor is not scenery], except where the trap door is[end if].</font>&quot; Instead of touching the stones when the trapdoor is scenery: say &quot;<font color=#000080>You run your hands over the floor, but don't detect any telltale signs. You'll have to go about this another way.</font>&quot;
+<br>
+
+<br>
+Instead of walking toward the stones: try jumping. <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+Before going from Debtor's Paradise when the trapdoor is scenery: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>As you walk out of the room, you notice that your footsteps sound odd[if player wears the helmet], as though there were hollow space somewhere under the stones -- though you cannot identify a specific part of the floor that seems more vulnerable[end if].</font>&quot; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before going to Debtor's Paradise when the trapdoor is scenery:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The floor sounds progressively[if player wears the helmet] hollower[otherwise] stranger[end if] as you walk toward the middle of the room.</font>&quot; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before going through the trapdoor when the trapdoor is scenery:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You haven't found a way down.</font>&quot; instead.
+<br>
+
+<br>
+Instead of jumping: say &quot;<font color=#000080>You hop, but don't attain much height.</font>&quot;
+<br>
+
+<br>
+Instead of jumping when the player is on a supporter:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try exiting instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of jumping in Debtor's Paradise:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The floor thuds hollowly under you.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of jumping in Debtor's Paradise when the player wears the helmet and the trapdoor is scenery:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the trapdoor to not scenery;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the trapdoor to fixed in place;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You hop experimentally across the floor, the helmet amplifying your sensitivity to every sound, so that you are able to distinguish the exact flagstone at which the hollow thudding becomes most resonant.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>On a bit of investigation, this stone turns out to be loose.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the stones when the trapdoor is scenery:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is wearing the helmet
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the trapdoor to not scenery;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the trapdoor to fixed in place;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You tap experimentally on the floor, listening closely through the power of the helmet, until you find a suspiciously resonant -- and loose -- stone.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You tap experimentally on the floor, but lack the acuity of hearing to tell whether there are different degrees of hollowness.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of listening to the stones when the player wears the helmet:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You press your ear to the ground and think you hear the distant movement of liquid -- but it's hard to be sure.</font>&quot;
+<br>
+
+<br>
+
+<br>
+The trapdoor is a door. The description is &quot;<font color=#000080>A trapdoor -- well, really, a hinged flagstone, not much different from the rest of the floor to which it belongs.</font>&quot; Understand &quot;<font color=#000080>stone</font>&quot; or &quot;<font color=#000080>flagstone</font>&quot; as the trapdoor when the trapdoor is not scenery. Instead of pushing or pulling or turning the closed trapdoor: try opening the trapdoor.
+<br>
+
+<br>
+Visibility rule when examining the trapdoor:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the trapdoor is not scenery
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You can't see very clearly in this light, of course, but you lean close and squint...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is sufficient light;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is insufficient light;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is sufficient light;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>trap</font>&quot; or &quot;<font color=#000080>door</font>&quot; as the trapdoor. The trapdoor is scenery. Below the trapdoor is the Dank Room. Above the trapdoor is Debtor's Paradise.
+<br>
+
+<br>
+Before listing nondescript items of Debtor's Paradise when the trapdoor is unseen: change the trapdoor to not marked for listing.
+<br>
+
+<br>
+Before doing something to the trapdoor when the trapdoor is scenery:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You can't see any such thing.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before going down in the Debtor's Paradise when the trapdoor is scenery: try going south instead. After deciding the scope of the player while in the Debtor's Paradise: if the trapdoor is not scenery, place trapdoor in scope.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  Covers WALK OVER FLOOR and similar commands, should the player try this.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

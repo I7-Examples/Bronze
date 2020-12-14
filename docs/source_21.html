@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_20.html">Previous</a><br><a href="source_22.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 5 - Tight Passage and Inscription</b>
+<br>
+
+<br>
+Tight Passage is northeast of Father's Regret. Tight Passage is dark. &quot;<font color=#000080>The passage through rock ends here, and begins to tunnel through soil instead where it heads northeast.</font>&quot;
+<br>
+
+<br>
+The cord is a fixed in place thing in Tight Passage. The description is &quot;<font color=#000080>A pullcord emerges from the rock just before the walls of the passage turn to mud.</font>&quot; Understand &quot;<font color=#000080>pullcord</font>&quot; as the cord. Instead of taking the cord, try pulling the cord. Instead of pulling the cord: say &quot;<font color=#000080>You give the cord a hard yank. Somewhere above you a very deep bell tolls.</font>&quot;; now the Parliamentary Chambers are active; summons runs out in 7 turns from now. Instead of pulling the cord when the Parliamentary Chambers are active: say &quot;<font color=#000080>Instead of the expected toll, there is only a muted thunk -- perhaps you cannot use the bell too many times in too short a period.</font>&quot; Instead of pulling the cord when the sinister door is unlocked: say &quot;<font color=#000080>No need to trouble him again.</font>&quot;
+<br>
+
+<br>
+A room can be active or still. When summons runs out: now the Parliamentary Chambers are still.
+<br>
+ 
+<br>
+
+<br>
+Instead of waiting when the location is Parliamentary Chambers and Parliamentary Chambers are active and the sinister door is locked:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the sinister door is unlocked; now the sinister door is open;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the Parliamentary Chambers are still;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>There is a scuffle, and a presence unfolds itself from where it was waiting, unseen, on the benches. It comes towards you and circles you, and you have the idea -- more imagination than eyesight -- that this was once a tall, thin man of considerable power.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>It says a few words in the bastardized Italian of the state of Medici-Credenza, and you hear the scrape of wood and stone from somewhere below you: a door opening. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Then the presence vanishes.</font>&quot;
+<br>
+
+<br>
+The inscription is a fixed in place thing in Tight Passage. The printing of the inscription is &quot;<font color=#000080>Pull this cord, then wait in the room directly above to speak with Lucrezia's steward. Do not let more than five minutes pass between the summons and the waiting, or he will depart again without offering aid.</font>&quot; Instead of rubbing or touching the inscription, say &quot;<font color=#000080>Try though you might to discover its meaning by touch, the letters are too small and numerous for you to read that way; only the capitals P, L, and D stand out. L for Lucrezia, maybe? The word does feel long enough.</font>&quot; The description of the inscription is &quot;<font color=#000080>There's lettering beneath the pullcord.</font>&quot;
+<br>
+
+<br>
+The inscription can be unknown, partially known, or fully revealed. The inscription is unknown. 
+<br>
+
+<br>
+After reading the inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the inscription does not require the candle;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the inscription does not require the stool;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue the action.
+<br>
+
+<br>
+After dropping the candle in a dark room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You set down the candle on the ground. The room remains brightly lit, but from below, your movements casting enormous shadows on the walls and ceiling.</font>&quot;
+<br>
+
+<br>
+After taking the candle in a dark room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You pick up the candle, restoring the lighting to a more natural angle. Immediately the place seems less unnerving.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before reading the fully revealed inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You have the words by heart now: [italic type][printing of the inscription][roman type][paragraph break]</font>&quot; instead.
+<br>
+
+<br>
+After reading the inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the inscription to fully revealed;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue the action.
+<br>
+
+<br>
+Instead of reading the inscription when illuminated:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Unfortunately the words are too worn for you to read. Perhaps if the light were coming in from an extreme angle, you would do better.</font>&quot; 
+<br>
+
+<br>
+Instead of reading the inscription when illuminated more than once: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the candle is on the stool and the stool is in the Tight Passage
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the inscription is partially known
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The candle is at about the right height here, but you won't get the full effect unless you push the whole thing back to the northeast and get the angles right.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The candle is at about the right height here to illuminate the inscription, but the angle's off; further down the corridor would be better.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the inscription is partially known
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You wave the candle around, trying to eke out the rest of the meaning, but it's not helping: what you really need is to set the candle up at the right height in the rooted room, and then come back and have a look.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player carries the candle, say &quot;<font color=#000080>You experiment with holding the candle in a variety of positions, but still </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Still </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>you can't quite make the inscription out -- something about the cord, and you think the large L is for Lucrezia. But what you really need is for the light to be coming in at about the height of the inscription itself, flush with the wall, and from some distance away[if the player carries the candle]. Your arms aren't long enough to let you hold the candle in the right position while you read[end if].</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+To decide whether illuminated:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, no; yes.
+<br>
+
+<br>
+Instead of reading the inscription when in darkness and the candle is not on a supporter:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the inscription is not fully revealed, change the inscription to partially known;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The light coming in does illuminate the floor sharply, and is at a good angle, but it is a bit too low to show up the lettering halfway up the wall. All you get is the deepest capital letters -- P, L, and D -- and the last line: [italic type]or he will depart again without offering aid.[roman type]</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Visibility rule when examining or reading the inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if an adjacent room is discernible, there is sufficient light;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is insufficient light;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is sufficient light;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+After deciding the scope of the player while in the Tight Passage: if an adjacent room is discernible, place inscription in scope.
+<br>
+
+<br>
+<font color=#404040>[This puzzle turned out to be quite challenging to the first testers who tried it, and needed the addition of a lot of hints and responses to close-but-not-quite-there solutions.</font>]
+<br>
+
+<br>
+After dropping the candle in the Tight Passage:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You set the candle down immediately under the inscription -- but that's no good, you see at once, because thanks to the curvature of the wall you still can't get the thing at the right angle. Perhaps if it were lit from further off and from the side, rather than the bottom...</font>&quot;
+<br>
+
+<br>
+After deciding the scope of the player when the player is in the Rooted Room and the inscription is seen:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;place the inscription in scope.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before doing something to the inscription when the player is in the Rooted Room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You'd have to head back southwest to be close to the inscription -- you can't reach it or read the small lettering from here[if the player can see the candle], though from what you can see, this is a good direction for the light to come from[end if].</font>&quot; instead. <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of pushing or pulling or turning the candle when the candle is in the Tight Passage:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You try pushing the candle this way and that. The farther it gets from the wall, the less use it is; and putting it right under the inscription does no good either. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>But you find that the angle gets better as you push the candle northeast along the wall, until the deepest-cut letters jump out at you: P, L, D.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>There's a lot more to it than that, though.</font>&quot; The candle is pushable between rooms. <font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+
+<br>
+Instead of pushing or pulling or turning the stool when the stool supports the candle and the stool is in the Tight Passage:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You adjust the stool in one direction and another, finding that the candlelight works best at this height, and the angle improves as you move the stool northeast.</font>&quot;
+<br>
+
+<br>
+After going northeast to the Rooted Room with the stool when the candle is on the stool:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You push the stool along the northeast wall, the candlelight shifting, until you reach a point that seems just right...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue the action.
+<br>
+
+<br>
+After going northeast to the Rooted Room with the candle:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You continue to move the candle along the northeast wall until you reach a point where the angle seems to be improving...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue the action.
+<br>
+
+<br>
+Instead of pushing or pulling or turning the candle when the candle is in the Tight Passage for the second turn:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try pushing the candle to the northeast instead.
+<br>
+
+<br>
+After putting the candle on the stool when in darkness:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You set the candle down on the stool, illuminating the room from a low but tolerable angle.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+After putting the candle on the stool when in the Rooted Room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You put the candle on the stool, aligning it neatly against the wall. A harsh raking illumination is now cast along the wall, about at a height with your knees.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of tieing something to the cord:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You try various arrangements, but the cord is too short to be secured to anything.</font>&quot;
+<br>
+
+<br>
+Instead of tieing the cord to something: try tieing the second noun to the cord.
+<br>
+
+<br>
+Instead of tieing the candle to the cord:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You spend some frustrating time trying to make a little noose of the cord and secure it around the candle, but is easier to imagine than to perform, and in the end you are forced to admit that even if you could do it, the angle of lighting on the inscription would not be the best. The light really needs to be coming in from lower and further off.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Understand &quot;<font color=#000080>near/beside/by/above/under/below/over</font>&quot; or &quot;<font color=#000080>next to</font>&quot; or &quot;<font color=#000080>up to</font>&quot; as &quot;<font color=#000080>[by]</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>hold [something held] [by] [something]</font>&quot; as juxtaposing it to. Understand &quot;<font color=#000080>put [something held] [by] [something]</font>&quot; as juxtaposing it to.
+<br>
+
+<br>
+Juxtaposing it to is an action applying to one thing and one visible thing. Carry out juxtaposing it to: say &quot;<font color=#000080>This produces no interesting results.</font>&quot;
+<br>
+
+<br>
+Instead of juxtaposing the candle to the inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try waving the candle.
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before putting the candle on the inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You try holding the candle very close to the inscription, but rapidly decide that distance and angle will be more helpful.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of waving the candle in the presence of the inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You experiment with ways to hold the candle, and find that the beginnings of letter forms suggest themselves if you put it at about knee height and some way northeast, close to the wall.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Unfortunately, from that position it's impossible to look at the inscription at the same time.</font>&quot;
+<br>
+
+<br>
+Carry out hinting about the unexamined inscription:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Have you tried reading the inscription? Dropping the candle in the same room? Moving it around?</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if player consents,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You need to light the inscription from far off, and at the right height. [more]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise stop the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if player consents,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>In fact, it might help if the candle were in the next room. [more]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise stop the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if player consents,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>If you put the candle in the Rooted Room and return to the Tight Passage, you find that the distance is about right but the lighting is too low, so you'll need to find a way to elevate the candle as well. [more]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise stop the action; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if player consents, say &quot;<font color=#000080>Get the stool. Put it in the Rooted Room. Put the candle on it. Return to the Tight Passage and read the inscription.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stop the action.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Carry out hinting about the examined inscription when the sinister door is locked:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Perhaps the pullcord will help you summon Lucrezia's steward and get into the chamber. [More]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if player consents,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You'll have to pull the cord, then within five moves go to the room which is immediately above this one; then WAIT. [more]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise stop the action; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if player consents,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>From the Tight Passage you go northeast to the Rose Garden, so you want the room which is south and west from the Rose Garden. [more]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise stop the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if player consents, say &quot;<font color=#000080>Pull the cord. Go to the Parliamentary Chambers. Wait.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stop the action.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  Added to deal with the case where players take the candle to the rooted room and try to look back at the Tight Passage in order to read it.</font><p>
+<A name="note2"><font color=#404040>[2].  This to enable >PUSH CANDLE NE as a solution.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

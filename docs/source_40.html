@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_39.html">Previous</a><br><a href="source_41.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 3 - &quot;<font color=#000080>Novice Mode</font>&quot; </b>
+<br>
+
+<br>
+<b>Section 1 - Training Wheels</b>
+<br>
+<font color=#404040>[It has been observed that very untrained players, confronting a game for the first time, have some difficulty understanding how to communicate with the game, and in particular what sorts of interaction are expected of them. This novice mode provides two kinds of help: one, it highlights the names of everything interesting in room descriptions, to draw attention to useful nouns; and two, it lists commands that the player might want to try, based on what is currently available in the room. This functionality can be turned off at any time through the command line or the menu.</font>] 
+<br>
+
+<br>
+After printing the banner text:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if novice mode is unset
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]Have you played interactive fiction before? &gt;</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player consents
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change novice mode to dead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]If you have not played Bronze before, you may still want to type HELP to learn about special commands unique to this game.</font>&quot;; <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change novice mode to functioning;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]Some extra command help is provided, though you may turn it off at any time.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Setting is a kind of value. The settings are unset, functioning and dead.
+<br>
+
+<br>
+Novice mode is a setting that varies. Novice mode is unset. Stopping novice mode is an action out of world. Starting novice mode is an action out of world. Understand &quot;<font color=#000080>novice mode off</font>&quot; as stopping novice mode. Understand &quot;<font color=#000080>novice off</font>&quot; as stopping novice mode. Understand &quot;<font color=#000080>novice mode on</font>&quot; as starting novice mode. Understand &quot;<font color=#000080>novice on</font>&quot; as starting novice mode. Carry out stopping novice mode: change novice mode to dead. Carry out starting novice mode: change novice mode to functioning. Report stopping novice mode: say &quot;<font color=#000080>Novice mode is now off. You may still consult HELP at any time, or use THINK ABOUT specific puzzles.</font>&quot; Report starting novice mode: say &quot;<font color=#000080>Novice mode is now on.</font>&quot;
+<br>
+
+<br>
+Include Complex Listing by Emily Short. <font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+
+<br>
+Before reading a command when novice mode is functioning:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]Some options to try (to play without guidance, type [bold type]novice mode off[roman type]): </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if not looking and not going, say &quot;<font color=#000080>[line break]  [bold type]look[roman type]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the helmet, say &quot;<font color=#000080>[line break]  [bold type]listen[roman type]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries something and we are not taking inventory, say &quot;<font color=#000080>[line break]  [bold type]inventory[roman type] (I)</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries something and a free-standing supporter is relevant
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of free-standing relevant supporters;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]put[roman type] something [bold type]on[roman type] [the prepared list delimited in disjunctive style]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a gettable thing is relevant
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of relevant gettable things;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]take[roman type] [the prepared list delimited in disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if an unexamined thing is relevant
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of relevant unexamined things;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]examine[roman type] (X) [the prepared list delimited in  disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;  
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a relevant thing is worth entering
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of relevant worth entering things;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]enter[roman type] [the prepared list delimited in  disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;   
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if an unlocked openable thing is relevant
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of relevant worth entering things;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]open[roman type] or [bold type]close[roman type] [the prepared list delimited in  disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a closed lockable thing is relevant
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of closed lockable relevant things;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]lock[roman type] or [bold type]unlock[roman type] [the prepared list delimited in  disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries an edible relevant thing
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of edible relevant things;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]eat[roman type] [the prepared list delimited in  disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;  
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries a wear-worthy thing
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of the wear-worthy things carried by the player;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]wear[roman type] [the prepared list delimited in disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a device is relevant, say &quot;<font color=#000080>[line break]  [bold type]turn on[roman type] or [bold type]turn off[roman type] [the list of relevant devices]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a room is adjacent, say &quot;<font color=#000080>[line break]  [bold type]go[roman type][exit list][if in darkness] or try other directions in the dark[otherwise] or [bold type]go to[roman type] any room you've visited[end if]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if an open door is relevant
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of the relevant open doors;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]go through[roman type] [the prepared list delimited in disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if another person is relevant, say &quot;<font color=#000080>[line break]  [bold type]kiss[roman type] or [bold type]wake[roman type] [the list of relevant other people][if the player carries something], or [bold type]give[roman type] things [bold type]to[roman type] him[end if]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the cord is relevant, say &quot;<font color=#000080>[line break]  [bold type]pull[roman type] [the cord]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries a ringer
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepare a list of the ringers carried by the player;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]ring[roman type] [the prepared list delimited in disjunctive style]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is in an active room and the inscription is examined, say &quot;<font color=#000080>[line break]  [bold type]wait[roman type] (Z)</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the fountain is relevant, say &quot;<font color=#000080>[line break]  [bold type]fill[roman type] a container</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the contract book and the contract book is examined and the player is in the Translation Room and the candle is visible, say &quot;<font color=#000080>[line break]  [bold type]look up[roman type] someone [bold type]in[roman type] the contract book</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]think about[roman type] a specific room or object to get a clue</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type]help[roman type] to see a more complete set of instructions</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[paragraph break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Definition: a thing is wear-worthy if it is not the shackle and it is wearable and it is relevant.
+<br>
+
+<br>
+Definition: a person is other if it is not the player. Definition: a person is another if it is other.
+<br>
+
+<br>
+Definition: a thing is free-standing if it is in a room.
+<br>
+
+<br>
+After taking inventory when novice mode is functioning: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is carrying something
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>To get rid of any of these objects, [bold type]drop[roman type] it, or [bold type]take off[roman type] anything you are wearing.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is wearing something, say &quot;<font color=#000080>You can always [bold type]take off[roman type] anything you are wearing.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>To acquire an inventory, [bold type]take[roman type] such portable objects as you find lying around.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Before printing the name of something (called the target): if novice mode is functioning, say &quot;<font color=#000080>[bold type]</font>&quot;. After printing the name of something: say &quot;<font color=#000080>[roman type]</font>&quot;.
+<br>
+
+<br>
+To say exit list:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count be 0;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with way running through directions
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let place be the room way from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, change way to marked for special listing; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;register things marked for listing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> [a prepared list delimited in disjunctive style]</font>&quot;.
+<br>
+
+<br>
+Definition: a thing is gettable:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is scenery, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is fixed in place, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is a person, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is carrying it, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is wearing it, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player can touch it, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+
+<br>
+Definition: a thing is relevant if it is visible and it is seen.
+<br>
+
+<br>
+Definition: a supporter is worth entering:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries it, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is enterable, yes.
+<br>
+
+<br>
+Definition: a container is worth entering:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries it, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is enterable and it is open, yes.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  These remarks added because beta-testers thought it was a little unfriendly to have the game not acknowledge the player's response to this question. Originally we said nothing, but went straight into play.</font><p>
+<A name="note2"><font color=#404040>[2].  This allows us to list things with inserted 'or' rather than 'and' (and also to do a number of considerably more challenging things, but we won't need most of them right away).</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

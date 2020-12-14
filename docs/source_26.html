@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_25.html">Previous</a><br><a href="source_27.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2 - The Bellroom</b>
+<br>
+
+<br>
+<font color=#404040>[The Bellroom is one of the most important rooms in the game, to which the player will have to return repeatedly in order to get the means to control his environment. So it gets a little more care than average:</font>]
+<br>
+
+<br>
+The Bellroom is north of the heavy door. Understand &quot;<font color=#000080>bell room</font>&quot; as the Bellroom. The heavy door is north of the Private Parlor. The heavy door is a lockable door. The small key unlocks the heavy door. The description of the heavy door is &quot;<font color=#000080>It looks thick enough to block sound.</font>&quot; Understand &quot;<font color=#000080>thick</font>&quot; as the heavy door. <font color=#404040><sup><a href="#note1">[1]</a></sup></font> 
+<br>
+
+<br>
+Definition: the small key is solved if it is handled. Definition: the small key is unsolved if it is not handled.
+<br>
+
+<br>
+The Bellroom is east of the White Gallery. East of the Bellroom is the Apothecary. 
+<br>
+
+<br>
+The description of the Bellroom is &quot;<font color=#000080>Kept, conveniently, close to where the masters of the house would once have slept. There are bells large and small, clappers, tambourines, and gongs. Most of these you have never seen used at all.</font>&quot; The bell collection is scenery in the Bellroom. Understand &quot;<font color=#000080>bells</font>&quot; or &quot;<font color=#000080>clappers</font>&quot; or &quot;<font color=#000080>clapper</font>&quot; or &quot;<font color=#000080>tambourine</font>&quot; or &quot;<font color=#000080>tambourines</font>&quot; or &quot;<font color=#000080>gongs</font>&quot; as the bell collection. Understand &quot;<font color=#000080>gong</font>&quot; as the bell collection when the bronze gong is not visible. Instead of searching the bell collection: say &quot;<font color=#000080>There are hundreds, perhaps thousands of these bells; you could not hope to enumerate them all. Some are so old and dusty, in the back ranks, that they cannot have been used in centuries.</font>&quot;
+<br>
+
+<br>
+The north window is a backdrop. It is in the Bellroom and the Apothecary. It is not scenery. The initial appearance of the north window is &quot;<font color=#000080>Roses from the garden below have crept up to grow around the [north window], lending a sickly smell to the place.</font>&quot; The description of the north window is &quot;<font color=#000080>You can't really see out through the framing vines.</font>&quot;. Understand &quot;<font color=#000080>roses</font>&quot; or &quot;<font color=#000080>rose</font>&quot; or &quot;<font color=#000080>vine</font>&quot; or &quot;<font color=#000080>vines</font>&quot; or &quot;<font color=#000080>framing</font>&quot; as the north window. Instead of searching the north window, try examining the north window. The scent of the north window is &quot;<font color=#000080>decay</font>&quot;.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look out [something]</font>&quot; as searching. <font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+
+<br>
+Rule for listing nondescript items of the Bellroom:
+<br>
+    say &quot;<font color=#000080>Catching your eye among many other unfamiliar items</font>&quot;; 
+<br>
+    list the contents of the Bellroom, as a sentence, 
+<br>
+        tersely, listing marked items only, prefacing with is/are, 
+<br>
+        including contents and giving brief inventory 
+<br>
+        information; 
+<br>
+    say &quot;<font color=#000080>.</font>&quot;
+<br>
+
+<br>
+Understand the commands &quot;<font color=#000080>play</font>&quot; or &quot;<font color=#000080>shake</font>&quot; or  &quot;<font color=#000080>ring</font>&quot; as &quot;<font color=#000080>hit</font>&quot;. Understand &quot;<font color=#000080>ring [ringer]</font>&quot; as attacking.
+<br>
+
+<br>
+The worked bronze gong is in storage. The description is &quot;<font color=#000080>A heavy thing that you have never seen rung. The upper surface is hammered with the sign of an elephant.</font>&quot; 
+<br>
+
+<br>
+Instead of attacking the bronze gong for the first time:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You hesitate. He told you not to play idly with the bells whose purposes were unknown to you, you see...</font>&quot;
+<br>
+
+<br>
+Instead of attacking the bronze gong:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You strike the gong, but to your disappointment, nothing happens.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of attacking the bronze gong in the presence of the elephant harness:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the Beast, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You strike the gong, and there is a faint sound, not the full-throated bong you might expect. The harness [italic type]moves[roman type] just a little, as though to say that there is life in it yet; that something still waits and listens for the gong, in case it is needed for use against a wayward king.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the bronze gong in the presence of Elzibad:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the Beast, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You strike the gong, and there is a faint sound, not the full-throated bong you might expect. In the portrait, the elephant turns its painted head to look at you, and it smiles; lifts its foot a little and stomps harder, as though to say, 'here is how tyrants are ended.'</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+A person can be alive or deceased. A person is usually alive.
+<br>
+
+<br>
+Instead of attacking the bronze gong in the presence of the beast:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the glass bell is not in storage
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You strike the gong and it rings very loudly, as though summoning someone out of a world three over from our own. Then what looks like a large dark cloud descends on the Beast and crushes the last life out of him, like a trodden grape.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>What is left is the husk of a man, not too mangled, but certainly dead. You peer curiously into that face, whose expressions you saw only on an animal's maw: but he doesn't look like anyone you recognize. Then his body fades away, just the way the bells always fade.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You find you are laughing a little hysterically.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>His servants remain enslaved, however.</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the gong to the Bellroom;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the Beast to storage;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the beast is deceased;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You strike the gong and it rings very loudly, as though summoning someone out of a world three over from our own. Then what looks like a large dark cloud descends on the Beast and crushes the last life out of him, like a trodden grape.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Afterward, when you can see, and think, you know that you have helped matters only so much: the Beast is gone, but the servants remain enslaved, no doubt inherited by the next of the line.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>You have punished the Beast for his sins, but his servants remain enslaved to the line of Kings</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+The little gold dinner bell is in the Bellroom. The description is &quot;<font color=#000080>It is the dinner summons, and particularly familiar to you.</font>&quot;
+<br>
+
+<br>
+The silver bell is in the bellroom. Understand &quot;<font color=#000080>lamplighter</font>&quot; as the silver bell. The description of the silver bell is &quot;<font color=#000080>It bears the stamp of a lamplighter.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the gold dinner bell when location is not the Kitchen:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the Dining Hall, say &quot;<font color=#000080>You ring the bell hopefully, but apparently it only works in the Kitchen itself.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>You ring the bell, but those who might hear and heed it are not close enough.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the gold dinner bell when feast is in Storage:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if location is not the Kitchen, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The dinner bell] tinkles gaily: as in automatic response, your stomach rumbles. There will be a feast, now, waiting for you in the dining hall.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>As for the gold bell, it returns to its place.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the gold bell to the Bellroom;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move feast to the Dining Hall.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+A grail is a kind of thing. The feast is a grail. The candle is a grail. 
+<br>
+
+<br>
+The silver bell is a ringer. The gold bell is a ringer. The gong is a ringer.  The target locale of the silver bell is the Translation Room. The target locale of the gold bell is the Kitchen. The target locale of the gong is the Gallery of Historical Paintings. The glass bell is a ringer. The target locale of the glass bell is the Lie Library. The glass bell is in Storage. The description of the glass bell is &quot;<font color=#000080>Thick glass with a clapper on a chain.</font>&quot;
+<br>
+
+<br>
+The leather tambourine is a ringer. The target locale of the tambourine is the Empty Bedroom. The tambourine is in Storage. The description of the tambourine is &quot;<font color=#000080>A hoop stretched with good-quality leather.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the leather tambourine when the player carries the shoes and the shoes are not wearable:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is not in the Empty Bedroom, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the tambourine to the Bellroom;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the shoes are wearable;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>A brisk wind fusses about your feet, then does something to the shoes, resizing and slightly reshaping so that they might have a hope of staying on you.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of attacking the leather tambourine when the player does not have the shoes and the shoes are not wearable and the player is in the Empty Bedroom:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You are whisked-about by a busy wind, but, finding nothing about you which it is able to assist with, it departs again.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The cow bell is a ringer. Understand &quot;<font color=#000080>cowbell</font>&quot; as the cow bell. The target locale of the cow bell is Crystal Bedroom. The cow bell is in storage. The description of the cow bell is &quot;<font color=#000080>Much like the ones you used on the cows at home.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the cow bell in the Virgin's:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You feel a strong sense of presence, and listening: this place is important, but the spirit cannot speak to you here. It's for this kind of situation that the mirror-scrying was used, when Lucrezia still lived in the castle...</font>&quot;
+<br>
+
+<br>
+Instead of attacking the cow bell in the Green Bedroom:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>A presence coalesces, weeps, and tries to speak; but there is no mirror to show it fully, here.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of attacking the tambourine in the presence of the mirrors:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>An aggrieved, overworked shoemaker appears, just as he looked in the image in Lucrezia's study. He presses his fingers to the glass and begs you in a few words to let him rest; then departs again into the shadows of the east wall, to wherever he natively rests.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of attacking the tambourine: say &quot;<font color=#000080>It does not resonate as it should.</font>&quot;
+<br>
+
+<br>
+Instead of attacking a ringer in the scrying room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You ring [the noun] hopefully, but -- despite the old function of the room -- there are no mirrored surfaces remaining in which your summoned spirit can manifest itself, because you took those all upstairs to your bedroom.</font>&quot;
+<br>
+
+<br>
+Instead of attacking a ringer in the presence of the mirrors:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Many faces press to the far side of the mirror, but no one shade has the strength to speak, and finally they fade away again, half-damned.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the cow bell when the girdle is in storage and the mirrors are visible:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the girdle to Virgin's End;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the cow bell to the bellroom;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You ring the [cow bell], and a heavy fog coalesces around you; then at the mirror there forms the image of an exceptionally beautiful young woman, wearing a green girdle.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>'It is a long time since I was called,' she says, pressing her nose and fingers to her side of the glass and looking at you with interest. You see around her neck the burn of a noose, and guess uneasily at what she did to herself. She looks at you with plain curiosity.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'So you're the one?' she asks. 'Did you know that he carried me over the drawbridge into the castle, and made me slave to his wishes even though I was betrothed to another? and that for the breach of contract my father died impoverished?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You say nothing. You have not known him to be like that; but many human lifetimes have passed since Yvette was alive.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>She shrugs one shoulder. 'If you can love such a creature, then I will leave the green girdle for you on my grave; you come take it and kiss him,' she says. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Then she fades from view.</font>&quot;
+<br>
+
+<br>
+Instead of attacking the silver bell when candle is in Storage:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is not the Translation Room, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The silver bell] rings once in triumph, and the room springs to brilliant light.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>The bell itself fades back to its usual place.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move silver bell to Bellroom;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move candle to the Translation Room. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The description of the Apothecary is &quot;<font color=#000080>Furnished with [a long countertop] and the equipment of an apothecary; sketches from physicians; [anatomical drawings] of creatures similar to the Beast, bears and lions being especially prominent; also [poison reference books], primarily the work of Italian and (earlier) Persian experts. The room has an unused air, and you do not remember ever coming in before, or seeing the Beast go in. It must have been a hobby that interested him before your arrival.</font>&quot;
+<br>
+
+<br>
+The long countertop is scenery in the Apothecary. It is a supporter. The description is &quot;<font color=#000080>The countertop has water stains and the occasional burn on it.</font>&quot; Understand &quot;<font color=#000080>table</font>&quot; or &quot;<font color=#000080>counter</font>&quot; as the countertop.
+<br>
+
+<br>
+The equipment is scenery on the countertop. The description is &quot;<font color=#000080>Delicate scales and glass bottles, blades and mortars and drying racks and other things you do not recognize.</font>&quot; Instead of doing something when the equipment must be touched, say &quot;<font color=#000080>The conviction that these recently contained powerful contact poisons makes you reluctant to handle them in any way.</font>&quot;
+<br>
+
+<br>
+To decide whether (item - a thing) must be touched:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the item is the noun and the action requires a touchable noun, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the item is the second noun and the action requires a touchable second noun, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+
+<br>
+Some poison reference books are scenery in the Apothecary. The description is &quot;<font color=#000080>Assorted disturbing recipes for ways to make your enemies die quickly, or to dispatch them slowly in great pain. The pages most discolored by use and splashed ingredients are those pertaining to swift and pleasant execution.</font>&quot; Understand &quot;<font color=#000080>book</font>&quot; as the reference books. Instead of taking the reference books, say &quot;<font color=#000080>There are too many of them to carry around, and besides, you lack the skill to concoct poison, even if you wanted to.</font>&quot;
+<br>
+
+<br>
+The anatomical drawings are scenery in the Apothecary. Understand &quot;<font color=#000080>drawing</font>&quot; or &quot;<font color=#000080>diagram</font>&quot; or &quot;<font color=#000080>bears</font>&quot; or &quot;<font color=#000080>lions</font>&quot; or &quot;<font color=#000080>sketches</font>&quot; or &quot;<font color=#000080>sketch</font>&quot; or &quot;<font color=#000080>digestive tract</font>&quot; as the drawings. The description of the anatomical drawings is &quot;<font color=#000080>They concentrate on weak points and the functioning of the digestive tract.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  The behavior of the Bellroom door is tied to the Stinky region -- see below.</font><p>
+<A name="note2"><font color=#404040>[2].  Because beta-testers wanted to be able to look out the windows.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

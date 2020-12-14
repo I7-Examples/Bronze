@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_0.html">Previous</a><br><a href="source_2.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 1 - Doors</b>
+<br>
+
+<br>
+The initial appearance of a door is usually &quot;<font color=#000080>Nearby [an item described] leads [item described direction].</font>&quot; The description of a door is usually &quot;<font color=#000080>[if open]It stands open[otherwise]It is closed[end if][if locked] and locked[otherwise] and unlocked[end if].</font>&quot;
+<br>
+
+<br>
+To say (item - a thing) direction:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be a random room;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the place be the other side of the item;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the place is visited, say &quot;<font color=#000080>[way through the item] to [the place in lower case]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[way through the item]</font>&quot;.
+<br>
+
+<br>
+Instead of attacking a closed door: say &quot;<font color=#000080>[The noun] reverberates but does not open.</font>&quot;
+<br>
+
+<br>
+Understand &quot;<font color=#000080>knock on [something]</font>&quot; or &quot;<font color=#000080>knock [something]</font>&quot; as attacking.  Understand the commands &quot;<font color=#000080>bang</font>&quot; and &quot;<font color=#000080>tap</font>&quot; and &quot;<font color=#000080>rap</font>&quot; as &quot;<font color=#000080>knock</font>&quot;.
+<br>
+
+<br>
+Before printing the name of an open door (called target) when looking or going: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the target is a staircase, do nothing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>open </font>&quot;.
+<br>
+
+<br>
+To decide what direction is the way through (threshold - a door): 
+<br>
+    let far side be the other side of threshold; 
+<br>
+    let way be the best route from the location to the far side, using even locked doors; 
+<br>
+    if way is a direction, decide on the way; 
+<br>
+    decide on inside.
+<br>
+
+<br>
+Instead of looking under something which is carried by the player:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Since you are holding [the noun], it stands to reason that nothing of interest could be concealed beneath.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking under something which is worn by the player:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Underneath there is only yourself.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking under a door:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The noun] meets the floor with very little space to spare.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

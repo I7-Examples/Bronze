@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_43.html">Previous</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2 - Menu System</b>
+<br>
+
+<br>
+Include Menus by Emily Short. <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+Include Basic Help Menu by Emily Short. <font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>menu</font>&quot; as asking for help.
+<br>
+
+<br>
+When play begins:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;choose row 1 in the Table of Basic Help Options;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change description entry to &quot;<font color=#000080>[bold type][story title][roman type][paragraph break][story description]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;choose row 2 in the Table of Basic Help Options;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change title entry to &quot;<font color=#000080>Instructions for Playing IF in General</font>&quot;;
+<br>
+
+<br>
+<b>Table of Basic Help Options (continued)</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>title</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> subtable</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> description</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> toggle</u></td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>Special Commands In [story title]</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[story title] has a few special commands not found in every game. </td></tr>
+</font><font color=#000080></table>
+<br>
+</font><font color=#000080>GO TO {any room} will allow you to travel automatically, assuming that there are no locked doors or other impediments in your way. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>FIND {any object} will similarly take you to any items you have seen already (but not find anything that you haven't seen yet). 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>LOOK {a direction} will tell you what lies that way without your having to go there.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>ROOMS will list all the rooms you have visited so far; OBJECTS will similarly list all the things you have seen in the course of the game.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>THINK ABOUT {any object} will provide extra information and sometimes context-sensitive hints, depending on what you have done so far.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>NOVICE MODE ON and NOVICE MODE OFF toggle the functioning of novice mode, which puts in bold-face the names of objects the player might want to attend to, and offers some command suggestions each turn. The game runs very slightly more slowly in novice mode because it is also calculating what the player might like to do at each turn. It is recommended that the novice player try this for a while, then turn it off when he gets the hang of the command-driven interface. Novice mode does not list every possible command, only those that seem especially obvious or relevant at any given moment.</font>&quot; --
+<br>
+&quot;<font color=#000080>Credits</font>&quot; -- &quot;<font color=#000080>Inform 7 is the work of Graham Nelson, and [story title] was compiled using Andrew Hunter's compiler for Mac OS X.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Admiral Jota, Dan Shiovitz, and David Welbourn offered some beta-testing corrections on an early prototype version of Bronze. The fuller version of the game was beta-tested by Annette Edelman, Michael Gentry, Dene Goodman, Yoon Ha Lee, Nick Montfort, Brian Rapp, and Dan Shiovitz. Bugs corrected after the first public release were submitted by Paul Trembath, Brett Witty, Nick Montfort, L. Ross Raszewski, Samuel Bronson, Christopher Tate, Brian Campbell, and Eric Eve.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Novice-friendly features are designed based on observations of frequent errors in logs of phpZork, rec.arts.int-fiction posts from players, and some analysis of novice transcripts by Aaron Reed.</font>&quot; --
+<br>
+&quot;<font color=#000080>Contacting the Author</font>&quot; -- &quot;<font color=#000080>If you have any difficulties with [story title], feel free to contact me at emshort@mindspring.com.</font>&quot; --
+<br>
+
+<br>
+<font color=#404040>[Number of beta-testers is negotiable; in general, the larger and more complex the piece, the more testers it needs. I try to get at least three for all but the simplest, smallest pieces. With Bronze, I was aiming at novice-friendliness, and so it was especially important to smooth down the rough edges of the parser and find the places where puzzles were underclued. So I looked for more testers and included some I hadn't worked with before, specifically because I wanted to test with some users who were *not* familiar and comfortable with my writing style. The testing list also includes a mix of more- and less-experienced players, and a range of interests (some are more apt to comment on writing, some on puzzle design, and so on).</font>]
+<br>
+ 
+<br>
+<b>Table of Stuckness Advice (continued)</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>title</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> subtable</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> description</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> toggle</u></td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>Try hints</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>If you're still stuck after your best efforts, figure out what seems to be stumping you and try THINK ABOUT {whatever it is}. The game may have some suggestions to offer you.</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
+<tr><td halign="left" valign="top"> </td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top">   </td></tr>
+<tr><td halign="left" valign="top"><font color=#404040>[And here we get rid of the &quot;score notification&quot; setting, because we don't want anyone to try turning it on.</font>]</td></tr>
+<tr><td halign="left" valign="top">When play begins:</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> choose row 2 in Table of Setting Options;</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> change title entry to &quot;<font color=#000080>[if novice mode is functioning]Novice mode on[otherwise]Novice mode off[end if]</font>&quot;;</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> change toggle entry to the switch novice mode rule.</td></tr>
+</table>
+<br>
+This is the switch novice mode rule:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if novice mode is functioning, change novice mode to dead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise change novice mode to functioning.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Understand &quot;<font color=#000080>credits</font>&quot; as asking for help. 
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  An extension to do menu systems on screen, using tables.</font><p>
+<A name="note2"><font color=#404040>[2].  An extension that contains some boilerplate help text in a form compatible with the menu extension.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

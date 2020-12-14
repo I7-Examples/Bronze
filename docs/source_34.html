@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_33.html">Previous</a><br><a href="source_35.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 4 - Look (a direction) </b>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look [direction]</font>&quot; as facing.
+<br>
+
+<br>
+Facing is an action applying to one visible thing.
+<br>
+
+<br>
+Instead of examining a direction, try facing the noun.
+<br>
+
+<br>
+Check facing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the viewed item be the room noun from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the viewed item is a room, try looking toward the viewed item instead.
+<br>
+
+<br>
+Carry out facing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You can't see anything promising that way.</font>&quot; 
+<br>
+
+<br>
+Carry out facing up:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the rain is visible, try examining the rain instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Yes, it's the ceiling. Not much help there.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of facing east in the Drawbridge:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The castle just goes on and on.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of facing west in the Drawbridge:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The castle just goes on and on.</font>&quot;
+<br>
+
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look toward [any adjacent room]</font>&quot; as looking toward. 
+<br>
+
+<br>
+Looking toward is an action applying to one visible thing.
+<br>
+
+<br>
+Check looking toward:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let way be the best route from location to noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if way is a direction, do nothing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Your view is obscured.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count be the number of moves from the location to the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the count is greater than 1, say &quot;<font color=#000080>Your view in that direction is blocked at the moment.</font>&quot; instead.
+<br>
+
+<br>
+Carry out looking toward:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You make out [the noun in lower case] that way[if the noun is unvisited], still unexplored since your return to the castle[end if].</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward a room which is in the State Rooms when the windchimes are in the rose garden:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You glance toward [the noun in lower case]: when you stand and look in from the inside, nothing stands in your way. But there are also portions of the room you can't view from this angle.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before looking toward a room which contains the Beast:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You check: the Beast is still in there, still motionless. Nothing has changed.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward the rose garden:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The rose garden looks better from the comfort of the walk: a pretty riot of petals and vines, but the smell dulled.</font>&quot;
+<br>
+ 
+<br>
+Instead of looking toward a lit room when in darkness:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Your chief impression is of light streaming in.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward the Law Library:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You see into the law library: rows of books, augustness and age. The place always gave you from the creeps, but from the outside it's not quite so bad.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward the State Rotunda:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You glance into the state rotunda, with its fancy flooring -- hard to get a full view from outside, though.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward Lucrezia's Study when Lucrezia's Study is unvisited:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, say &quot;<font color=#000080>You can't see anything promising that way.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the sinister door is closed, say &quot;<font color=#000080>Yes: it is a door.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You poke your head in and get the rough impression of a darkened room dominated by an enormous painting. But it's hard to say more than that.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward Crystal Bedroom:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The bedroom -- your bedroom -- glitters and sparkles at you. You can imagine what your father and sisters would say about the fact that you sleep amid such luxury. Like a kept woman.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward the Balcony:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>There's fresh air that way, and a vista.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward the Central Courtyard:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>It is still, as always, raining in the central courtyard: the only thing that ever changes is how hard it rains, how swiftly the water runs from the gutters and pools in the gravel, the angle at which the droplets come in.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward a room which is in the Hourglass:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You get a giddy glimpse of sand and glass.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward the Black Gallery:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Your primary impression, from here, is of scorched walls and general ruination.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward the Burnt Frame:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>That way it's just blackened timbers and sky.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of looking toward a dark room:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, say &quot;<font color=#000080>You can't see anything promising that way.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>It's too dim to see much that way, though there is open space.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Include Case Management by Emily Short.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

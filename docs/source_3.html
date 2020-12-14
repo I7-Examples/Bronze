@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_2.html">Previous</a><br><a href="source_4.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3 - Sounds</b>
+<br>
+
+<br>
+A thing has a property called sound. The sound of a thing is usually &quot;<font color=#000080>silence</font>&quot;.
+<br>
+
+<br>
+A procedural rule: ignore the block listening rule.
+<br>
+
+<br>
+Carry out listening to something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, say &quot;<font color=#000080>The [sound of the noun] sounds like [a noun].</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>From [the noun] you hear [the sound of the noun].</font>&quot;
+<br>
+
+<br>
+Definition: a thing is audible if the sound of it is not &quot;<font color=#000080>silence</font>&quot;.
+<br>
+
+<br>
+Echolocating is an activity.
+<br>
+
+<br>
+Before printing the name of something audible (called target) while echolocating:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the target is not the player, say &quot;<font color=#000080>[sound] from [if the target is not the player]the [end if]</font>&quot; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Rule for printing the name of the player while echolocating:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is not audible, say &quot;<font color=#000080>yourself</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>your own [sound of the player]</font>&quot;
+<br>
+
+<br>
+Rule for printing the name of something (called target) which is not visible while echolocating: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[roman type]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the target is the player
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>yourself</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the holder of the target;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let way be the best route from the location to the place;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if way is a direction, say &quot;<font color=#000080>[way]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[if the target is in location]immediate vicinity[otherwise]middle distance[end if]</font>&quot;.
+<br>
+ 
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

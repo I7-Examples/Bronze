@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_42.html">Previous</a><br><a href="source_44.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Part 5 - Fancy Screen Effects</b>
+<br>
+
+<br>
+<b>Section 1 - Improved Status Line</b>
+<br>
+
+<br>
+<font color=#404040>[This status line is designed to help the player track his exploration through the game: rooms that aren't explored yet are highlighted in red, and a count of explored rooms is kept in the lower left corner. We add the further refinement that, if the player is in a dark room, the compass line shows only exits which lead to lit rooms, on the assumption that he will be able to see lighted exits but not dark ones.</font>]
+<br>
+
+<br>
+Include Basic Screen Effects by Emily Short. <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+To turn screen black:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say white letters;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;turn the background black;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clear the screen;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;leave space;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To turn screen white:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;turn the background white;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say black letters;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clear the screen;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;leave space.
+<br>
+
+<br>
+To leave space:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<b>Table of Fancy Status</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>left</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> central</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> right </u></td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080> [if in darkness]Darkness[otherwise][location][end if]</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080></font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[top rose]</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080> [regional area]</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080></font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[middle rose]</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080> Rooms searched: [number of rooms which are visited]/[number of rooms]</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080></font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[bottom rose]</font>&quot;</td></tr>
+<tr><td halign="left" valign="top"> </td></tr>
+</table>
+<br>
+To say red reverse:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;turn the background red.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say black reverse:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;turn the background black.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say white reverse:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;turn the background white.
+<br>
+
+<br>
+Definition: a room is discernible: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is the Dank Room and the trapdoor is scenery, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is lit, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is the ultimate location of the candle, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;yes.
+<br>
+
+<br>
+To say top rose:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room up from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if]U   [default letters]</font>&quot;; otherwise say &quot;<font color=#000080>    </font>&quot;; <font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room northwest from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if]NW[default letters]</font>&quot;; otherwise say &quot;<font color=#000080>  </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room north from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if] N [default letters]</font>&quot;; otherwise say &quot;<font color=#000080>   </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room northeast from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if]NE[default letters]</font>&quot;; otherwise say &quot;<font color=#000080>  </font>&quot;.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say middle rose:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>    </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room west from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if]W [default letters]</font>&quot;; otherwise say &quot;<font color=#000080>  </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> . </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room east from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if] E[default letters]</font>&quot;; otherwise say &quot;<font color=#000080>  </font>&quot;.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say bottom rose:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room down from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if]D   [default letters]</font>&quot;; otherwise say &quot;<font color=#000080>    </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room southwest from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if]SW[default letters]</font>&quot;; otherwise say &quot;<font color=#000080>  </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room south from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if] S [default letters]</font>&quot;; otherwise say &quot;<font color=#000080>   </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let place be the room southeast from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if place is a discernible room, say &quot;<font color=#000080>[if the place is unvisited][red reverse][end if]SE[default letters]</font>&quot;; otherwise say &quot;<font color=#000080>  </font>&quot;.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+Rule for constructing the status line:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fill status bar with Table of Fancy Status;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say default letters;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  An extension that provides phrases for changing text colors, modifying the status line more fully, pausing the game, and so on.</font><p>
+<A name="note2"><font color=#404040>[2].  Originally I assumed that everyone would be using a white-letters-on-black status bar, and set the lettering to black and white after printing the first letter. This was a mistake, as many people on Windows Frotz have a default color scheme that makes the status bar blue-on-white -- so of course the white lettering on a white background didn't show at all. Moral: never ever make assumptions about the color scheme used by your audience.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

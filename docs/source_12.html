@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>Bronze - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_11.html">Previous</a><br><a href="source_13.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3 - The Law Library and Contract Book</b>
+<br>
+
+<br>
+The Law Library is north of the Great Dining Hall. &quot;<font color=#000080>Many [books of precedent] line these walls, containing every kind of contract that can be made to bind every kind of soul.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>A hole in the floor descends to the other, less savory portion of this place.</font>&quot; Some books are scenery in the Law Library. Understand &quot;<font color=#000080>shelves</font>&quot; and &quot;<font color=#000080>books</font>&quot; and &quot;<font color=#000080>contracts</font>&quot; as the books. The description is &quot;<font color=#000080>It is not as though you would understand the language in which they are written.</font>&quot; The great contract book is a thing in the Law Library. Understand &quot;<font color=#000080>contracts</font>&quot; as the contract book. The description of the great contract book is &quot;<font color=#000080>A book many thousands of pages long, and on each page is a name, a birthdate, a term of service, all the contracts that bind the castle's ghosts and servitors and Powers: ostlers and fighting-men, bishops and whores.</font>&quot;
+<br>
+
+<br>
+The books of precedent are scenery in the law library. The description is &quot;<font color=#000080>There are too many for you to read even if you took a long time at it, and most are written in unfamiliar languages.</font>&quot;
+<br>
+
+<br>
+Instead of attacking or cutting the contract book:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>It proves most resistant to any physical assault.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Stands to reason it wouldn't be that easy, of course.</font>&quot;
+<br>
+
+<br>
+Instead of burning the contract book when the player carries the candle:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You hold the candle to the book; the flame licks the pages cheerily and gleams on the gilding of the marginal illuminations -- some of those early contracts are quite fancy. But the fire does not harm the parchment at all, or even darken it.</font>&quot;
+<br>
+
+<br>
+Instead of consulting the great contract book about a topic listed in the Table of Contracts List:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is not in the Translation Room, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player cannot see the candle, continue the action; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[reply entry][paragraph break]</font>&quot;.
+<br>
+
+<br>
+After printing the name of a ringer (called target): 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the target is in Storage
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the number of ringers in storage is greater than 3 and the Bellroom is visited, say &quot;<font color=#000080> (come to think of it, haven't you seen that...?)</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the target to the Bellroom;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if. 
+<br>
+
+<br>
+<b>Table of Contracts List</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>topic</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> reply</u></td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>steward/pullcord/cord</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>The contract you uncover here is written in such a technical language of necromancy and chthonic ritual that you cannot uncover the gist of it, but describes a steward of special guarding powers, owing a debt to Lucrezia and not necessarily to the others of her house.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>shoemaker/cobbler/tambourine/shoes/shoe</font>&quot; or &quot;<font color=#000080>leather tambourine</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>You find a contract for a shoemaker: longer than the average contract, because it seems to have enslaved the man almost without limit, to serve Lucrezia's constant need: she had very very bad feet. [if the image is unexamined]To your irritation, it omits a description of the shoemaker's summons; but perhaps if you could find more about the woman, there would be some mention of the matter[otherwise]It omits the usual information about the summons and the usual location of action, but the image in Lucrezia's study is more helpful -- perhaps, again, an intentional precaution on her part[end if].</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>library/librarian/glass</font>&quot; or &quot;<font color=#000080>glass bell</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>The contract records that the librarian -- a relatively recent innovation at the castle -- is controlled by a [glass bell]. </font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>lamplighter/silver/bell/silver</font>&quot; or &quot;<font color=#000080>silver bell</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>To live as a thin spirit, having no volition, and lighting the lamps whenever the silver bell is rung.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>me/myself/self</font>&quot; or &quot;<font color=#000080>my contract</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>You search, search, search -- and here is the page with your name at the top. But the contract below, which stipulates your eternal imprisonment here, has been amended with a permission to leave and return within seven days. Then: 'Guarantor of this exchange: the king of the castle and all his rights and servants.' Which means that if you had not returned, the Beast would have been forfeit and all the servants as well.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>father/papa/dad/daddy/shackle/shackles</font>&quot; or &quot;<font color=#000080>my father</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Your father's contract is just before your own: a lifetime (and deathtime) of service in this castle, as the immediate result of setting foot herein. From comparison to some of the other contracts, you see that it would have been easy service indeed, no manual labor but only companionship to the king, and no command-bell to make him come or go.</td></tr>
+</font><font color=#000080></table>
+<br>
+</font><font color=#000080>But the contract has been amended in a small neat hand that says: 'Voided in voluntary exchange for his daughter's service.' That would be where you come in. And: 'Guarantor of this exchange: the king of the castle and all his rights and servants.'</font>&quot;
+<br>
+&quot;<font color=#000080>beast/him/king</font>&quot; &quot;<font color=#000080>Even if you knew his name, he wouldn't be listed here, of course. The master is not contracted, only the servants.</font>&quot;
+<br>
+&quot;<font color=#000080>virgins/maidens/maiden/virgin</font>&quot; &quot;<font color=#000080>Here you are: two thousand virgins, contracted to sew and hem and embroider until the end of time. This would certainly account for the quantity of bed-linen to be found in the castle.</font>&quot;
+<br>
+&quot;<font color=#000080>Lucrezia</font>&quot; &quot;<font color=#000080>The mistress is not contracted, only the servants. She had no contract, while she lived, and was allowed, therefore, to die.</font>&quot;
+<br>
+&quot;<font color=#000080>Elzibad/Yggdram/Athanasius</font>&quot; &quot;<font color=#000080>The kings you will not find contracted here, though there might be some history in the papers of the records room.</font>&quot;
+<br>
+&quot;<font color=#000080>chef/chefs/cooks/cook</font>&quot; or &quot;<font color=#000080>gold dinner bell</font>&quot; or &quot;<font color=#000080>gold bell</font>&quot; or &quot;<font color=#000080>gold</font>&quot; &quot;<font color=#000080>Dozens of cooks were placed under contract, at different times, new ones being brought on as the old ones were unable to keep up with the current fashions in cuisine; and these are controlled in turn by the gold dinner bell.</font>&quot;
+<br>
+&quot;<font color=#000080>bishop/bishops</font>&quot; &quot;<font color=#000080>You find just one bishop, actually -- men of the church having been, on the whole, more wary than the average person about coming into any contact with this castle and its inhabitants. He appears to have been an Ethiopian, and the terms of his service abstruse and theological. A backhanded attempt to save one or two of the royal souls, perhaps.</font>&quot;
+<br>
+&quot;<font color=#000080>ostler/ostlers</font>&quot; &quot;<font color=#000080>To judge by this, the castle once had many hundreds of horses. No way of guessing what they do now, the horses having passed a plain animal lifespan and died.</font>&quot;
+<br>
+&quot;<font color=#000080>whore/whores/prostitute/prostitutes</font>&quot; &quot;<font color=#000080>Well. This explains the dreams one has in certain bedrooms.</font>&quot;
+<br>
+&quot;<font color=#000080>fighting-men/fighters/knights/knight/fighter/fighting-man/chimes/windchimes</font>&quot; or &quot;<font color=#000080>fighting man/men</font>&quot; &quot;<font color=#000080>The windchimes bind the usual array of guards and armsmen; from the large number so bound, and the terms of the contracts, you get the sense that even the undead are not entirely proof against destruction in battle, so that new ones had to be taken on with great frequency.</font>&quot;
+<br>
+&quot;<font color=#000080>worked bronze gong</font>&quot; or &quot;<font color=#000080>bronze gong</font>&quot; or &quot;<font color=#000080>worked gong</font>&quot; or &quot;<font color=#000080>gong</font>&quot; or &quot;<font color=#000080>harness</font>&quot; or &quot;<font color=#000080>elephant harness</font>&quot; or &quot;<font color=#000080>elephant</font>&quot; &quot;<font color=#000080>A [worked bronze gong], according to this, controls a shape-shifting djinn of considerable size and destructive power, which resents the terms of its enslavement and would be overjoyed to take revenge. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>This djinn has taken many forms in the past, but most frequently disguises itself as an elephant. </font>&quot;
+<br>
+&quot;<font color=#000080>gamesman/chess/chessplayer/player</font>&quot; &quot;<font color=#000080>You search for the spirit that plays chess, but find nothing. It must have been recorded under a proper name, but you do not know what that might be.</font>&quot;
+<br>
+&quot;<font color=#000080>miniature/girdle/Yvette</font>&quot; or &quot;<font color=#000080>green girdle</font>&quot; &quot;<font color=#000080>With some effort, you find the contract, which turns to be one of a large number of contracts involving young women. These all occur towards the end of the book, shortly before your own.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>In fact, this is the very last contract recorded before your father's and yours: a young woman named Yvette, brought to the castle -- though she was betrothed to a lord already -- to 'serve' the king. You have the impression that the contract book is leaving out a good deal, such as why Yvette was associated with the girdle, and what she was doing here. Perhaps in the papers there will be something.</font>&quot;
+<br>
+&quot;<font color=#000080>gargoyle/gargoyles/doctor</font>&quot; &quot;<font color=#000080>After some researches you succeed in finding a reference, to a young doctor who was contracted to the castle to relieve the impotence of the king's brother, Duke Cantherius.</font>&quot;
+<br>
+&quot;<font color=#000080>Duke Cantherius</font>&quot; or &quot;<font color=#000080>duke/Cantherius</font>&quot; &quot;<font color=#000080>The Duke was not under contract, being a member of the king's own family.</font>&quot;
+<br>
+
+<br>
+Understand &quot;<font color=#000080>consult</font>&quot; or &quot;<font color=#000080>look up</font>&quot; or &quot;<font color=#000080>read</font>&quot; as &quot;<font color=#000080>[search term]</font>&quot;.
+<br>
+
+<br>
+After reading a command:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player's command includes &quot;<font color=#000080>[search term]</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while the player's command includes &quot;<font color=#000080>the</font>&quot;, cut the matched text;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Instead of consulting or examining the great contract book when the player is not in the Translation Room: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The runes are unfamiliar to you, but you know what the book is: a record of all the contracts of all the souls enslaved to the king of this castle[if the contract book is unexamined].
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You caught him staring at you once. 'Your clothing is wearing out. I'll look up a seamstress in the contract book for you.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You plucked the erring sleeve back into place. 'You needn't,' you said. 'I don't mind.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'Yes, but I do,' he snapped. 'I was once a -- the polite term would be a connoisseur of ladies -- and it is not a taste that goes away. So for everyone's sanity it would be best if you went about fully clothed.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You avoided him for three days, after that incident. But your gowns were all replaced[end if].</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the contract book is examined;
+<br>
+
+<br>
+Instead of consulting or examining the great contract book when the location is the Translation Room and the player cannot see the candle:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You lean close to the pages, squinting at their probably-more-comprehensible lettering, but still cannot get the sense of them without a proper light.</font>&quot;
+<br>
+
+<br>
+The Translation Room is west of the Lower Bulb. &quot;<font color=#000080>Endowed with a deep power that dissolves into ready vernacular even the most ancient and secret scripts of the Law Library[if the candle is not visible].
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Usually blazing with the captured light of many thousands of candles, but it has been let to go out, and everything is dim[end if].</font>&quot;
+<br>
+
+<br>
+The ordinary quill pen is a thing in the Translation Room. The description of the ordinary quill pen is &quot;<font color=#000080>You notice -- can't help noticing -- that the feather is blacker and sleeker and longer than should come from any ordinary bird. As if pulled from the wing of a black angel. The stain on the tip is red.</font>&quot; Understand &quot;<font color=#000080>mephistopheles</font>&quot; or &quot;<font color=#000080>stain</font>&quot; or &quot;<font color=#000080>tip</font>&quot; or &quot;<font color=#000080>feather</font>&quot; as the quill. The scent of the quill is &quot;<font color=#000080>sharp bitterness like myrrh</font>&quot;.
+<br>
+
+<br>
+Rule for printing the name of the examined quill pen: say &quot;<font color=#000080>quill of Mephistopheles</font>&quot;.
+<br>
+
+<br>
+Instead of examining the quill pen for the first time:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say  &quot;<font color=#000080>Made of a black feather, to be sure, but there is nothing else at all strange about it, or valuable, or in the least bit unusual. Nothing to make you look twice.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of taking the quill, say &quot;<font color=#000080>It is too heavy for you to lift.</font>&quot; Instead of taking the unexamined quill: say &quot;<font color=#000080>It doesn't look heavy at all, but you can't lift it.</font>&quot; Instead of doing something other than taking or examining with the quill: say &quot;<font color=#000080>For the quill of Mephistopheles, they say, the first king made certain terrible exchanges: at any rate, you cannot use it yourself without sacrificing what you dare not. It is not for anyone but the Kings to use, and they only at their own peril.</font>&quot;
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>
