@@ -1,0 +1,11 @@
+*.inform/Index
+*.inform/Metadata.iFiction
+*.inform/Release.blurb
+*.inform/Settings.plist
+*.inform/Skein.skein
+* Materials/*.?blorb
+* Materials/solution.txt
+* Materials/source.txt
+* Materials/source.html
+* Materials/source*.html
+* Materials/index.html
