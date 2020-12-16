@@ -1,8 +1,8 @@
 "Bronze" by Emily Short. 
 
-Include (- Serial "060503"; -).
+Include (- Serial "101025"; -).
 
-The story genre is "Fairy Tale". The release number is 11. The story headline is "A fractured fairy tale". The story description is "When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
+The story genre is "Fairy Tale". The release number is 12. The story headline is "A fractured fairy tale". The story description is "When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
 	
 'Don't go back,' they say, and 'When will we ever see you again?' But you imagine they will find consolation somewhere.
 	
@@ -27,7 +27,7 @@ Index map with room-shape set to "square" and room-size set to 60 and room-name-
 
 Include Locksmith by Emily Short.
 
-Use full-length room descriptions, American dialect, no scoring, and the serial comma. Use memory economy. Use MAX_SYMBOLS of 7000.
+Use full-length room descriptions, American dialect, no scoring, and the serial comma. Use memory economy. Use MAX_SYMBOLS of 7000. 
 	
 Part 1 - Adjustments to the World Model
 
@@ -40,7 +40,7 @@ Include Plurality by Emily Short.
 
 The description of a thing is usually "The appearance of [the noun] has not changed significantly since you left."  
 
-The description of a container is usually "[The noun] [if the noun is open]contains [the list of things in the noun][end if][if the noun is closed][is/are] closed[end if][if the noun is locked] and locked[end if][if the noun is closed and the noun is transparent]. Inside [is/are the list of things in the noun][end if]."
+The description of a container is usually "[The noun] [if the noun is open]contains [the list of things in the noun][end if][if the noun is closed][is-are] closed[end if][if the noun is locked] and locked[end if][if the noun is closed and the noun is transparent]. Inside [is-are the list of things in the noun][end if]."
 
 Section 1 - Doors
 
@@ -77,9 +77,9 @@ Instead of looking under a door:
 	
 Section 2 - Smells
  
-A thing has a property called scent. The scent of a thing is usually "nothing".
+A thing has some text called scent. The scent of a thing is usually "nothing".
 
-A procedural rule: ignore the block smelling rule.
+The block smelling rule is not listed in any rulebook.
 
 Carry out smelling something:
 	say "From [the noun] you smell [scent of the noun]."
@@ -94,9 +94,9 @@ Before printing the name of something scented while smelling a room: say "[scent
 
 Section 3 - Sounds
 
-A thing has a property called sound. The sound of a thing is usually "silence".
+A thing has some text called sound. The sound of a thing is usually "silence".
 
-A procedural rule: ignore the block listening rule.
+The block listening rule is not listed in any rulebook.
 
 Carry out listening to something:
 	if in darkness, say "The [sound of the noun] sounds like [a noun].";
@@ -130,7 +130,7 @@ Chapter 2 - New Kinds
 
 A display is a kind of thing. A display is always scenery. [* A kind mostly used for the paintings, with special behavior to handle what happens when the player tries to look behind one.]
 
-A reminder is a kind of thing. A reminder has some text called a memory. Carry out examining an unexamined reminder: say "[memory of the noun][paragraph break]You reacquaint yourself with its appearance: ".
+A reminder is a kind of thing. A reminder has some text called a memory. Carry out examining an unexamined reminder: say "[memory of the noun][paragraph break]You reacquaint yourself with its appearance: [run paragraph on]".
 
 A floor is a kind of thing. Before putting something on a floor: try dropping the noun instead. Before facing down in the presence of a floor (called target): try examining the target instead. A floor is always scenery. Instead of looking under a floor: say "Nice idea if you can figure out how." Understand "floor" or "ground" as a floor.
 	 
@@ -157,7 +157,7 @@ Understand "search" as searching.
 
 A bed is a kind of supporter. A bed is always enterable. A bed is usually scenery. The description of a bed is usually "Unrumpled: the service keeps them neat and tidy." Understand "sheets" or "sheet" or "pillow" or "pillows" as the bed. Instead of looking under a bed, say "It is clean beneath as above." The scent of a bed is "faint lavender".
 
-A view is a kind of backdrop. The view has a property called refusal. The refusal of a view is usually "You are too far from [the noun] to do anything but look." 
+A view is a kind of backdrop. The view has some text called refusal. The refusal of a view is usually "You are too far from [the noun] to do anything but look." 
 
 Instead of doing something other than examining to a view:
 	if listening to the noun and the noun is audible, continue the action;
@@ -173,7 +173,7 @@ Understand the commands "ascend" and "descend" as climb. Understand "go down [st
 
 A fluid container is a kind of thing. A fluid container can be empty or full. After printing the name of a full fluid container while listing contents: say " (full)". After printing the name of an empty fluid container while listing contents: say " (empty)".
 
-A ringer is a kind of thing. A ringer has a property called the target locale.
+A ringer is a kind of thing. A ringer has an object called the target locale.
 	
 
 
@@ -181,6 +181,7 @@ Instead of attacking a ringer:
 	say "The clapper is resentfully mute. The servants have fulfilled their contract for the day, and cannot be commanded again until tomorrow comes."
 	
 Instead of attacking a ringer when location is not the target locale of the noun:
+	if the noun is the gong, continue the action;
 	if the player can see the mirrors, continue the action;
 	say "You ring the bell, but those who might hear and heed it are not close enough."
 	
@@ -269,7 +270,7 @@ The  arrival of Princess Lucrezia is a display in the Gallery of Historical Pain
 
 The Treasure Room is northeast of the Scarlet Gallery. "[if the iron cage is locked]Locked[otherwise]Kept[end if] in [an iron cage] are the house treasures not in use: the collection consists of [a list of things in the iron cage], at present[if something is in the cage] -- he showed them to you one rainy day, telling you their many histories[end if]." 
 
-The iron cage is an enterable closed openable container in the Treasure Room. The cage is scenery. It is lockable and locked. It is transparent. Understand "bars" or "metal" or "broad" or "strap-like" or "bars of metal" or "marks" or "treasures" or "treasure" or "house treasures" as the cage. The description is "Made of broad strap-like bars of metal, as thick as a man's belt, and heavily reinforced. Here and there are marks where someone would seem to have made an attempt to break in[if the cage contains something]. In the cage [is/are the list of things in the cage][end if]."
+The iron cage is an enterable closed openable container in the Treasure Room. The cage is scenery. It is lockable and locked. It is transparent. Understand "bars" or "metal" or "broad" or "strap-like" or "bars of metal" or "marks" or "treasures" or "treasure" or "house treasures" as the cage. The description is "Made of broad strap-like bars of metal, as thick as a man's belt, and heavily reinforced. Here and there are marks where someone would seem to have made an attempt to break in[if the cage contains something]. In the cage [is-are the list of things in the cage][end if]."
 
 In the cage is a sceptre and a jagged piece. The sceptre is a reminder. The description of the sceptre is "Studded with measly turquoises and semi-precious stones." The memory of the sceptre is "Formerly belonging to Queen Ingratitudina the First (so he said), only slightly bent where she used it to strike King Cophetua." The printed name of the jagged piece is "puzzle piece". Understand "puzzle piece" as the jagged piece.
 
@@ -528,7 +529,7 @@ The Black Gallery contains a white apple, a stuffed boar, a preserved goat, a ca
 
 Instead of taking a fixed in place curious thing in the Black Gallery, say "[The noun] is too heavy for you to lift."
 	
-A thing has a property called elaboration. The elaboration of a thing is usually "quite ordinary". The elaboration of the stuffed boar is "(looking angry)". The elaboration of the white apple is "(complete with white stem and leaf)". The elaboration of the glass leaf is "(very fragile)". The elaboration of the cane is "(probably a swordstick, by the look of the handle)". The elaboration of the goat is "(in a very large jar)". The elaboration of the buckle is "(without a mate)". The elaboration of the copper snake is "(jointed)". The elaboration of the homunculus is "(pickled)". The elaboration of the perch is "(evidently much used)". The elaboration of the swatch is "(torn from a much bigger piece)". The elaboration of the pendant is "(faceted)". The elaboration of the gold ring is "(with signet, though you do not recognize the symbol)". The elaboration of the broken beam is "(charred at each end)"
+A thing has some text called elaboration. The elaboration of a thing is usually "quite ordinary". The elaboration of the stuffed boar is "(looking angry)". The elaboration of the white apple is "(complete with white stem and leaf)". The elaboration of the glass leaf is "(very fragile)". The elaboration of the cane is "(probably a swordstick, by the look of the handle)". The elaboration of the goat is "(in a very large jar)". The elaboration of the buckle is "(without a mate)". The elaboration of the copper snake is "(jointed)". The elaboration of the homunculus is "(pickled)". The elaboration of the perch is "(evidently much used)". The elaboration of the swatch is "(torn from a much bigger piece)". The elaboration of the pendant is "(faceted)". The elaboration of the gold ring is "(with signet, though you do not recognize the symbol)". The elaboration of the broken beam is "(charred at each end)"
 
 When play begins:
 	repeat with item running through things in the Black Gallery
@@ -543,7 +544,7 @@ When play begins:
 Rule for writing a paragraph about something in the Black Gallery:
 	now the player is mentioned; now the rows are mentioned;
 	now the surroundings are mentioned;
-	if the Black Gallery contains at least six unmentioned things, say "There's [a random unmentioned thing in the Gallery in full] and [a random unmentioned thing in the Gallery in full]; [a random unmentioned thing in the Gallery], [a random unmentioned thing in the Gallery], [a random unmentioned thing in the Gallery]; [list of unmentioned things in the Gallery].";
+	if the Black Gallery contains at least six unmentioned things, say "There's [a random unmentioned thing in the Gallery in full] and [a random unmentioned thing in the Gallery in full]; [a random unmentioned thing in the Gallery], [a random unmentioned thing in the Gallery], [a random unmentioned thing in the Gallery]; [a list of unmentioned things in the Gallery].";
 	otherwise say "[The rows] have been thinned down to [the list of unmentioned things in the Gallery], thanks to your diligent action."
 	
 To say (item - a thing) in full:
@@ -627,7 +628,6 @@ It inks this carefully from the inkpot, then stamps inside the front of the book
 				say "[line break]You never do discover any final rest or cure for the Beast. But perhaps that is a small price to pay for all the souls you have liberated.";
 				end the game saying "You have made an exchange";
 			end if;
-			say line break;
 			stop the action;
 		otherwise;
 			say "You summon the librarian, who comes and looks at the contract book: you see this as a sort of fog. It frowns at the condition of some of the pages, then searches the front and back of the book; then, grimacing, it takes out a red seal like those used in the empire of the Chan. It is about to mark the contract book property of the Lie Library, when it discovers that its seal ink has dried up: so the stamp has no efficacy. Disappointed, it vanishes again.";
@@ -679,7 +679,7 @@ After examining the embroidery: change the description of the embroidery to "Unf
 Before putting the embroidery materials on the windchimes:
 	say "You try muffling the chimes in the cloth, but can't rig the whole arrangement so as to keep them absolutely silent -- and that is what you need to do, if you're going to avoid summoning up the spirit guards." instead.
 	
-Instead of tieing the materials to the windchimes: try putting the materials on the windchimes. Instead of tieing the windchimes to the materials: try putting the materials on the windchimes.
+Instead of tying the materials to the windchimes: try putting the materials on the windchimes. Instead of tying the windchimes to the materials: try putting the materials on the windchimes.
 
 Understand "cover [something] with [something]" as putting it on (with nouns reversed). Understand "wrap [something] in/with [something]" as putting it on (with nouns reversed). Understand "muffle [something] in/with [something]" as putting it on (with nouns reversed). Understand "wrap [something] around [something]" as putting it on. Understand the commands "shroud" and "silence" as "muffle". [* This is a response to play-testers wanting to try muffling the chimes in embroidery -- a reasonable attempt, but one that would short-circuit the intended puzzle structure.]
 
@@ -727,7 +727,7 @@ After going to the Rose Garden from the Rooted Room:
 Section 2 - The Windchimes
 [The windchimes need to guide the player through the darkness when he wears the helmet, so we have a fairly complicated set of rules determining whether they're audible and, if so, how this is described.]
 
-Some iron windchimes are an ambiguously plural thing in the Rose Garden. Understand "guard" or "guards" or "chimes" or "chime" or "chain" or "padlock" or "small" or "lock" as the windchimes. "Strung up by a chain is a set of [iron windchimes]." The description of the windchimes is "Each chime is engraved with the staring eyes and exaggerated nostrils of a spirit warrior."  The windchimes can be lockable. The windchimes can be locked. The windchimes are lockable and locked. The windchimes have a property called matching key. The small key unlocks the windchimes. Instead of taking the windchimes when the windchimes are locked: say "The chimes have been locked to the chain that supports them."
+Some iron windchimes are an ambiguously plural thing in the Rose Garden. Understand "guard" or "guards" or "chimes" or "chime" or "chain" or "padlock" or "small" or "lock" as the windchimes. "Strung up by a chain is a set of [iron windchimes]." The description of the windchimes is "Each chime is engraved with the staring eyes and exaggerated nostrils of a spirit warrior."  The windchimes can be lockable. The windchimes can be locked. The windchimes are lockable and locked. [The windchimes have a thing called matching key.] The small key unlocks the windchimes. Instead of taking the windchimes when the windchimes are locked: say "The chimes have been locked to the chain that supports them."
 
 Instead of pulling the locked windchimes, say "They refuse to come free, having been locked in place with a small padlock." Instead of pulling the unlocked windchimes when the windchimes are in the location: try taking the noun.
 
@@ -790,29 +790,29 @@ To play sounds:
 			end if;
 			if the way is a direction, say " from [the way]";
 			otherwise say " nearby";
-			if an audible thing is in an adjacent room, say ", competing with [list of audible things which are in adjacent rooms]";
-			say "[if an audible thing is in the location]. You can also make out [list of audible things in the location][end if].";
+			if an audible thing is in an adjacent room, say ", competing with [a list of audible things which are in adjacent rooms]";
+			say "[if an audible thing is in the location]. You can also make out [a list of audible things in the location][end if].";
 		otherwise;
-			say " somewhere nearby. You cannot be quite certain of the direction[if an audible thing is visible]. You also hear [list of audible visible things], nearer at hand[end if].";
+			say " somewhere nearby. You cannot be quite certain of the direction[if an audible thing is visible]. You also hear [a list of audible visible things], nearer at hand[end if].";
 		end if;
 	otherwise; 
 		if an audible thing is in the location
 		begin;
-			say "You hear [list of audible things in the location]";
+			say "You hear [a list of audible things in the location]";
 			if the player wears the helmet
 			begin;
-				if an audible thing is in an adjacent room, say ", and [list of audible things which are in adjacent rooms]";
+				if an audible thing is in an adjacent room, say ", and [a list of audible things which are in adjacent rooms]";
 			end if;
 			say ".";
 		otherwise;
 			if the player wears the helmet
 			begin;
-				if an audible thing is in an adjacent room, say "You hear [list of audible things which are in adjacent rooms].";
+				if an audible thing is in an adjacent room, say "You hear [a list of audible things which are in adjacent rooms].";
 				otherwise say "Everything is quiet, but loudly quiet: if there were any movement at all, you would sense it.";
 			otherwise; 
 				if in darkness and an audible thing is in an adjacent room
 				begin;
-					say "You hear [list of audible things which are in adjacent rooms].";
+					say "You hear [a list of audible things which are in adjacent rooms].";
 					end the echolocating activity;
 					rule succeeds;
 				end if;
@@ -922,6 +922,8 @@ The Apprentice's Workshop is west of the Central Crypt and northwest of the Debt
 
 Rocky Chamber is southeast of Father's Regret. Rocky Chamber is dark. "A tight, rocky corner among foundations of the oldest part of the castle. A slow leak in the south wall admits a little water, but not enough to be very destructive." Rocky Chamber is southwest of Zoo. The leak is a floor in the Rocky Chamber. The sound of the leak is "irregular dripping". Understand "drip" or "dripping" or "oily" or "water" as the leak. 
 
+Understand "fill [something]" as filling. Filling is an action applying to one thing.
+
 Instead of filling something in the presence of the leak, say "The leak is only a drip, not enough to fill anything." The description of the leak is "The dripping moisture has the oily look of moat water."  The scent of the leak is "mildewy dampness". Before inserting the leak into something: say "The leak is insufficient to fill much of anything." instead. Before inserting something into the leak: try inserting the leak into the noun instead. [* To deal with people saying things like PUT INKPOT IN THE LEAK and PUT WATER IN THE INKPOT.]
 
 
@@ -1016,7 +1018,7 @@ Tight Passage is northeast of Father's Regret. Tight Passage is dark. "The passa
 
 The cord is a fixed in place thing in Tight Passage. The description is "A pullcord emerges from the rock just before the walls of the passage turn to mud." Understand "pullcord" as the cord. Instead of taking the cord, try pulling the cord. Instead of pulling the cord: say "You give the cord a hard yank. Somewhere above you a very deep bell tolls."; now the Parliamentary Chambers are active; summons runs out in 7 turns from now. Instead of pulling the cord when the Parliamentary Chambers are active: say "Instead of the expected toll, there is only a muted thunk -- perhaps you cannot use the bell too many times in too short a period." Instead of pulling the cord when the sinister door is unlocked: say "No need to trouble him again."
 
-A room can be active or still. When summons runs out: now the Parliamentary Chambers are still.
+A room can be active or still. At the time when summons runs out: now the Parliamentary Chambers are still.
  
 
 Instead of waiting when the location is Parliamentary Chambers and Parliamentary Chambers are active and the sinister door is locked:
@@ -1028,7 +1030,7 @@ It says a few words in the bastardized Italian of the state of Medici-Credenza, 
 
 Then the presence vanishes."
 
-The inscription is a fixed in place thing in Tight Passage. The printing of the inscription is "Pull this cord, then wait in the room directly above to speak with Lucrezia's steward. Do not let more than five minutes pass between the summons and the waiting, or he will depart again without offering aid." Instead of rubbing or touching the inscription, say "Try though you might to discover its meaning by touch, the letters are too small and numerous for you to read that way; only the capitals P, L, and D stand out. L for Lucrezia, maybe? The word does feel long enough." The description of the inscription is "There's lettering beneath the pullcord."
+The inscription is a fixed in place thing in Tight Passage. Understand "lettering" as the inscription. The printing of the inscription is "Pull this cord, then wait in the room directly above to speak with Lucrezia's steward. Do not let more than five minutes pass between the summons and the waiting, or he will depart again without offering aid." Instead of rubbing or touching the inscription, say "Try though you might to discover its meaning by touch, the letters are too small and numerous for you to read that way; only the capitals P, L, and D stand out. L for Lucrezia, maybe? The word does feel long enough." The description of the inscription is "There's lettering beneath the pullcord."
 
 The inscription can be unknown, partially known, or fully revealed. The inscription is unknown. 
 
@@ -1078,7 +1080,7 @@ To decide whether illuminated:
 
 Instead of reading the inscription when in darkness and the candle is not on a supporter:
 	if the inscription is not fully revealed, change the inscription to partially known;
-	say "The light coming in does illuminate the floor sharply, and is at a good angle, but it is a bit too low to show up the lettering halfway up the wall. All you get is the deepest capital letters -- P, L, and D -- and the last line: [italic type]or he will depart again without offering aid.[roman type]"
+	say "The light coming in does illuminate the floor sharply, and is at a good angle, but it is a bit too low to show up the lettering halfway up the wall. All you get is the deepest capital letters -- P, L, and D -- and the last line: [italic type]or he will depart again without offering aid.[roman type][line break]"
 	
 Visibility rule when examining or reading the inscription:
 	if in darkness
@@ -1129,19 +1131,19 @@ After putting the candle on the stool when in darkness:
 After putting the candle on the stool when in the Rooted Room:
 	say "You put the candle on the stool, aligning it neatly against the wall. A harsh raking illumination is now cast along the wall, about at a height with your knees."
 	
-Instead of tieing something to the cord:
+Instead of tying something to the cord:
 	say "You try various arrangements, but the cord is too short to be secured to anything."
 
-Instead of tieing the cord to something: try tieing the second noun to the cord.
+Instead of tying the cord to something: try tying the second noun to the cord.
 
-Instead of tieing the candle to the cord:
+Instead of tying the candle to the cord:
 	say "You spend some frustrating time trying to make a little noose of the cord and secure it around the candle, but is easier to imagine than to perform, and in the end you are forced to admit that even if you could do it, the angle of lighting on the inscription would not be the best. The light really needs to be coming in from lower and further off."
 	
 Understand "near/beside/by/above/under/below/over" or "next to" or "up to" as "[by]".
 
-Understand "hold [something held] [by] [something]" as juxtaposing it to. Understand "put [something held] [by] [something]" as juxtaposing it to.
+Understand "hold [something preferably held] [by] [something]" as juxtaposing it to. Understand "put [something preferably held] [by] [something]" as juxtaposing it to.
 
-Juxtaposing it to is an action applying to one thing and one visible thing. Carry out juxtaposing it to: say "This produces no interesting results."
+Juxtaposing it to is an action applying to one carried thing and one visible thing. Carry out juxtaposing it to: say "This produces no interesting results."
 
 Instead of juxtaposing the candle to the inscription:
 	try waving the candle.
@@ -1248,7 +1250,7 @@ Chapter 7 - West Wing
 
 The Great Dining Hall is west of the Entrance Hall. "[if the location is unvisited or the number of filled rows in the Table of memories is 0]Such a long hall that the soup might get cold between one end and the other. You and he used only the far west end, nearest the kitchen. Once you took to dining together at all, that is; the first few months he brought trays to your room, while you hid.
 
-But then you took to eating here; and at the end of every meal he would stand up formally and ask his question[otherwise]You allow yourself to remember another night, another request[end if].[if the number of filled rows in the Table of Memories is greater than 0][line break][memory][end if]".
+But then you took to eating here; and at the end of every meal he would stand up formally and ask his question[otherwise]You allow yourself to remember another night, another request[end if].[if the number of filled rows in the Table of Memories is greater than 0][paragraph break][memory][end if]".
 
 The long table is scenery in the Great Dining Hall. It is a supporter. Instead of looking under the long table, say "There are no gnawed bones or anything of that nature."
 
@@ -1264,7 +1266,7 @@ Chapter 8 - Upstairs
 
 Section 1 - Apartments and Upstairs Galleries
 
-East of the Upper Bulb is the Gallery of Still Life. The description of the Gallery of Still Life is "Natural light from the south -- coming in from the courtyard[if the player is on the stool], though you cannot see all the way down to ground level from here, even on the stool[otherwise], you suppose, though you are too short to see out[end if] -- illuminates a series of still life paintings on the north wall: one showing the [Wedding Treasure] when Lucrezia arrived from Medici-Credenza, the other rather fancifully entitled [Supper]." The Gallery of Still Life is in the State Rooms.
+East of the Upper Bulb is the Gallery of Still Life. The description of the Gallery of Still Life is "Natural light from the south -- coming in from the courtyard[if the player is on the stool], though you cannot see all the way down to ground level from here, even on the stool[otherwise], you suppose, though you are too short to see out[end if] -- illuminates a series of still life paintings on the north wall: one showing the [Wedding Treasure] when Lucrezia arrived from Medici-Credenza, the other rather fancifully entitled [Supper]."
 
 Wedding Treasure is a display in the Gallery of Still Life. Understand "painting"  or "still life" or "table" or "girdle" or "inkpot" or "helmet" or "green" or "cloven shoes" or "paintings" as wedding treasure. The description is "A table tastefully laid with possessions of power or personal worth, brought by Lucrezia as gifts from her father: an inkpot, a helmet, a green girdle stitched with vines, a curious pair of cloven shoes."
 
@@ -1346,6 +1348,7 @@ Understand "squint" as a mistake ("You squinch your eyes, but do not substantive
 
 The sea is a view in the Gilded Balcony. Understand "ocean" or "wave" or "ship" or "ships" as the sea. Instead of facing the forest for the second time: try facing the sea. The description of the sea is "If you look long enough, your vision expands until you can see the ocean, grey and clouded with storms, that took your father's livelihood and brought your family to ruin."
 
+Swimming is an action applying to nothing. Understand "swim" or "dive" as swimming.
 
 The moat is a view. Understand "oily" and "splashing" and "brown" and "water" as the moat. It is in the drawbridge and the Gilded Balcony. The description is "The moat is full of slightly oily brown water. If you had been physically imprisoned, you might have tried to swim across; so it is just as well that you were not." The sound of the moat is "occasional splashing". The scent of the moat is "aquaceous plant-life with an undertone of slime". Instead of swimming in the presence of the moat: try swimming in the moat. Instead of swimming in the moat: say "Both unappealing and unnecessary."
 
@@ -1468,7 +1471,7 @@ Instead of attacking a ringer in the scrying room:
 Instead of attacking a ringer in the presence of the mirrors:
 	say "Many faces press to the far side of the mirror, but no one shade has the strength to speak, and finally they fade away again, half-damned."
 
-Instead of attacking the cow bell when the girdle is in storage and the mirrors are visible:
+Instead of attacking the cow bell in the presence of the mirrors when the girdle is in storage:
 	move the girdle to Virgin's End;
 	move the cow bell to the bellroom;
 	say "You ring the [cow bell], and a heavy fog coalesces around you; then at the mirror there forms the image of an exceptionally beautiful young woman, wearing a green girdle.
@@ -1520,7 +1523,7 @@ The Haunted Area is a region. Virgin's End, Father's Regret, Debtor's Paradise, 
 
 Hourglass is a region. Lower Bulb and Upper Bulb are in Hourglass. Instead of going to Hourglass when the player wears the helmet: say "You walk far enough in to get a view of sand falling in a huge hourglass. Though it is only a thin stream, it sounds louder than it should: the noise, magnified by your helmet, becomes too much to bear, and you retreat."
 
-State Rooms is a region. Law Library, Lie Library, Translation Room, State Rotunda, Parliamentary Chambers, Burnt Frame, Smoke-Damaged Chamber, Black Gallery, Armory, and Records Room are in the State Rooms. Hourglass is in State Rooms.
+State Rooms is a region. Law Library, Lie Library, Translation Room, State Rotunda, Parliamentary Chambers, Burnt Frame, Smoke-Damaged Chamber, Black Gallery, Armory, and Records Room are in the State Rooms. Hourglass is in State Rooms. The Gallery of Still Life is in the State Rooms.
 	
 Apartments is a region. Private Parlor, Guest Bedroom, Upstairs, Green Bedroom, Crystal Bedroom, Gilded Balcony, and Empty Bedroom are in Apartments.
 
@@ -1591,7 +1594,7 @@ When Scouring Main Castle ends in completion:
 		say "Upstairs. That must be the solution. You'll find him up there, and everything will go back to normal; as it always does after a fight or disagreement or odd patch. Sooner or later things just right themselves and resume as they have always gone.";
 		rule succeeds;
 	end if;
-	say "So he's not among the kitchen things.[line break]";
+	say "So he's not among the kitchen things.";
 	if a room in Apartments is unvisited
 	begin;
 		suggest upstairs;
@@ -1605,7 +1608,7 @@ When Scouring Main Castle ends in completion:
 Scouring Old Castle is a scene. Scouring Old Castle begins when the location is in Old Castle and Scouring Old Castle has not happened. Scouring Old Castle ends in completion when every room in Old Castle is visited. Scouring Old Castle ends in irrelevance when Search ends.
 
 When Scouring Old Castle ends in completion: 
-	say "He's not down here, then, in the east wing.[line break]";
+	say "He's not down here, then, in the east wing.[paragraph break]";
 	if a room in Main Castle is unvisited
 	begin;
 		suggest Main Castle;
@@ -1618,7 +1621,7 @@ When Scouring Old Castle ends in completion:
 Scouring Upstairs is a scene. Scouring upstairs begins when the location is in Apartments and Scouring upstairs has not happened. Scouring upstairs ends in completion when every room in Apartments is visited. Scouring upstairs ends in irrelevance when Search ends.
 
 When Scouring Upstairs ends in completion: 
-	say "He's not upstairs, then: there's nowhere in these rooms he could have been hiding, no space large enough to conceal him.[line break]";
+	say "He's not upstairs, then: there's nowhere in these rooms he could have been hiding, no space large enough to conceal him.[paragraph break]";
 	if a room in the Old Castle is unvisited
 	begin;
 		suggest old castle;
@@ -1666,7 +1669,7 @@ In your defense, you never had sugared violets at home."
 
 
 Before going to an unvisited room (called destination) during Search:
-	if destination is the Crystal Bedroom or Gilded Balcony, continue the action;
+	if destination is the Crystal Bedroom or the destination is the Gilded Balcony, continue the action;
 	if destination is in the State Rooms and the windchimes are in the Rose Garden, continue the action;
 	if destination is dark and the player is not carrying the candle, continue the action;
 	if most of the rooms are visited
@@ -1683,7 +1686,7 @@ Chapter 2 - Recollections
 To say memory:
 	repeat through the Table of Memories
 	begin;
-		say "[reply entry][line break]";
+		say "[reply entry]";
 		blank out the whole row;
 		rule succeeds;
 	end repeat.
@@ -1993,7 +1996,7 @@ Understand "use [a wearable thing]" as wearing.
 
 Understand "use [a closed openable container]" as opening. Understand "use [an open openable container]" as closing.
 
-Understand "use [something held] on [a locked lockable thing]" as unlocking it with (with nouns reversed). Understand "use [something held] on [an unlocked lockable thing]" as locking it with (with nouns reversed).
+Understand "use [something preferably held] on [a locked lockable thing]" as unlocking it with (with nouns reversed). Understand "use [something preferably held] on [an unlocked lockable thing]" as locking it with (with nouns reversed).
 
 Understand "use [a switched off device]" as switching on.
 
@@ -2119,6 +2122,7 @@ Carry out approaching:
 	let initial location be the location; 
 	while the player is not in the noun
 	begin;
+		let heading be nothing;
 		if the noun is adjacent to the location
 		begin; 
 			let heading be the best route from the location to the noun, using doors;
@@ -2182,6 +2186,7 @@ Check region-seeking:
 	if the map region of location is the noun or the map region of the location is in the noun, say "You're already in [the noun]; if you'd like to investigate other rooms, you'll have to be more specific about directions." instead.
 	
 Carry out region-seeking:
+	let the goal be nothing;
 	repeat with space running through pivotal rooms
 	begin;
 		if the map region of the space is the noun, let goal be the space; 
@@ -2341,7 +2346,7 @@ Carry out finding:
 			say "That wasn't in one specific location.";
 		otherwise;
 			if the place is the location, say "You have [the noun] in front of you.";
-			otherwise say "[The noun] [is/are] gone.";
+			otherwise say "[The noun] [is-are] gone.";
 		end if;
 	end if. 
 	
@@ -2960,7 +2965,7 @@ Instead of hinting about the roses:
 
 Understand "rooms" or "places" as seeking room list. Seeking room list is an action out of world. Carry out seeking room list: say "Thus far you have visited [the list of visited rooms]."
 
-Understand "objects" or "things" as seeking object list. Seeking object list is an action out of world. Carry out seeking object list: say "Thus far you have seen [list of listable things]."
+Understand "objects" or "things" as seeking object list. Seeking object list is an action out of world. Carry out seeking object list: say "Thus far you have seen [a list of listable things]."
 
 Definition: a thing is listable:
 	if it is the player, no;
@@ -3000,69 +3005,59 @@ Before reading a command when novice mode is functioning:
 	say "[line break]Some options to try (to play without guidance, type [bold type]novice mode off[roman type]): ";
 	if not looking and not going, say "[line break]  [bold type]look[roman type]";
 	if the player wears the helmet, say "[line break]  [bold type]listen[roman type]";
-	if the player carries something and we are not taking inventory, say "[line break]  [bold type]inventory[roman type] (I)";
+	if the player carries something and we are not taking inventory, say "[line break]  [bold type]inventory[roman type] (I)"; 
 	if the player carries something and a free-standing supporter is relevant
-	begin;
-		prepare a list of free-standing relevant supporters;
-		register things marked for listing; 
+	begin; 
+		prepare a list of free-standing relevant supporters; 
 		say "[line break]  [bold type]put[roman type] something [bold type]on[roman type] [the prepared list delimited in disjunctive style]"; 
 	end if;
 	if a gettable thing is relevant
 	begin;
-		prepare a list of relevant gettable things;
-		register things marked for listing; 
+		prepare a list of relevant gettable things;  
 		say "[line break]  [bold type]take[roman type] [the prepared list delimited in disjunctive style]";
-	end if; 
+	end if;  
 	if an unexamined thing is relevant
-	begin;
-		prepare a list of relevant unexamined things;
-		register things marked for listing; 
+	begin; 
+		prepare a list of relevant unexamined things; 
 		say "[line break]  [bold type]examine[roman type] (X) [the prepared list delimited in  disjunctive style]";
 	end if;  
 	if a relevant thing is worth entering
 	begin;
-		prepare a list of relevant worth entering things;
-		register things marked for listing; 
+		prepare a list of relevant worth entering things; 
 		say "[line break]  [bold type]enter[roman type] [the prepared list delimited in  disjunctive style]";
 	end if;   
 	if an unlocked openable thing is relevant
 	begin;
-		prepare a list of relevant worth entering things;
-		register things marked for listing; 
+		prepare a list of relevant worth entering things; 
 		say "[line break]  [bold type]open[roman type] or [bold type]close[roman type] [the prepared list delimited in  disjunctive style]";
 	end if;
 	if a closed lockable thing is relevant
 	begin;
-		prepare a list of closed lockable relevant things;
-		register things marked for listing; 
+		prepare a list of closed lockable relevant things; 
 		say "[line break]  [bold type]lock[roman type] or [bold type]unlock[roman type] [the prepared list delimited in  disjunctive style]";
 	end if; 
 	if the player carries an edible relevant thing
 	begin;
-		prepare a list of edible relevant things;
-		register things marked for listing; 
+		prepare a list of edible relevant things; 
 		say "[line break]  [bold type]eat[roman type] [the prepared list delimited in  disjunctive style]";
 	end if;  
 	if the player carries a wear-worthy thing
 	begin;
-		prepare a list of the wear-worthy things carried by the player;
-		register things marked for listing; 
+		prepare a list of the wear-worthy things carried by the player; 
 		say "[line break]  [bold type]wear[roman type] [the prepared list delimited in disjunctive style]";
 	end if;
 	if a device is relevant, say "[line break]  [bold type]turn on[roman type] or [bold type]turn off[roman type] [the list of relevant devices]";
 	if a room is adjacent, say "[line break]  [bold type]go[roman type][exit list][if in darkness] or try other directions in the dark[otherwise] or [bold type]go to[roman type] any room you've visited[end if]";
 	if an open door is relevant
 	begin;
-		prepare a list of the relevant open doors;
-		register things marked for listing; 
+		prepare a list of the relevant open doors; 
 		say "[line break]  [bold type]go through[roman type] [the prepared list delimited in disjunctive style]";
 	end if;
 	if another person is relevant, say "[line break]  [bold type]kiss[roman type] or [bold type]wake[roman type] [the list of relevant other people][if the player carries something], or [bold type]give[roman type] things [bold type]to[roman type] him[end if]";
 	if the cord is relevant, say "[line break]  [bold type]pull[roman type] [the cord]";
 	if the player carries a ringer
 	begin;
-		prepare a list of the ringers carried by the player;
-		register things marked for listing; 
+		prepare a list of the ringers carried by the player; 
 		say "[line break]  [bold type]ring[roman type] [the prepared list delimited in disjunctive style]";
 	end if;
 	if the player is in an active room and the inscription is examined, say "[line break]  [bold type]wait[roman type] (Z)";
@@ -3119,9 +3114,13 @@ Definition: a container is worth entering:
 	if the player carries it, no;
 	if it is enterable and it is open, yes.
 
-Section 2 - Adjustments to Wording of Standard Refusals
+Section 2 - Adjustments to Wording of Standard Refusals 
 
-Procedural rule: substitute the helpful can't enter something carried rule for the can't enter something carried rule; substitute the fulsome report dropping rule for the standard report dropping rule; ignore the block vaguely going rule.
+The helpful can't enter something carried rule is listed instead of the can't enter something carried rule in the check entering rules.
+
+The fulsome report dropping rule is listed instead of the standard report dropping rule in the report dropping rules.
+
+The block vaguely going rule is not listed in any rulebook.
 
 Rule for supplying a missing noun while going:
 	if going
@@ -3193,9 +3192,7 @@ Understand the commands "wander" and "proceed" and "stroll" and "stride" and "st
 
 Understand the commands "hand" and "deliver" as "give".
 
-Understand the command "depart" as "leave".
-
-Understand the command "excavate" as "dig".
+Understand the command "depart" as "leave". 
 
 Understand the command "carve" as "cut".
  
@@ -3245,7 +3242,7 @@ Understand "look [around]" as looking.
 
 Understand "go [around]" as going. Understand "go [around] [castle]" as going. Understand "search [castle]" or "look [around] [castle]" as going.
 
-Understand "put out [something]" as extinguishing. Understand "blow out [something]" as extinguishing. Understand "blow on/in/through [something]" as blowing. Understand "extinguish [something]" as extinguishing. Understand the command "snuff" as "extinguish".
+Understand "put out [something]" as extinguishing. Understand "blow out [something]" as extinguishing. Understand "blow on/in/through [something]" as blowing. Understand "extinguish [something]" as extinguishing. Understand the command "snuff" as "extinguish". Blowing is an action applying to one thing.
 
 Understand "show inventory/invent/i/inv" as taking inventory.
 
@@ -3257,7 +3254,7 @@ Understand "out of/from" or "from" as "[out of]". Understand "down on" or "on" a
 
 Understand "get [things inside] [out of] [something]" as removing it from.
 
-Understand "set [things held] down" as dropping. Understand "set [things held] [on] [something]" as putting it on. Understand "set down [things]" as dropping.
+Understand "set [things preferably held] down" as dropping. Understand "set [things preferably held] [on] [something]" as putting it on. Understand "set down [things preferably held]" as dropping.
 
 Understand "end" as quitting the game.
 
@@ -3378,11 +3375,11 @@ To say bottom rose:
 	if place is a discernible room, say "[if the place is unvisited][red reverse][end if] S [default letters]"; otherwise say "   ";
 	let place be the room southeast from the location;
 	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]SE[default letters]"; otherwise say "  ".
-	 
+
 Rule for constructing the status line:
 	fill status bar with Table of Fancy Status;
 	say default letters;
-	rule succeeds.
+	rule succeeds. 
 
 
 Section 2 - Menu System
@@ -3439,3 +3436,4 @@ This is the switch novice mode rule:
 	otherwise change novice mode to functioning.
 	
 Understand "credits" as asking for help. 
+

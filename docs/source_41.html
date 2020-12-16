@@ -1,92 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Emily Short - Bronze — 43 of 46</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Emily Short" />
+  <meta name="description" content="A page for the game Bronze by Emily Short." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>Bronze - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_40.html">Previous</a><br><a href="source_42.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2 - Adjustments to Wording of Standard Refusals</b>
-<br>
+<div class = "container">
 
-<br>
-Procedural rule: substitute the helpful can't enter something carried rule for the can't enter something carried rule; substitute the fulsome report dropping rule for the standard report dropping rule; ignore the block vaguely going rule.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Rule for supplying a missing noun while going:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if going
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let chosen way be the logical exit;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if chosen way is a direction
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>(heading [chosen way], since there are no other options)</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the noun to the chosen way;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; say &quot;<font color=#000080>You will have to be more specific about which direction you want to go[if novice mode is functioning]. The available directions are[exit list][end if].</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>Bronze</span> <span class="pagination">— 43 of 46</span>
+	</h1>
+	<h2>
+		<span>Emily Short</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 12</span>
+	</div>
+</div>
 
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_40.html">Previous</a></li><li><a href="source_42.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-This is the fulsome report dropping rule: say &quot;<font color=#000080>You set down [the noun].</font>&quot;
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 2 - Adjustments to Wording of Standard Refusals </span></p><p class="indent0"></p><p class="indent0">The helpful can't enter something carried rule is listed instead of the can't enter something carried rule in the check entering rules.</p><p class="indent0"></p><p class="indent0">The fulsome report dropping rule is listed instead of the standard report dropping rule in the report dropping rules.</p><p class="indent0"></p><p class="indent0">The block vaguely going rule is not listed in any rulebook.</p><p class="indent0"></p><p class="indent0">Rule for supplying a missing noun while going:</p><p class="indent1">if going</p><p class="indent1">begin;</p><p class="indent2">let chosen way be the logical exit;</p><p class="indent2">if chosen way is a direction</p><p class="indent2">begin;</p><p class="indent3">say &quot;<span class="quote">(heading [</span><span class="substitution">chosen way</span><span class="quote">], since there are no other options)</span>&quot;;</p><p class="indent3">change the noun to the chosen way;</p><p class="indent2">otherwise;</p><p class="indent3"> say &quot;<span class="quote">You will have to be more specific about which direction you want to go[</span><span class="substitution">if novice mode is functioning</span><span class="quote">]. The available directions are[</span><span class="substitution">exit list</span><span class="quote">][</span><span class="substitution">end if</span><span class="quote">].</span>&quot;;</p><p class="indent2">end if; </p><p class="indent1">end if;</p><p class="indent0"></p><p class="indent0"></p><p class="indent0">This is the fulsome report dropping rule: say &quot;<span class="quote">You set down [</span><span class="substitution">the noun</span><span class="quote">].</span>&quot;</p><p class="indent0"></p><p class="indent0">This is the helpful can't enter something carried rule:</p><p class="indent1">if the player carries the noun</p><p class="indent1">begin;</p><p class="indent2">say &quot;<span class="quote">You decide that you'll need [</span><span class="substitution">the noun</span><span class="quote">] to be on the ground first. [</span><span class="substitution">run paragraph on</span><span class="quote">]</span>&quot;;</p><p class="indent2">try dropping the noun;</p><p class="indent1">end if;</p><p class="indent1">if the player carries the noun, stop the action.</p><p class="indent1"></p><p class="indent0">Before going somewhere when the holder of the player is not a room:</p><p class="indent1">say &quot;<span class="quote">You decide that you'll need to get down first. [</span><span class="substitution">run paragraph on</span><span class="quote">]</span>&quot;;</p><p class="indent1">try exiting;</p><p class="indent1">if the player is not in a room, stop the action.</p><p class="indent1"></p><p class="indent0"></p><p class="indent0"></p>
+</div>
 
-<br>
-This is the helpful can't enter something carried rule:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player carries the noun
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You decide that you'll need [the noun] to be on the ground first. [run paragraph on]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try dropping the noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player carries the noun, stop the action.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Before going somewhere when the holder of the player is not a room:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You decide that you'll need to get down first. [run paragraph on]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;try exiting;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player is not in a room, stop the action.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
+<div class ="notes">
 
-<br>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</body>
 
 </html>

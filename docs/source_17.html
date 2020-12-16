@@ -1,144 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Emily Short - Bronze — 19 of 46</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Emily Short" />
+  <meta name="description" content="A page for the game Bronze by Emily Short." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>Bronze - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_16.html">Previous</a><br><a href="source_18.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 6 - Crypt, and Darkness</b>
-<br>
+<div class = "container">
 
-<br>
-<b>Section 1 - Darkness In General</b>
-<br>
-<font color=#404040>[Darkness in Bronze is a bit more complicated than average because we take into account what can be heard, and also whether there is a light source in a room that might be shining into the dark one. So we set some general rules for it here:</font>] 
-<br>
- 
-<br>
-Rule for printing the description of a dark room:  
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if an adjacent room (called the light source) is discernible
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let way be the best route from the location to the light source, using doors;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if way is up
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Though a dim light filters down from [the light source in lower case], you can see almost nothing of the contents of your current location[if an adjacent room which is not the light source contains the candle], and a raking light across the floor from the next room[end if].</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is Debtor's Paradise
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if trapdoor is not scenery
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]The only thing you can make out clearly is [the trapdoor].[line break]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is Tight Passage
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break][The inscription] stands out beautifully now.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if candle is on a supporter
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The light from [way] comes in a bit above floor-level, sharply illuminating one wall but leaving the rest of your surroundings dark and unfathomable.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is Debtor's Paradise and trapdoor is not scenery, say &quot;<font color=#000080>[line break]The only thing you can make out clearly is [the trapdoor].[line break]</font>&quot;; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is Tight Passage, say &quot;<font color=#000080>[line break][The inscription] stands out beautifully now.</font>&quot;; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>It's very dark and you can barely make out any of the room's contents, or even tell where the walls are. The only illumination is a harsh raking light across the floor, coming in from [the way].</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is Debtor's Paradise
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if trapdoor is not scenery
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]The only thing you can make out clearly is [the trapdoor].</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the trapdoor to fixed in place;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the trapdoor to not scenery; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]In fact, that oddly-angled light shows an unevenness in the floor: [a trapdoor] of matched stone.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if location is Tight Passage
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break][The inscription] is unfortunately just too high on the wall to be fully lit this way, though you can pick up part of it.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the overview be the room up from the location;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the overview is a room and overview is not dark
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Though a dim light filters down from [the overview in lower case], you can see almost nothing of the contents of your current location. You find yourself concentrating all the more alertly on your hearing, as though the slightest echo might offer a clue.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>It's so dark in here that you have to feel your way along, and are nervous of tripping at any moment. You find yourself concentrating all the more alertly on your hearing, as though the slightest echo might offer a clue.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say line break;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play sounds;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class ="sourceintroduction">
+	<h1>
+		<span>Bronze</span> <span class="pagination">— 19 of 46</span>
+	</h1>
+	<h2>
+		<span>Emily Short</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 12</span>
+	</div>
+</div>
+
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_16.html">Previous</a></li><li><a href="source_18.html">Next</a></li>
+</ul>
+</div>
+
+<div class = "source">
+<p class="indent0"><span class="heading">Chapter 6 - Crypt, and Darkness</span></p><p class="indent0"></p><p class="indent0"><span class="heading">Section 1 - Darkness In General</span></p><p class="indent0"><span class="comment">[Darkness in Bronze is a bit more complicated than average because we take into account what can be heard, and also whether there is a light source in a room that might be shining into the dark one. So we set some general rules for it here:]</span> </p><p class="indent0"> </p><p class="indent0">Rule for printing the description of a dark room:  </p><p class="indent1">if an adjacent room (called the light source) is discernible</p><p class="indent1">begin;</p><p class="indent2">let way be the best route from the location to the light source, using doors;</p><p class="indent2">if way is up</p><p class="indent2">begin;</p><p class="indent3">say &quot;<span class="quote">Though a dim light filters down from [</span><span class="substitution">the light source in lower case</span><span class="quote">], you can see almost nothing of the contents of your current location[</span><span class="substitution">if an adjacent room which is not the light source contains the candle</span><span class="quote">], and a raking light across the floor from the next room[</span><span class="substitution">end if</span><span class="quote">].</span>&quot;;</p><p class="indent3">if location is Debtor's Paradise</p><p class="indent3">begin;</p><p class="indent4">if trapdoor is not scenery</p><p class="indent4">begin;</p><p class="indent4">say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">]The only thing you can make out clearly is [</span><span class="substitution">the trapdoor</span><span class="quote">].[</span><span class="substitution">line break</span><span class="quote">]</span>&quot;;</p><p class="indent4">end if;</p><p class="indent3">end if;</p><p class="indent3">if location is Tight Passage</p><p class="indent3">begin;</p><p class="indent4">say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">][</span><span class="substitution">The inscription</span><span class="quote">] stands out beautifully now.</span>&quot;;</p><p class="indent3">end if;</p><p class="indent2">otherwise;</p><p class="indent3">if candle is on a supporter</p><p class="indent3">begin;</p><p class="indent4">say &quot;<span class="quote">The light from [</span><span class="substitution">way</span><span class="quote">] comes in a bit above floor-level, sharply illuminating one wall but leaving the rest of your surroundings dark and unfathomable.</span>&quot;;</p><p class="indent4">if location is Debtor's Paradise and trapdoor is not scenery, say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">]The only thing you can make out clearly is [</span><span class="substitution">the trapdoor</span><span class="quote">].[</span><span class="substitution">line break</span><span class="quote">]</span>&quot;; </p><p class="indent4">if location is Tight Passage, say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">][</span><span class="substitution">The inscription</span><span class="quote">] stands out beautifully now.</span>&quot;; </p><p class="indent3">otherwise;</p><p class="indent3">say &quot;<span class="quote">It's very dark and you can barely make out any of the room's contents, or even tell where the walls are. The only illumination is a harsh raking light across the floor, coming in from [</span><span class="substitution">the way</span><span class="quote">].</span>&quot;;</p><p class="indent3">if location is Debtor's Paradise</p><p class="indent3">begin;</p><p class="indent4">if trapdoor is not scenery</p><p class="indent4">begin;</p><p class="indent4">say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">]The only thing you can make out clearly is [</span><span class="substitution">the trapdoor</span><span class="quote">].</span>&quot;;</p><p class="indent4">otherwise; </p><p class="indent4">change the trapdoor to fixed in place;</p><p class="indent4">change the trapdoor to not scenery; </p><p class="indent4">say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">]In fact, that oddly-angled light shows an unevenness in the floor: [</span><span class="substitution">a trapdoor</span><span class="quote">] of matched stone.</span>&quot;;</p><p class="indent4">end if;</p><p class="indent3">end if;</p><p class="indent3">if location is Tight Passage</p><p class="indent3">begin;</p><p class="indent4">say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">][</span><span class="substitution">The inscription</span><span class="quote">] is unfortunately just too high on the wall to be fully lit this way, though you can pick up part of it.</span>&quot;;</p><p class="indent3">end if;</p><p class="indent3">end if;</p><p class="indent2">end if;</p><p class="indent1">otherwise;</p><p class="indent2">let the overview be the room up from the location;</p><p class="indent2">if the overview is a room and overview is not dark</p><p class="indent2">begin; </p><p class="indent3">say &quot;<span class="quote">Though a dim light filters down from [</span><span class="substitution">the overview in lower case</span><span class="quote">], you can see almost nothing of the contents of your current location. You find yourself concentrating all the more alertly on your hearing, as though the slightest echo might offer a clue.</span>&quot;;</p><p class="indent2">otherwise;</p><p class="indent3">say &quot;<span class="quote">It's so dark in here that you have to feel your way along, and are nervous of tripping at any moment. You find yourself concentrating all the more alertly on your hearing, as though the slightest echo might offer a clue.</span>&quot;;</p><p class="indent2">end if;</p><p class="indent2">say line break;</p><p class="indent2">play sounds;</p><p class="indent1">end if;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p>
+</div>
+
+<div class ="notes">
+
+</div>
+
+</div>
+
+</body>
 
 </html>

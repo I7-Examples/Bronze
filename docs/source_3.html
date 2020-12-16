@@ -1,90 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Emily Short - Bronze — 5 of 46</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Emily Short" />
+  <meta name="description" content="A page for the game Bronze by Emily Short." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>Bronze - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_2.html">Previous</a><br><a href="source_4.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3 - Sounds</b>
-<br>
+<div class = "container">
 
-<br>
-A thing has a property called sound. The sound of a thing is usually &quot;<font color=#000080>silence</font>&quot;.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-A procedural rule: ignore the block listening rule.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>Bronze</span> <span class="pagination">— 5 of 46</span>
+	</h1>
+	<h2>
+		<span>Emily Short</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 12</span>
+	</div>
+</div>
 
-<br>
-Carry out listening to something:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if in darkness, say &quot;<font color=#000080>The [sound of the noun] sounds like [a noun].</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>From [the noun] you hear [the sound of the noun].</font>&quot;
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_2.html">Previous</a></li><li><a href="source_4.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-Definition: a thing is audible if the sound of it is not &quot;<font color=#000080>silence</font>&quot;.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 3 - Sounds</span></p><p class="indent0"></p><p class="indent0">A thing has some text called sound. The sound of a thing is usually &quot;<span class="quote">silence</span>&quot;.</p><p class="indent0"></p><p class="indent0">The block listening rule is not listed in any rulebook.</p><p class="indent0"></p><p class="indent0">Carry out listening to something:</p><p class="indent1">if in darkness, say &quot;<span class="quote">The [</span><span class="substitution">sound of the noun</span><span class="quote">] sounds like [</span><span class="substitution">a noun</span><span class="quote">].</span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">From [</span><span class="substitution">the noun</span><span class="quote">] you hear [</span><span class="substitution">the sound of the noun</span><span class="quote">].</span>&quot;</p><p class="indent0"></p><p class="indent0">Definition: a thing is audible if the sound of it is not &quot;<span class="quote">silence</span>&quot;.</p><p class="indent0"></p><p class="indent0">Echolocating is an activity.</p><p class="indent0"></p><p class="indent0">Before printing the name of something audible (called target) while echolocating:</p><p class="indent1">if the target is not the player, say &quot;<span class="quote">[</span><span class="substitution">sound</span><span class="quote">] from [</span><span class="substitution">if the target is not the player</span><span class="quote">]the [</span><span class="substitution">end if</span><span class="quote">]</span>&quot; </p><p class="indent1"></p><p class="indent0">Rule for printing the name of the player while echolocating:</p><p class="indent1">if the player is not audible, say &quot;<span class="quote">yourself</span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">your own [</span><span class="substitution">sound of the player</span><span class="quote">]</span>&quot;</p><p class="indent0"></p><p class="indent0">Rule for printing the name of something (called target) which is not visible while echolocating: </p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">roman type</span><span class="quote">]</span>&quot;;</p><p class="indent1">if the target is the player</p><p class="indent1">begin;</p><p class="indent2">say &quot;<span class="quote">yourself</span>&quot;;</p><p class="indent2">rule succeeds;</p><p class="indent1">end if;</p><p class="indent1">let place be the holder of the target;</p><p class="indent1">let way be the best route from the location to the place;</p><p class="indent1">if way is a direction, say &quot;<span class="quote">[</span><span class="substitution">way</span><span class="quote">]</span>&quot;; </p><p class="indent1">otherwise say &quot;<span class="quote">[</span><span class="substitution">if the target is in location</span><span class="quote">]immediate vicinity[</span><span class="substitution">otherwise</span><span class="quote">]middle distance[</span><span class="substitution">end if</span><span class="quote">]</span>&quot;.</p><p class="indent0"> </p><p class="indent0"></p>
+</div>
 
-<br>
-Echolocating is an activity.
-<br>
+<div class ="notes">
 
-<br>
-Before printing the name of something audible (called target) while echolocating:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the target is not the player, say &quot;<font color=#000080>[sound] from [if the target is not the player]the [end if]</font>&quot; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Rule for printing the name of the player while echolocating:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player is not audible, say &quot;<font color=#000080>yourself</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>your own [sound of the player]</font>&quot;
-<br>
+</div>
 
-<br>
-Rule for printing the name of something (called target) which is not visible while echolocating: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[roman type]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the target is the player
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>yourself</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let place be the holder of the target;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let way be the best route from the location to the place;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if way is a direction, say &quot;<font color=#000080>[way]</font>&quot;; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[if the target is in location]immediate vicinity[otherwise]middle distance[end if]</font>&quot;.
-<br>
- 
-<br>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</body>
 
 </html>

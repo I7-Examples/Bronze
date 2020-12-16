@@ -1,88 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Emily Short - Bronze — 3 of 46</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Emily Short" />
+  <meta name="description" content="A page for the game Bronze by Emily Short." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>Bronze - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">Bronze</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_0.html">Previous</a><br><a href="source_2.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 1 - Doors</b>
-<br>
+<div class = "container">
 
-<br>
-The initial appearance of a door is usually &quot;<font color=#000080>Nearby [an item described] leads [item described direction].</font>&quot; The description of a door is usually &quot;<font color=#000080>[if open]It stands open[otherwise]It is closed[end if][if locked] and locked[otherwise] and unlocked[end if].</font>&quot;
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-To say (item - a thing) direction:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let place be a random room;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the place be the other side of the item;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the place is visited, say &quot;<font color=#000080>[way through the item] to [the place in lower case]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[way through the item]</font>&quot;.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>Bronze</span> <span class="pagination">— 3 of 46</span>
+	</h1>
+	<h2>
+		<span>Emily Short</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 12</span>
+	</div>
+</div>
 
-<br>
-Instead of attacking a closed door: say &quot;<font color=#000080>[The noun] reverberates but does not open.</font>&quot;
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_0.html">Previous</a></li><li><a href="source_2.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-Understand &quot;<font color=#000080>knock on [something]</font>&quot; or &quot;<font color=#000080>knock [something]</font>&quot; as attacking.  Understand the commands &quot;<font color=#000080>bang</font>&quot; and &quot;<font color=#000080>tap</font>&quot; and &quot;<font color=#000080>rap</font>&quot; as &quot;<font color=#000080>knock</font>&quot;.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 1 - Doors</span></p><p class="indent0"></p><p class="indent0">The initial appearance of a door is usually &quot;<span class="quote">Nearby [</span><span class="substitution">an item described</span><span class="quote">] leads [</span><span class="substitution">item described direction</span><span class="quote">].</span>&quot; The description of a door is usually &quot;<span class="quote">[</span><span class="substitution">if open</span><span class="quote">]It stands open[</span><span class="substitution">otherwise</span><span class="quote">]It is closed[</span><span class="substitution">end if</span><span class="quote">][</span><span class="substitution">if locked</span><span class="quote">] and locked[</span><span class="substitution">otherwise</span><span class="quote">] and unlocked[</span><span class="substitution">end if</span><span class="quote">].</span>&quot;</p><p class="indent0"></p><p class="indent0">To say (item - a thing) direction:</p><p class="indent1">let place be a random room;</p><p class="indent1">let the place be the other side of the item;</p><p class="indent1">if the place is visited, say &quot;<span class="quote">[</span><span class="substitution">way through the item</span><span class="quote">] to [</span><span class="substitution">the place in lower case</span><span class="quote">]</span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">[</span><span class="substitution">way through the item</span><span class="quote">]</span>&quot;.</p><p class="indent0"></p><p class="indent0">Instead of attacking a closed door: say &quot;<span class="quote">[</span><span class="substitution">The noun</span><span class="quote">] reverberates but does not open.</span>&quot;</p><p class="indent0"></p><p class="indent0">Understand &quot;<span class="quote">knock on [</span><span class="substitution">something</span><span class="quote">]</span>&quot; or &quot;<span class="quote">knock [</span><span class="substitution">something</span><span class="quote">]</span>&quot; as attacking.  Understand the commands &quot;<span class="quote">bang</span>&quot; and &quot;<span class="quote">tap</span>&quot; and &quot;<span class="quote">rap</span>&quot; as &quot;<span class="quote">knock</span>&quot;.</p><p class="indent0"></p><p class="indent0">Before printing the name of an open door (called target) when looking or going: </p><p class="indent1">if the target is a staircase, do nothing;</p><p class="indent1">otherwise say &quot;<span class="quote">open </span>&quot;.</p><p class="indent0"></p><p class="indent0">To decide what direction is the way through (threshold - a door): </p><p class="indent0">    let far side be the other side of threshold; </p><p class="indent0">    let way be the best route from the location to the far side, using even locked doors; </p><p class="indent0">    if way is a direction, decide on the way; </p><p class="indent0">    decide on inside.</p><p class="indent0"></p><p class="indent0">Instead of looking under something which is carried by the player:</p><p class="indent1">say &quot;<span class="quote">Since you are holding [</span><span class="substitution">the noun</span><span class="quote">], it stands to reason that nothing of interest could be concealed beneath.</span>&quot;</p><p class="indent1"></p><p class="indent0">Instead of looking under something which is worn by the player:</p><p class="indent1">say &quot;<span class="quote">Underneath there is only yourself.</span>&quot;</p><p class="indent1"></p><p class="indent0">Instead of looking under a door:</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The noun</span><span class="quote">] meets the floor with very little space to spare.</span>&quot;</p><p class="indent1"></p>
+</div>
 
-<br>
-Before printing the name of an open door (called target) when looking or going: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the target is a staircase, do nothing;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>open </font>&quot;.
-<br>
+<div class ="notes">
 
-<br>
-To decide what direction is the way through (threshold - a door): 
-<br>
-    let far side be the other side of threshold; 
-<br>
-    let way be the best route from the location to the far side, using even locked doors; 
-<br>
-    if way is a direction, decide on the way; 
-<br>
-    decide on inside.
-<br>
+</div>
 
-<br>
-Instead of looking under something which is carried by the player:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Since you are holding [the noun], it stands to reason that nothing of interest could be concealed beneath.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Instead of looking under something which is worn by the player:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Underneath there is only yourself.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Instead of looking under a door:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The noun] meets the floor with very little space to spare.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</body>
 
 </html>
