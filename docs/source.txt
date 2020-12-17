@@ -1,8 +1,8 @@
-"Bronze" by Emily Short. 
+"Bronze" by Emily Short
 
-Include (- Serial "101025"; -).
+Include (- Serial "201217"; -).
 
-The story genre is "Fairy Tale". The release number is 12. The story headline is "A fractured fairy tale". The story description is "When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
+The story genre is "Fairy Tale". The release number is 13. The story headline is "A fractured fairy tale". The story description is "When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
 	
 'Don't go back,' they say, and 'When will we ever see you again?' But you imagine they will find consolation somewhere.
 	
@@ -14,33 +14,35 @@ Bronze is a puzzle-oriented adaptation of Beauty and the Beast with an expansive
 
 Features help for novice players, a detailed adaptive hint system to assist players who get lost, and a number of features to make navigating a large space more pleasant." The story creation year is 2006.
 
-Release along with a solution, 
+Release along with a solution,
 	source text,
 	a website, 
 	cover art, 
 	a file of "Manual" called "Bronze Manual.pdf", 
-	a file of "Complete (Spoilerful) Map" called "map.pdf",  
-	a file of "Walkthrough" called "Walkthrough.txt",
+	a file of "Complete (Spoilerful) Map" called "map.pdf", 
+	a file of "Walkthrough" called "Walkthrough.txt", 
 	a file of "Making of..." called "Overview.html".
 
 Index map with room-shape set to "square" and room-size set to 60 and room-name-size set to 9 and room-name-length set to 13 and route-thickness set to 15 and room-outline set to off and map-outline set to off and route-colour set to "White" and room-colour set to "White" and font set to "Trebuchet-MS-Regular" and EPS file.
 
+Include Singing Reloaded by Shin.
+
 Include Locksmith by Emily Short.
 
-Use full-length room descriptions, American dialect, no scoring, and the serial comma. Use memory economy. Use MAX_SYMBOLS of 7000. 
-	
+Use full-length room descriptions, American dialect, and the serial comma.
+
+Use no deprecated features.
+
+
 Part 1 - Adjustments to the World Model
 
 Chapter 1 - Modifying Existing Kinds
 
 [Because the style of this game is one of very light implementation with a lot of rooms, there may be some objects we forget to give detailed descriptions. But we'd still rather not see the default Inform message about undescribed objects ("you see nothing special about the {whatever}"). So here we apply a more game-specific version of that answer:]
 
-
-Include Plurality by Emily Short.
-
 The description of a thing is usually "The appearance of [the noun] has not changed significantly since you left."  
 
-The description of a container is usually "[The noun] [if the noun is open]contains [the list of things in the noun][end if][if the noun is closed][is-are] closed[end if][if the noun is locked] and locked[end if][if the noun is closed and the noun is transparent]. Inside [is-are the list of things in the noun][end if]."
+The description of a container is usually "[The noun] [if the noun is open]contains [the list of things in the noun][end if][if the noun is closed][are] closed[end if][if the noun is locked] and locked[end if][if the noun is closed and the noun is transparent]. Inside [are] [the list of things in the noun][end if]."
 
 Section 1 - Doors
 
@@ -61,10 +63,10 @@ Before printing the name of an open door (called target) when looking or going:
 	otherwise say "open ".
 
 To decide what direction is the way through (threshold - a door): 
-    let far side be the other side of threshold; 
-    let way be the best route from the location to the far side, using even locked doors; 
-    if way is a direction, decide on the way; 
-    decide on inside.
+	let far side be the other side of threshold; 
+	let way be the best route from the location to the far side, using even locked doors; 
+	if way is a direction, decide on the way; 
+	decide on inside.
 
 Instead of looking under something which is carried by the player:
 	say "Since you are holding [the noun], it stands to reason that nothing of interest could be concealed beneath."
@@ -79,7 +81,7 @@ Section 2 - Smells
  
 A thing has some text called scent. The scent of a thing is usually "nothing".
 
-The block smelling rule is not listed in any rulebook.
+The report smelling rule is not listed in any rulebook.
 
 Carry out smelling something:
 	say "From [the noun] you smell [scent of the noun]."
@@ -96,7 +98,7 @@ Section 3 - Sounds
 
 A thing has some text called sound. The sound of a thing is usually "silence".
 
-The block listening rule is not listed in any rulebook.
+The report listening rule is not listed in any rulebook.
 
 Carry out listening to something:
 	if in darkness, say "The [sound of the noun] sounds like [a noun].";
@@ -115,11 +117,9 @@ Rule for printing the name of the player while echolocating:
 
 Rule for printing the name of something (called target) which is not visible while echolocating: 
 	say "[roman type]";
-	if the target is the player
-	begin;
+	if the target is the player:
 		say "yourself";
 		rule succeeds;
-	end if;
 	let place be the holder of the target;
 	let way be the best route from the location to the place;
 	if way is a direction, say "[way]"; 
@@ -149,7 +149,7 @@ After deciding the scope of the player:
 Before touching a direction, try touching the generic surroundings instead. Before pushing or pulling a direction, try pushing the generic surroundings instead. Instead of smelling the generic surroundings, try smelling the location. Instead of listening to the generic surroundings, try listening to the location.
 
 Rule for supplying a missing noun while searching:
-	change the noun to the generic surroundings.
+	now the noun is the generic surroundings.
 	
 Instead of searching the generic surroundings: try hinting roomily about the location. Instead of hinting about the generic surroundings: try hinting roomily about the location.
 	
@@ -169,7 +169,7 @@ A staircase is a kind of door. A staircase is usually open. A staircase is seldo
 Instead of climbing a staircase:
 	try entering the noun. 
 	
-Understand the commands "ascend" and "descend" as climb. Understand "go down [staircase]" as climbing. Understand "go up [staircase]" as climbing.
+Understand the commands "ascend" and "descend" as "climb". Understand "go down [staircase]" as climbing. Understand "go up [staircase]" as climbing.
 
 A fluid container is a kind of thing. A fluid container can be empty or full. After printing the name of a full fluid container while listing contents: say " (full)". After printing the name of an empty fluid container while listing contents: say " (empty)".
 
@@ -237,13 +237,13 @@ If you daemons do not do this, I will bind you under the earth in darkness and m
 Carry out wearing the helmet:
 	repeat with item running through people
 	begin;
-		change the sound of the item to "steady breathing";
+		now the sound of the item is "steady breathing";
 	end repeat.
 	
 Carry out taking off the helmet:
 	repeat with item running through people
 	begin;
-		change the sound of the item to "silence";
+		now the sound of the item is "silence";
 	end repeat.
 
 After wearing the helmet: 
@@ -363,7 +363,7 @@ Around the outside of this contraption ascends a wooden staircase."
 
 The wooden staircase is a staircase. It is above the Lower Bulb and below the Upper Bulb. It is scenery. The description is "Grown somewhat rickety with age."
 
-The description of the Upper Bulb is "[if the Lower Bulb is not visited]In this very tall room, like a silo, is a glass of running sand: not an hourglass, or even a dayglass, but a timer whose duration you do not know. A whole Sahara remains in its upper chamber, but it is running steadily down into the room below you[otherwise]In the upper chamber, you find, there is almost as much sand as there is below; indeed for all you can tell the flow might be eternal[end if]." The sand is a view. It is in the Lower Bulb and the Upper Bulb . The sound of the sand is "dry trickling". Understand "hourglass" or "dayglass" or "bulb" or "glass" or "timer" as the sand. The description is "[if in the Hourglass]No human glassblower could have made this thing, that much is certain[otherwise]No more than a sporadic sprinkle from above[end if]."
+The description of the Upper Bulb is "[if the Lower Bulb is not visited]In this very tall room, like a silo, is a glass of running sand: not an hourglass, or even a dayglass, but a timer whose duration you do not know. A whole Sahara remains in its upper chamber, but it is running steadily down into the room below you[otherwise]In the upper chamber, you find, there is almost as much sand as there is below; indeed for all you can tell the flow might be eternal[end if]." The sand is a view. It is in the Lower Bulb and the Upper Bulb . The sound of the sand is "dry trickling". Understand "hourglass" or "dayglass" or "bulb" or "glass" or "timer" as the sand. The description is "[if the location is regionally in the Hourglass]No human glassblower could have made this thing, that much is certain[otherwise]No more than a sporadic sprinkle from above[end if]."
 
 Instead of wearing the helmet in the Hourglass:
 	say "The roar is so loud that you cannot bear it: this cannot be the flow of sand magnified. It is more as though you are hearing the rumbling destruction caused by the passage of time; in any case, you take the helmet off again, to save your hearing."
@@ -444,11 +444,10 @@ Instead of consulting the great contract book about a topic listed in the Table 
 	say "[reply entry][paragraph break]".
 
 After printing the name of a ringer (called target): 
-	if the target is in Storage
-	begin;
-		if the number of ringers in storage is greater than 3 and the Bellroom is visited, say " (come to think of it, haven't you seen that...?)";
+	if the target is in Storage-Box:
+		if the number of ringers in Storage-Box is greater than 3 and the Bellroom is visited:
+			say " (come to think of it, haven't you seen that...?)";
 		move the target to the Bellroom;
-	end if. 
 
 Table of Contracts List
 topic	reply
@@ -482,10 +481,9 @@ In fact, this is the very last contract recorded before your father's and yours:
 Understand "consult" or "look up" or "read" as "[search term]".
 
 After reading a command:
-	if the player's command includes "[search term]"
-	begin;
-		while the player's command includes "the", cut the matched text;
-	end if.
+	if the player's command includes "[search term]":
+		while the player's command includes "the":
+			cut the matched text;
 
 Instead of consulting or examining the great contract book when the player is not in the Translation Room: 
 	say "The runes are unfamiliar to you, but you know what the book is: a record of all the contracts of all the souls enslaved to the king of this castle[if the contract book is unexamined].
@@ -537,7 +535,7 @@ When play begins:
 		if the item is not the rows, now the item is curious;
 		if the item is not the inkpot
 		begin; 
-			change the description of the item to "A [very]curious object."; [* We could do this individually, but this initialization is quicker to code and easier to change on the fly.]
+			now the description of the item is "A [very]curious object."; [* We could do this individually, but this initialization is quicker to code and easier to change on the fly.]
 		end if;
 	end repeat.
 	
@@ -561,7 +559,7 @@ A thing can be curious or dull. A thing is usually dull.
 
 [Of course, our careful efforts will be defeated if the player can TAKE ALL. So, in this room only, we might make "all" fail. But this produces the unsatisfactory answer to TAKE ALL: There are none at all available! which is clearly not right. So we need to adjust that also. Here we frankly cheat.]
 
-Rule for deciding whether all includes something curious while in the Black Gallery:
+Rule for deciding whether all includes something curious when the location is the Black Gallery:
 	it does not.
 	
 Rule for deciding whether all includes scenery:
@@ -591,14 +589,14 @@ The ivory door is a door. It is closed and lockable and locked. The ivory key un
 
 The book return stand is a supporter in the Lie Library. The description is "Carvings around the outer edge of the stand indicate how one should use it: a small tonsured figure places a book on the stand, then rings a bell; whereupon a librarian, bearing the traditional shackles and sheets of a ghost, appears to take it away." Understand "bookstand" or "carving" or "carvings" or "figure" or "librarian" or "shackles" as the stand.
 
-Before attacking a ringer when the contract book is in storage:
+Before attacking a ringer when the contract book is in Storage-Box:
 	say "All the servants of the castle are now released, and none will serve you." instead.
 	
-Definition: the glass bell is unsolved if the contract book is not in storage. Definition: the Lie Library is unsolved if the contract book is not in storage.
+Definition: the glass bell is unsolved if the contract book is not in Storage-Box. Definition: the Lie Library is unsolved if the contract book is not in Storage-Box.
 	
-Definition: the glass bell is solved if the contract book is in storage. 
+Definition: the glass bell is solved if the contract book is in Storage-Box. 
 
-Definition: the Lie Library is solved if the contract book is in storage.
+Definition: the Lie Library is solved if the contract book is in Storage-Box.
 
 Instead of attacking the glass bell in the Lie Library:
 	if the contract book is on the book return stand
@@ -606,27 +604,27 @@ Instead of attacking the glass bell in the Lie Library:
 		if the inkpot is on the book return stand and the inkpot is full
 		begin;
 			move glass bell to bellroom;
-			move contract book to storage;
+			move contract book to Storage-Box;
 			say "You summon the librarian, who comes and looks at the contract book: you see this as a sort of fog. It frowns at the condition of some of the pages, then searches the front and back of the book; then, grimacing, it takes out a red seal like those used in the empire of the Chan. 
 
 It inks this carefully from the inkpot, then stamps inside the front of the book:[paragraph break]";
 			center "PROPERTY OF THE LIE LIBRARY";
 			center "DO NOT REMOVE";
 			say "[paragraph break]...whereupon the contracts inside begin to unravel and dissolve into the merest stories.";
-			if feast is in storage
+			if feast is in Storage-Box
 			begin;
 				say "[line break]Of course, this means that you are unable to find any food, since the kitchen staff no longer exists to prepare it. The Beast, though still alive, will not survive until you can fetch something. But perhaps that is a small price to pay for all the souls you have liberated.";
-				end the game saying "You have made an exchange";
+				end the story saying "You have made an exchange";
 			end if;
-			if the Beast is in storage
+			if the Beast is in Storage-Box
 			begin;
-				end the game saying "You have punished the Beast for his sins and set free his slaves";
+				end the story saying "You have punished the Beast for his sins and set free his slaves";
 				stop the action;
 			end if;
-			if girdle is in storage
+			if girdle is in Storage-Box
 			begin;
 				say "[line break]You never do discover any final rest or cure for the Beast. But perhaps that is a small price to pay for all the souls you have liberated.";
-				end the game saying "You have made an exchange";
+				end the story saying "You have made an exchange";
 			end if;
 			stop the action;
 		otherwise;
@@ -674,7 +672,7 @@ Understand "sew [text]" as a mistake ("You have never been much of a seamstress.
 
 Instead of solving embroidery: say "You can roughly guess what the rest of the pattern ought to look like, but that does not mean that you could complete it with any success." [* For the case of >FINISH EMBROIDERY.]
 
-After examining the embroidery: change the description of the embroidery to "Unfinished linen and threads."
+After examining the embroidery: now the description of the embroidery is "Unfinished linen and threads."
 
 Before putting the embroidery materials on the windchimes:
 	say "You try muffling the chimes in the cloth, but can't rig the whole arrangement so as to keep them absolutely silent -- and that is what you need to do, if you're going to avoid summoning up the spirit guards." instead.
@@ -739,7 +737,7 @@ After dropping the windchimes in the Rose Garden: say "You string the chimes aga
 
 After taking the windchimes in the Rose Garden: 
 	move windchimes to the Bellroom;
-	change windchimes to handled;
+	now windchimes is handled;
 	say "You take the chimes down, silencing them and muting their power. When they are entirely still, they fade from your grip and vanish."
 	
 Before doing something other than hinting about or examining or listening to the windchimes when the player is not on a supporter:
@@ -764,9 +762,11 @@ Instead of touching an audible thing when in darkness:
 Instead of listening to a room:
 	play sounds.	
 	
-A procedural rule while listening:
-	ignore the can't reach inside rooms rule. [* This allows us to listen to the windchimes even when we are not in the same room with them.]
+The can only reach inside rooms while listening rule substitutes for the can't reach inside rooms rule when listening. [* This allows us to listen to the windchimes even when we are not in the same room with them.]
 
+This is the can only reach inside rooms while listening rule:
+	continue the action;
+	
 To play sounds:
 	begin the echolocating activity;
 	if the player can see the windchimes
@@ -834,7 +834,7 @@ To decide whether guards act:
 	repeat with N running from 0 to length
 	begin;
 		if windchimes are almost inaudible, no;
-		change loudness of windchimes to the loudness after the loudness of the windchimes;
+		now loudness of windchimes is the loudness after the loudness of the windchimes;
 	end repeat; 
 	yes.
 
@@ -882,8 +882,8 @@ Rule for printing the description of a dark room:
 				begin;
 				say "[line break]The only thing you can make out clearly is [the trapdoor].";
 				otherwise; 
-				change the trapdoor to fixed in place;
-				change the trapdoor to not scenery; 
+				now the trapdoor is fixed in place;
+				now the trapdoor is not scenery; 
 				say "[line break]In fact, that oddly-angled light shows an unevenness in the floor: [a trapdoor] of matched stone.";
 				end if;
 			end if;
@@ -955,8 +955,8 @@ Instead of jumping in Debtor's Paradise:
 	say "The floor thuds hollowly under you."
 	
 Instead of jumping in Debtor's Paradise when the player wears the helmet and the trapdoor is scenery:
-	change the trapdoor to not scenery;
-	change the trapdoor to fixed in place;
+	now the trapdoor is not scenery;
+	now the trapdoor is fixed in place;
 	say "You hop experimentally across the floor, the helmet amplifying your sensitivity to every sound, so that you are able to distinguish the exact flagstone at which the hollow thudding becomes most resonant.
 	
 On a bit of investigation, this stone turns out to be loose."
@@ -964,8 +964,8 @@ On a bit of investigation, this stone turns out to be loose."
 Instead of attacking the stones when the trapdoor is scenery:
 	if the player is wearing the helmet
 	begin;
-		change the trapdoor to not scenery;
-		change the trapdoor to fixed in place;
+		now the trapdoor is not scenery;
+		now the trapdoor is fixed in place;
 		say "You tap experimentally on the floor, listening closely through the power of the helmet, until you find a suspiciously resonant -- and loose -- stone.";
 	otherwise;
 		say "You tap experimentally on the floor, but lack the acuity of hearing to tell whether there are different degrees of hollowness.";
@@ -993,12 +993,12 @@ Visibility rule when examining the trapdoor:
 
 Understand "trap" or "door" as the trapdoor. The trapdoor is scenery. Below the trapdoor is the Dank Room. Above the trapdoor is Debtor's Paradise.
 
-Before listing nondescript items of Debtor's Paradise when the trapdoor is unseen: change the trapdoor to not marked for listing.
+Before listing nondescript items of Debtor's Paradise when the trapdoor is unseen: now the trapdoor is not marked for listing.
 
 Before doing something to the trapdoor when the trapdoor is scenery:
 	say "You can't see any such thing." instead.
 	
-Before going down in the Debtor's Paradise when the trapdoor is scenery: try going south instead. After deciding the scope of the player while in the Debtor's Paradise: if the trapdoor is not scenery, place trapdoor in scope.
+Before going down in the Debtor's Paradise when the trapdoor is scenery: try going south instead. After deciding the scope of the player when the location is the Debtor's Paradise: if the trapdoor is not scenery, place trapdoor in scope.
 
 Section 4 - Dank Room and Fountain
 
@@ -1049,7 +1049,7 @@ Before reading the fully revealed inscription:
 	say "You have the words by heart now: [italic type][printing of the inscription][roman type][paragraph break]" instead.
 
 After reading the inscription:
-	change the inscription to fully revealed;
+	now the inscription is fully revealed;
 	continue the action.
 
 Instead of reading the inscription when illuminated:
@@ -1079,7 +1079,7 @@ To decide whether illuminated:
 	if in darkness, no; yes.
 
 Instead of reading the inscription when in darkness and the candle is not on a supporter:
-	if the inscription is not fully revealed, change the inscription to partially known;
+	if the inscription is not fully revealed, now the inscription is partially known;
 	say "The light coming in does illuminate the floor sharply, and is at a good angle, but it is a bit too low to show up the lettering halfway up the wall. All you get is the deepest capital letters -- P, L, and D -- and the last line: [italic type]or he will depart again without offering aid.[roman type][line break]"
 	
 Visibility rule when examining or reading the inscription:
@@ -1091,7 +1091,7 @@ Visibility rule when examining or reading the inscription:
 		there is sufficient light;
 	end if.
 
-After deciding the scope of the player while in the Tight Passage: if an adjacent room is discernible, place inscription in scope.
+After deciding the scope of the player when the location is the Tight Passage: if an adjacent room is discernible, place inscription in scope.
 
 [This puzzle turned out to be quite challenging to the first testers who tried it, and needed the addition of a lot of hints and responses to close-but-not-quite-there solutions.]
 
@@ -1128,7 +1128,7 @@ Instead of pushing or pulling or turning the candle when the candle is in the Ti
 After putting the candle on the stool when in darkness:
 	say "You set the candle down on the stool, illuminating the room from a low but tolerable angle."
 	
-After putting the candle on the stool when in the Rooted Room:
+After putting the candle on the stool when the location is the Rooted Room:
 	say "You put the candle on the stool, aligning it neatly against the wall. A harsh raking illumination is now cast along the wall, about at a height with your knees."
 	
 Instead of tying something to the cord:
@@ -1258,7 +1258,7 @@ The Enormous Kitchen is west of the Great Dining Hall. "Haunted with the spirits
 
 The Servant Quarters are north of the Enormous Kitchen. "[if location is unvisited]You've never come here before, and now you see why. [end if]Not a room friendly to visitors, it has the air of resentful, martyred suffering. Even His most unpleasant ancestors would not have grudged this place more paint, surely, and more straw for the beds." The straw is scenery in the Quarters. "Well. There really isn't any." Instead of doing something other than examining with the straw: say "There's hardly enough straw to do anything with."
 
-The decaying ladder is a staircase. "A decaying ladder leads [if in the Quarters]down[otherwise]up[end if]." It is above the Apprentice's and below the Quarters. 
+The decaying ladder is a staircase. "A decaying ladder leads [if the location is the Quarters]down[otherwise]up[end if]." It is above the Apprentice's and below the Quarters. 
 
 The Guard Tower is southwest of the Entrance Hall. "A round tower offering protection to the drawbridge[if the scarlet tower is visited]. It is less cheery and more strongly fortified than the Scarlet Tower, and offers little by way of a view[end if]."
  
@@ -1298,9 +1298,9 @@ Definition: the jigsaw is solved if the jagged piece is part of the jigsaw. Defi
 Instead of solving the jigsaw when the player carries the jagged piece and the jigsaw is not solved:
 	now the jagged piece is part of the jigsaw; 
 	say "You snap the final piece into place.
-	
+
 Nothing tremendous happens, but the picture is complete.";
-	change the description of the jigsaw to "The table is set for two: a robed king, and the devil. Between the two of them is a quill pen, jet black, and a huge book. The dialogue of these two characters is written on tiny gilt scrolls that spool out of their mouths, and this is what you could not read before the jagged piece was found: the devil is saying, 'TIME IS ON MY SIDE,' to which the king replies, 'BUT NOT FOR LONG.'";
+	now the description of the jigsaw is "The table is set for two: a robed king, and the devil. Between the two of them is a quill pen, jet black, and a huge book. The dialogue of these two characters is written on tiny gilt scrolls that spool out of their mouths, and this is what you could not read before the jagged piece was found: the devil is saying, 'TIME IS ON MY SIDE,' to which the king replies, 'BUT NOT FOR LONG.'";
 	try examining the jigsaw.
 
 The Green Bedroom is southwest of the Private Parlor. "Having more personality than most of the bedrooms, it was decorated for someone specific and has been left that way: green and white, with a simple rustic cast unusual for the palace."  The Green Bedroom contains a bed called green bed.
@@ -1373,16 +1373,16 @@ The north window is a backdrop. It is in the Bellroom and the Apothecary. It is 
 Understand "look out [something]" as searching. [* Because beta-testers wanted to be able to look out the windows.]
 
 Rule for listing nondescript items of the Bellroom:
-    say "Catching your eye among many other unfamiliar items"; 
-    list the contents of the Bellroom, as a sentence, 
-        tersely, listing marked items only, prefacing with is/are, 
-        including contents and giving brief inventory 
-        information; 
-    say "."
+	say "Catching your eye among many other unfamiliar items"; 
+	list the contents of the Bellroom, as a sentence, 
+		tersely, listing marked items only, prefacing with is/are, 
+		including contents and giving brief inventory 
+		information; 
+	say "."
 
 Understand the commands "play" or "shake" or  "ring" as "hit". Understand "ring [ringer]" as attacking.
 
-The worked bronze gong is in storage. The description is "A heavy thing that you have never seen rung. The upper surface is hammered with the sign of an elephant." 
+The worked bronze gong is in Storage-Box. The description is "A heavy thing that you have never seen rung. The upper surface is hammered with the sign of an elephant." 
 
 Instead of attacking the bronze gong for the first time:
 	say "You hesitate. He told you not to play idly with the bells whose purposes were unknown to you, you see..."
@@ -1401,7 +1401,7 @@ Instead of attacking the bronze gong in the presence of Elzibad:
 A person can be alive or deceased. A person is usually alive.
 
 Instead of attacking the bronze gong in the presence of the beast:
-	if the glass bell is not in storage
+	if the glass bell is not in Storage-Box
 	begin;
 		say "You strike the gong and it rings very loudly, as though summoning someone out of a world three over from our own. Then what looks like a large dark cloud descends on the Beast and crushes the last life out of him, like a trodden grape.
 
@@ -1411,13 +1411,13 @@ You find you are laughing a little hysterically.
 	
 His servants remain enslaved, however."; 
 		move the gong to the Bellroom;
-		move the Beast to storage;
+		move the Beast to Storage-Box;
 		now the beast is deceased;
 	otherwise;
 		say "You strike the gong and it rings very loudly, as though summoning someone out of a world three over from our own. Then what looks like a large dark cloud descends on the Beast and crushes the last life out of him, like a trodden grape.
 
 Afterward, when you can see, and think, you know that you have helped matters only so much: the Beast is gone, but the servants remain enslaved, no doubt inherited by the next of the line.";
-		end the game saying "You have punished the Beast for his sins, but his servants remain enslaved to the line of Kings";
+		end the story saying "You have punished the Beast for his sins, but his servants remain enslaved to the line of Kings";
 	end if.
 
 The little gold dinner bell is in the Bellroom. The description is "It is the dinner summons, and particularly familiar to you."
@@ -1428,7 +1428,7 @@ Instead of attacking the gold dinner bell when location is not the Kitchen:
 	if the player is in the Dining Hall, say "You ring the bell hopefully, but apparently it only works in the Kitchen itself.";
 	otherwise say "You ring the bell, but those who might hear and heed it are not close enough."
 
-Instead of attacking the gold dinner bell when feast is in Storage:
+Instead of attacking the gold dinner bell when feast is in Storage-Box:
 	if location is not the Kitchen, continue the action;
 	say "[The dinner bell] tinkles gaily: as in automatic response, your stomach rumbles. There will be a feast, now, waiting for you in the dining hall.
 
@@ -1439,9 +1439,9 @@ As for the gold bell, it returns to its place.";
 
 A grail is a kind of thing. The feast is a grail. The candle is a grail. 
 
-The silver bell is a ringer. The gold bell is a ringer. The gong is a ringer.  The target locale of the silver bell is the Translation Room. The target locale of the gold bell is the Kitchen. The target locale of the gong is the Gallery of Historical Paintings. The glass bell is a ringer. The target locale of the glass bell is the Lie Library. The glass bell is in Storage. The description of the glass bell is "Thick glass with a clapper on a chain."
+The silver bell is a ringer. The gold bell is a ringer. The gong is a ringer.  The target locale of the silver bell is the Translation Room. The target locale of the gold bell is the Kitchen. The target locale of the gong is the Gallery of Historical Paintings. The glass bell is a ringer. The target locale of the glass bell is the Lie Library. The glass bell is in Storage-Box. The description of the glass bell is "Thick glass with a clapper on a chain."
 
-The leather tambourine is a ringer. The target locale of the tambourine is the Empty Bedroom. The tambourine is in Storage. The description of the tambourine is "A hoop stretched with good-quality leather."
+The leather tambourine is a ringer. The target locale of the tambourine is the Empty Bedroom. The tambourine is in Storage-Box. The description of the tambourine is "A hoop stretched with good-quality leather."
 
 Instead of attacking the leather tambourine when the player carries the shoes and the shoes are not wearable:
 	if the player is not in the Empty Bedroom, continue the action;
@@ -1452,7 +1452,7 @@ Instead of attacking the leather tambourine when the player carries the shoes an
 Instead of attacking the leather tambourine when the player does not have the shoes and the shoes are not wearable and the player is in the Empty Bedroom:
 	say "You are whisked-about by a busy wind, but, finding nothing about you which it is able to assist with, it departs again."
 	
-The cow bell is a ringer. Understand "cowbell" as the cow bell. The target locale of the cow bell is Crystal Bedroom. The cow bell is in storage. The description of the cow bell is "Much like the ones you used on the cows at home."
+The cow bell is a ringer. Understand "cowbell" as the cow bell. The target locale of the cow bell is Crystal Bedroom. The cow bell is in Storage-Box. The description of the cow bell is "Much like the ones you used on the cows at home."
 
 Instead of attacking the cow bell in the Virgin's:
 	say "You feel a strong sense of presence, and listening: this place is important, but the spirit cannot speak to you here. It's for this kind of situation that the mirror-scrying was used, when Lucrezia still lived in the castle..."
@@ -1471,7 +1471,7 @@ Instead of attacking a ringer in the scrying room:
 Instead of attacking a ringer in the presence of the mirrors:
 	say "Many faces press to the far side of the mirror, but no one shade has the strength to speak, and finally they fade away again, half-damned."
 
-Instead of attacking the cow bell in the presence of the mirrors when the girdle is in storage:
+Instead of attacking the cow bell in the presence of the mirrors when the girdle is in Storage-Box:
 	move the girdle to Virgin's End;
 	move the cow bell to the bellroom;
 	say "You ring the [cow bell], and a heavy fog coalesces around you; then at the mirror there forms the image of an exceptionally beautiful young woman, wearing a green girdle.
@@ -1486,7 +1486,7 @@ She shrugs one shoulder. 'If you can love such a creature, then I will leave the
 
 Then she fades from view."
 
-Instead of attacking the silver bell when candle is in Storage:
+Instead of attacking the silver bell when candle is in Storage-Box:
 	if the location is not the Translation Room, continue the action;
 	say "[The silver bell] rings once in triumph, and the room springs to brilliant light.
 	
@@ -1539,7 +1539,7 @@ Definition: a thing is mentionable:
 
 Fresh breeze is a scene. Fresh breeze begins when fresh breeze has not happened and the thick door is open and the heavy door is open. Fresh breeze ends when the time since fresh breeze began is 2 minutes. 
 
-When fresh breeze begins: if the player can see the thick door or the player can see the heavy door, say "With both doors open, a breeze begins to blow through the smelly area.". When fresh breeze ends: remove the stench from play; if the player can see the thick door or the player can see the heavy door, say "The worst of rose stink has mostly gone, now."
+When fresh breeze begins: if the player can see the thick door or the player can see the heavy door, say "With both doors open, a breeze begins to blow through the smelly area.". When fresh breeze ends: now the stench is nowhere; if the player can see the thick door or the player can see the heavy door, say "The worst of rose stink has mostly gone, now."
 
 [There are a variety of ways to close off part of a game's geography, and Bronze explores many of them: place a whole area behind a single locked or concealed door (as with the ivory door and the Lie Library area, or the trapdoor and the Press Room); make an area that can only be visited while the player is carrying some object (all the dark places, and particularly the haunted area, which requires both the candle and the shoes); or this approach, which is to have multiple entrances and require that the player visit all of them before being allowed in. 
 
@@ -1573,7 +1573,7 @@ Chapter 1 - Encouragement
 [Here we have a few light elements to nudge the player along. These are fairly trivial and fade out as the game proceeds, but during the first portion, when he has nothing to do but explore, we want to keep him focused on moving from room to room, so that he knows this is the right thing to be doing.]
 
 When play begins:
-	change the player to seen;
+	now the player is seen;
 	say "When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
 	
 'Don't go back,' they say, and 'When will we ever see you again?' But you imagine they will find consolation somewhere.
@@ -1772,7 +1772,7 @@ Zoo	"largely self-disgust, the image of himself as the kind of creature who belo
 Virgin's End	"[italic type]They died without marrying those to whom they were betrothed, but not all died maidens[roman type]. Impossible to tell the tenor of that particular thought. [italic type]Not all of them are to my account, I hasten to add[roman type]."
 Gallery of Historical Paintings	"amusement. [italic type]Poor old Elzibad. Though I suppose it wasn't so funny at the time. Remind me to tell you-- but I may not have the chance, I suppose[roman type]."
 Walk's End	"an unexpected burst of sentiment. He loves this place, because he so often spoke with you here, and it is overlaid with odd glimpses of yourself, gestures and expressions you did not know looked so funny.[line break]"
-Scrying	"[italic type]Mostly we used all this for communicating with the enslaved, bringing their spirits to the mirrors to speak to us. That was easily done, by ringing the bells. The more difficult stuff, real prophecy, foresight -- only a few of our line ever had those powers. Lucrezia, mostly[roman type]."
+the Scrying Room	"[italic type]Mostly we used all this for communicating with the enslaved, bringing their spirits to the mirrors to speak to us. That was easily done, by ringing the bells. The more difficult stuff, real prophecy, foresight -- only a few of our line ever had those powers. Lucrezia, mostly[roman type]."
 Study	"[italic type]Interesting. They never let me in here. But then, Lucrezia wanted to bring the family to ruin, so perhaps that is why[roman type]."
 Scarlet Tower	"all old innocent recollections, playing at knights when he was still a boy, long ago."
 Drawbridge	"[italic type]I'm not sure you can leave just now, poppet[roman type]."
@@ -1811,10 +1811,10 @@ Chapter 3 - Items Reserved For Later
 
 There are other ways we could track this information, but I chose storage as straight-forward and easily remembered.]
 
-Storage is a container. 
+Storage-Box is a container. 
 
 
-The Beast is a man in Storage. "And here [Beast] lies, sprawled on the ground as if he'd fallen." The description of the Beast is "[if the Beast is fed]Though he has eaten, he looks deeply exhausted, as though something preys on his spirit[otherwise]He looks starved, unwell, near death, in fact. He will need to be given food before he will properly revive -- and who knows what else...
+The Beast is a man in Storage-Box. "And here [Beast] lies, sprawled on the ground as if he'd fallen." The description of the Beast is "[if the Beast is fed]Though he has eaten, he looks deeply exhausted, as though something preys on his spirit[otherwise]He looks starved, unwell, near death, in fact. He will need to be given food before he will properly revive -- and who knows what else...
 
 It baffles you to find him in this condition, when he could easily have gotten whatever he needed in the kitchen[end if]."  A person can be hungry or fed. The beast is hungry. The scent of the beast is "night woods and decadent spices".
 
@@ -1835,22 +1835,20 @@ Instead of kissing the fed Beast when the player wears the girdle:
 	say "As you do, you can't help remembering -- because of the girdle -- how many women before you this king imprisoned against their will. And why should he deserve to be forgiven, merely because he has been less cruel to you than to the others?
 		
 When you lift your head, he is his proper self: a man, about forty-five. Handsome, perhaps, but in the style of the lord mayor, not someone you would have aspired to wed[if the royal portrait is seen]. His face has perhaps softened a little since his youth, but he is still recognizably the same person[end if].";
-		if the contract book is in storage
-		begin;
-			say "[line break]His fingers stretch in experiment. 'Dear virgin mother. You did it. The servants are free?'
+	if the contract book is in Storage-Box:
+		say "[line break]His fingers stretch in experiment. 'Dear virgin mother. You did it. The servants are free?'
 			
 You nod.
 
 'Good girl.' He touches your cheek affectionately; then freezes. 'And you're wearing Yvette's girdle. I suppose you heard her story, in that case.' He sticks out his jaw. 'You can go now. It won't kill me, this time.'
 			
 You draw a breath and give him your answer.";
-			end the game saying "You have restored the King and freed his servants";
-		otherwise;
-			say "[line break]He looks ruefully at his restored hands. 'I failed to free them,' he says. 'And now I've dragged you into the trouble with me.'
+		end the story saying "You have restored the King and freed his servants";
+	otherwise:
+		say "[line break]He looks ruefully at his restored hands. 'I failed to free them,' he says. 'And now I've dragged you into the trouble with me.'
 						
 You shake your head, and try to calm him.";
-			end the game saying "You have restored the King, but not his servants";
-		end if.
+		end the story saying "You have restored the King, but not his servants";
 		
 Instead of kissing the hungry Beast when the player wears the girdle:
 	say "You try to kiss him, but he does not stir. Still hungry, apparently."
@@ -1869,7 +1867,7 @@ Instead of giving something to the Beast:
 	say "He does not move or wake up enough to take any interest."
 
 Instead of giving the feast to the Beast:
-	remove the feast from play;
+	now the feast is nowhere;
 	move the iron key to the player;
 	say "With great care, you feed the soup to the Beast. So much spills that you doubt whether you are making any progress; then he swallows.
 	
@@ -1892,20 +1890,20 @@ He looks startled. 'Not for me,' he says. 'There's a room in the basement below 
 	repurpose the player. [* This horribly bureaucratic phrase is for the hint system: we have assigned the player some new goals, so it is necessary to change a few terms of the system in order to direct him more fruitfully.]
 
 
-The iron key is a passkey. It is in Storage. The iron key unlocks the iron cage. The description of the iron key is "The head of the key bears the image of a treasure chest."
+The iron key is a passkey. It is in Storage-Box. The iron key unlocks the iron cage. The description of the iron key is "The head of the key bears the image of a treasure chest."
 	
-The feast is in Storage. The feast is edible. Understand "food" or "platter" or "considerable" as the feast. "A considerable [feast] is set out on a platter as big as a shield." The description of the feast is "A platter heaped with -- why, you must this time have woken the chefs of King Yggdram the Piscine: it is pickled whitefish and wilted greens, hot soup made from leviathan's bones, and other dishes you do not recognize, made of things that have not grown in this vicinity for many a year." Understand "whitefish" and "pickled" and "wilted" and "Greens" and "soup" and "dishes" and "dish" and "leviathan's" and "bones" as the feast. The scent of the feast is "troutlike aroma".
+The feast is in Storage-Box. The feast is edible. Understand "food" or "platter" or "considerable" as the feast. "A considerable [feast] is set out on a platter as big as a shield." The description of the feast is "A platter heaped with -- why, you must this time have woken the chefs of King Yggdram the Piscine: it is pickled whitefish and wilted greens, hot soup made from leviathan's bones, and other dishes you do not recognize, made of things that have not grown in this vicinity for many a year." Understand "whitefish" and "pickled" and "wilted" and "Greens" and "soup" and "dishes" and "dish" and "leviathan's" and "bones" as the feast. The scent of the feast is "troutlike aroma".
 
 Understand "feed [edible thing] to [someone]" as giving it to. Understand "feed [someone] [something edible]" as giving it to (with nouns reversed).
 
 Instead of eating the feast, say "You restrain yourself with difficulty." Instead of tasting the feast: say "You allow yourself a sip of the soup, which goes down warm and bracing. Jonah must not have had things as bad as he always let on."
 
-The candle is in Storage. The candle is lit. "The single [candle] blazes with many times more light than one light source ought to produce." The description of the candle is "Only apparently a single candle, but giving off a great deal of illumination." Understand "light" or "lighting" or "lamp" or "illumination" or "lights" or "candles" or "lamps" as the candle. Instead of burning the candle, say "Already taken care of." Instead of blowing the candle, say "After the trouble you took?"
+The candle is in Storage-Box. The candle is lit. "The single [candle] blazes with many times more light than one light source ought to produce." The description of the candle is "Only apparently a single candle, but giving off a great deal of illumination." Understand "light" or "lighting" or "lamp" or "illumination" or "lights" or "candles" or "lamps" as the candle. Instead of burning the candle, say "Already taken care of." Instead of blowing the candle, say "After the trouble you took?"
 
 Instead of burning something when the player is not carrying the candle:
 	say "You don't even have a source of flame."
 
-The magic girdle is a grail. It is wearable. It is in storage. The description of the magic girdle is "It is the green girdle familiar to you from paintings here; a possession of Lucrezia's." After wearing the girdle: say "You put on the girdle, securing it around you. It fits unexpectedly well."
+The magic girdle is a grail. It is wearable. It is in Storage-Box. The description of the magic girdle is "It is the green girdle familiar to you from paintings here; a possession of Lucrezia's." After wearing the girdle: say "You put on the girdle, securing it around you. It fits unexpectedly well."
  
 
 Part 4 - Making Play More Friendly
@@ -2154,16 +2152,16 @@ Carry out approaching:
 		end if; 
 		if the destination is not the noun
 		begin;
-			change the player to hurrying;
+			now the player is hurrying;
 			silently try going heading;
 		otherwise;
 			say "[paragraph break]";
-			change the player to staid;
+			now the player is staid;
 			try going heading;
 		end if;
 		if the player is not in the destination
 		begin;
-			change the player to staid;
+			now the player is staid;
 			rule fails;
 		otherwise;
 			if initial location is dark and destination is not dark and destination is not the noun, say ", emerging into [the destination in lower case]. [run paragraph on]";
@@ -2264,8 +2262,8 @@ Section 7 - Go Back (the way we came)
 The former direction is a direction that varies. The last location is a room that varies.
 
 Carry out going a direction:
-	change the last location to the location;
-	change the former direction to the noun. 
+	now the last location is the location;
+	now the former direction is the noun. 
 
 Understand "go back" as retreating. Understand "back" or "return" or "retreat" as retreating.
 
@@ -2316,10 +2314,10 @@ Instead of hunting the beast:
 
 Definition: a thing is pending:
 	if it is a ringer, no;
-	if it is in storage, yes;
+	if it is in Storage-Box, yes;
 	no. 
 
-Understand "find [any seen thing]" as finding. Understand the command "seek" as find. Understand "look for [any seen thing]" as finding. Understand "go to [any seen thing]" as finding.
+Understand "find [any seen thing]" as finding. Understand the command "seek" as "find". Understand "look for [any seen thing]" as finding. Understand "go to [any seen thing]" as finding.
 
 Finding is an action applying to one visible thing.
 
@@ -2346,7 +2344,7 @@ Carry out finding:
 			say "That wasn't in one specific location.";
 		otherwise;
 			if the place is the location, say "You have [the noun] in front of you.";
-			otherwise say "[The noun] [is-are] gone.";
+			otherwise say "[The noun] [are] gone.";
 		end if;
 	end if. 
 	
@@ -2500,7 +2498,7 @@ Carry out hinting about an unexamined thing which explains something (called tar
 	end if;
 	if target is unseen
 	begin;
-		if the target is in Storage, continue the action;
+		if the target is in Storage-Box, continue the action;
 		otherwise say "[The noun] might prove useful information, sooner or later." instead;
 	otherwise;
 		say "You could examine [the noun]." instead;
@@ -2615,13 +2613,15 @@ After taking something, say "You acquire [the noun]."
 
 To decide what room is the ultimate location of (item - a thing):
 	let place be the holder of the item;
-	while the place is a thing, let the place be the holder of the place;
+	while the place is a thing:
+		let the place be the holder of the place;
 	if the place is a room, decide on the place.
 
 To decide what thing is the visible shell of (item - a thing):
 	if item is visible, decide on the item;
 	let place be the holder of the item;
-	while place is a thing and place is not visible, let place be the holder of the place;
+	while place is a thing and place is not visible:
+		let place be the holder of the place;
 	if the place is visible, decide on the place.
 
 To say more:
@@ -2745,7 +2745,7 @@ The silver bell follows the heavy door. The candle requires the silver bell.
 
 The dinner bell follows the heavy door. The feast requires the dinner bell. The Beast requires the feast. Definition: the Beast is solved if it is deceased. Definition: the Beast is unsolved if the Beast is not solved.
 
-Definition: the dinner bell is solved if the feast is not in storage. Definition: The dinner bell is unsolved if the feast is in storage. Definition: the silver bell is solved if the candle is not in storage. Definition: the silver bell is unsolved if the candle is in storage.
+Definition: the dinner bell is solved if the feast is not in Storage-Box. Definition: The dinner bell is unsolved if the feast is in Storage-Box. Definition: the silver bell is solved if the candle is not in Storage-Box. Definition: the silver bell is unsolved if the candle is in Storage-Box.
 
 The shoes follow the iron cage. 
 
@@ -2833,7 +2833,7 @@ Carry out hinting about the book return stand:
 	end if;
 
 
-Instead of hinting about the glass bell when the glass bell is in Storage:
+Instead of hinting about the glass bell when the glass bell is in Storage-Box:
 	say "The Lie Library might work if you could summon the librarian. He (or she) might reshelve whatever you take there. [more]";
 	if player consents
 	begin;
@@ -2843,7 +2843,7 @@ Instead of hinting about the glass bell when the glass bell is in Storage:
 	end if;
 	if player consents, say "Try consulting the contract book about the librarian."
 
-Instead of hinting about feast when the feast is in storage:
+Instead of hinting about feast when the feast is in Storage-Box:
 	say "The beast seems to be suffering extreme hunger. [More]";
 	if player consents,
 		say "You will not be able to find food; you'll have to get the castle servants to bring it to you. [More]";
@@ -2853,7 +2853,7 @@ Instead of hinting about feast when the feast is in storage:
 	otherwise stop the action;
 	if player consents, try hinting about gold dinner bell.
 	
-Instead of hinting about candle when candle is in storage and the Translation Room is visited:
+Instead of hinting about candle when candle is in Storage-Box and the Translation Room is visited:
 	say "Lighting the translation room might be useful. [More]";
 	if player consents,
 		say "You will not be able to find light; you'll have to get the castle servants to bring it to you. [More]";
@@ -2863,13 +2863,13 @@ Instead of hinting about candle when candle is in storage and the Translation Ro
 	otherwise stop the action;
 	if player consents, try hinting about silver bell.
 	
-Instead of hinting about the candle when the candle is in storage and the Rose Garden is visited and the Translation Room is unvisited:
+Instead of hinting about the candle when the candle is in Storage-Box and the Rose Garden is visited and the Translation Room is unvisited:
 	say "There is a room here where you might be able to acquire light, but you haven't reached it yet. Try exploring further."
 	
 Instead of hinting about the contract book when the Translation Room is unvisited:
 	say "The contract book's script is incomprehensible to you. You'll have to find some way to decipher it, or some location that assists you. Further exploration of the State Rooms might be in order."
 
-Instead of hinting about candle when candle is in storage and the Rose Garden is unvisited:
+Instead of hinting about candle when candle is in Storage-Box and the Rose Garden is unvisited:
 	if the location is dark
 	begin;
 		say "It is possible to wander in the dark, for the time being. [more]";
@@ -2887,7 +2887,7 @@ Instead of hinting about candle when candle is in storage and the Rose Garden is
 Instead of hinting about the pending feast when the Beast is unseen:
 	say "Finding the beast is your first priority." 
 	
-Instead of hinting about the beast when the beast is in storage:
+Instead of hinting about the beast when the beast is in Storage-Box:
 	if the beast is deceased, say "You've avenged the wrongs of centuries, and put him out of his misery. There is nothing more you could do for or to him, even if you were able to find him again." instead;
 	say "Keep exploring: you'll find him sooner or later. [more]";
 	if player consents
@@ -2938,15 +2938,15 @@ Instead of hinting about the contract book in the presence of the candle:
 	end if.
 		
 
-Definition: the Translation Room is solved if the candle is not in storage. Definition: the Translation Room is unsolved if the candle is in storage.
+Definition: the Translation Room is solved if the candle is not in Storage-Box. Definition: the Translation Room is unsolved if the candle is in Storage-Box.
 
 Definition: a door is solved if it is unlocked. Definition: a door is unsolved if it is locked.
 
-Definition: the Kitchen is solved if the feast is not in storage. Definition: the Kitchen is unsolved if the feast is in storage.
+Definition: the Kitchen is solved if the feast is not in Storage-Box. Definition: the Kitchen is unsolved if the feast is in Storage-Box.
 
-Definition: the Dining Hall is solved if the feast is not in storage. Definition: the Dining Hall is unsolved if the feast is in storage.
+Definition: the Dining Hall is solved if the feast is not in Storage-Box. Definition: the Dining Hall is unsolved if the feast is in Storage-Box.
 
-Definition: a grail is solved if it is not in storage. Definition: a grail is unsolved if it is in storage.
+Definition: a grail is solved if it is not in Storage-Box. Definition: a grail is unsolved if it is in Storage-Box.
 
 Instead of hinting about the miniature when the miniature is unseen:
 	say "What gave the Beast his beastly form was an incident from his personal history, not a part of his family's troubled dealings. Therefore it is not Lucrezia's magic that will help you with this, but whatever you can find out about his own history. [More]";
@@ -2987,17 +2987,17 @@ After printing the banner text:
 	say "[line break]Have you played interactive fiction before? >";
 	if the player consents
 	begin;
-		change novice mode to dead;
+		now novice mode is dead;
 		say "[line break]If you have not played Bronze before, you may still want to type HELP to learn about special commands unique to this game."; [* These remarks added because beta-testers thought it was a little unfriendly to have the game not acknowledge the player's response to this question. Originally we said nothing, but went straight into play.]
 	otherwise;
-		change novice mode to functioning;
+		now novice mode is functioning;
 		say "[line break]Some extra command help is provided, though you may turn it off at any time.";
 	end if;
 	end if.
 
 Setting is a kind of value. The settings are unset, functioning and dead.
 
-Novice mode is a setting that varies. Novice mode is unset. Stopping novice mode is an action out of world. Starting novice mode is an action out of world. Understand "novice mode off" as stopping novice mode. Understand "novice off" as stopping novice mode. Understand "novice mode on" as starting novice mode. Understand "novice on" as starting novice mode. Carry out stopping novice mode: change novice mode to dead. Carry out starting novice mode: change novice mode to functioning. Report stopping novice mode: say "Novice mode is now off. You may still consult HELP at any time, or use THINK ABOUT specific puzzles." Report starting novice mode: say "Novice mode is now on."
+Novice mode is a setting that varies. Novice mode is unset. Stopping novice mode is an action out of world. Starting novice mode is an action out of world. Understand "novice mode off" as stopping novice mode. Understand "novice off" as stopping novice mode. Understand "novice mode on" as starting novice mode. Understand "novice on" as starting novice mode. Carry out stopping novice mode: now novice mode is dead. Carry out starting novice mode: now novice mode is functioning. Report stopping novice mode: say "Novice mode is now off. You may still consult HELP at any time, or use THINK ABOUT specific puzzles." Report starting novice mode: say "Novice mode is now on."
 
 Include Complex Listing by Emily Short. [* This allows us to list things with inserted 'or' rather than 'and' (and also to do a number of considerably more challenging things, but we won't need most of them right away).]
 
@@ -3090,7 +3090,7 @@ To say exit list:
 	repeat with way running through directions
 	begin;
 		let place be the room way from the location;
-		if place is a discernible room, change way to marked for special listing; 
+		if place is a discernible room, now way is marked for special listing; 
 	end repeat;
 	register things marked for listing;
 	say " [a prepared list delimited in disjunctive style]".
@@ -3129,7 +3129,7 @@ Rule for supplying a missing noun while going:
 		if chosen way is a direction
 		begin;
 			say "(heading [chosen way], since there are no other options)";
-			change the noun to the chosen way;
+			now the noun is the chosen way;
 		otherwise;
 			 say "You will have to be more specific about which direction you want to go[if novice mode is functioning]. The available directions are[exit list][end if].";
 		end if; 
@@ -3158,7 +3158,7 @@ Section 3 - Miscellaneous Other Assistance for Novices
 Taking inventory is acting confused. Looking is acting confused. Examining an examined thing is acting confused.
 
 After acting confused for the sixth turn: 
-	if in the Great Dining Hall, do nothing;
+	if the location is the Great Dining Hall, do nothing;
 	otherwise remind about assistance.
 
 To remind about assistance:
@@ -3186,7 +3186,7 @@ Understand the command "breathe" as "smell".
 
 Understand "look [something]" as examining. [* This is not good syntax but has been shown to be used frequently by both novice players and players whose only IF contact is very old IF.] 
 
-Understand the commands "see" and "view" as "look". Understand the commands "observe" and "inspect" as examine.
+Understand the commands "see" and "view" as "look". Understand the commands "observe" and "inspect" as "examine".
 
 Understand the commands "wander" and "proceed" and "stroll" and "stride" and "strut" and "sneak" and "creep" and "rush" as "walk".
 
@@ -3204,7 +3204,7 @@ Understand the commands "strike" and  "smack" and "injure" as "hit".
 
 Understand the commands "scream" and "yodel" and "yell" and "holler" and "roar" as "shout".
 
-Understand the command "board" as enter.
+Understand the command "board" as "enter".
 
 Understand the commands "toss" and "fling" and "hurl" as "throw".
 
@@ -3265,22 +3265,19 @@ Understand "finger/fingers/hand/hands/fist/fists/feet/foot/arm/arms/legs/leg/hea
 Understand "by/with/using" as "[means]".
 
 After reading a command:
-	if the player's command includes "head [a direction]"
-	begin;
-		if the player's command includes "head", replace the matched text with "go";
-	end if;
-	if the player's command includes "[means] [specific anatomy]"
-	begin;
+	if the player's command includes "head [a direction]":
+		if the player's command includes "head":
+			replace the matched text with "go";
+	if the player's command includes "[means] [specific anatomy]":
 		say "(It is usually not necessary to refer to specific body parts.)";
 		cut the matched text;
-		while the player's command includes "[means] [specific anatomy]", cut the matched text;
-	end if;
-	if the player's command includes "[specific anatomy]"
-	begin;
+		while the player's command includes "[means] [specific anatomy]":
+			cut the matched text;
+	if the player's command includes "[specific anatomy]":
 		say "(It is usually not necessary to refer to specific body parts.)";
 		replace the matched text with "me";
-		while the player's command includes "[specific anatomy]", replace the matched text with "me";
-	end if.
+		while the player's command includes "[specific anatomy]":
+			replace the matched text with "me";
 
 	
 Before putting something wearable on the player:
@@ -3305,41 +3302,23 @@ Section 1 - Improved Status Line
 
 [This status line is designed to help the player track his exploration through the game: rooms that aren't explored yet are highlighted in red, and a count of explored rooms is kept in the lower left corner. We add the further refinement that, if the player is in a dark room, the compass line shows only exits which lead to lit rooms, on the assumption that he will be able to see lighted exits but not dark ones.]
 
-Include Basic Screen Effects by Emily Short. [* An extension that provides phrases for changing text colors, modifying the status line more fully, pausing the game, and so on.]
+Include Flexible Windows by Jon Ingold.
 
-To turn screen black:
-	say white letters;
-	turn the background black;
-	clear the screen;
-	leave space;
-	
-To turn screen white:
-	turn the background white;
-	say black letters;
-	clear the screen;
-	leave space.
+Table of User Styles (continued)
+window	style name	background color
+all-grid-windows	special-style-1	"#FF0000"
 
-To leave space:
-	say paragraph break;
-	say paragraph break;
-	say paragraph break;
-	say paragraph break. 
-	
 Table of Fancy Status
 left	central	right 
 " [if in darkness]Darkness[otherwise][location][end if]"	""	"[top rose]"
 " [regional area]"	""	"[middle rose]"
 " Rooms searched: [number of rooms which are visited]/[number of rooms]"	""	"[bottom rose]"
  
-
 To say red reverse:
-	turn the background red.
+	say special-style-1;
 	
-To say black reverse:
-	turn the background black.
-	
-To say white reverse:
-	turn the background white.
+To say default letters:
+	say roman type;
 
 Definition: a room is discernible: 
 	if it is the Dank Room and the trapdoor is scenery, no;
@@ -3352,9 +3331,9 @@ To say top rose:
 	let place be the room up from the location;
 	if the place is a discernible room, say "[if the place is unvisited][red reverse][end if]U   [default letters]"; otherwise say "    "; [* Originally I assumed that everyone would be using a white-letters-on-black status bar, and set the lettering to black and white after printing the first letter. This was a mistake, as many people on Windows Frotz have a default color scheme that makes the status bar blue-on-white -- so of course the white lettering on a white background didn't show at all. Moral: never ever make assumptions about the color scheme used by your audience.]
 	let place be the room northwest from the location;
-	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]NW[default letters]"; otherwise say "  ";
+	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]NW [default letters]"; otherwise say "   ";
 	let place be the room north from the location;
-	if place is a discernible room, say "[if the place is unvisited][red reverse][end if] N [default letters]"; otherwise say "   ";
+	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]N [default letters]"; otherwise say "  ";
 	let place be the room northeast from the location;
 	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]NE[default letters]"; otherwise say "  ".
 	
@@ -3370,9 +3349,9 @@ To say bottom rose:
 	let place be the room down from the location;
 	if the place is a discernible room, say "[if the place is unvisited][red reverse][end if]D   [default letters]"; otherwise say "    ";
 	let place be the room southwest from the location;
-	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]SW[default letters]"; otherwise say "  ";
+	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]SW [default letters]"; otherwise say "   ";
 	let place be the room south from the location;
-	if place is a discernible room, say "[if the place is unvisited][red reverse][end if] S [default letters]"; otherwise say "   ";
+	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]S [default letters]"; otherwise say "  ";
 	let place be the room southeast from the location;
 	if place is a discernible room, say "[if the place is unvisited][red reverse][end if]SE[default letters]"; otherwise say "  ".
 
@@ -3392,9 +3371,9 @@ Understand "menu" as asking for help.
 
 When play begins:
 	choose row 1 in the Table of Basic Help Options;
-	change description entry to "[bold type][story title][roman type][paragraph break][story description]";
+	now description entry is "[bold type][story title][roman type][paragraph break][story description]";
 	choose row 2 in the Table of Basic Help Options;
-	change title entry to "Instructions for Playing IF in General";
+	now title entry is "Instructions for Playing IF in General";
 
 Table of Basic Help Options (continued)
 title	subtable	description	toggle
@@ -3428,12 +3407,12 @@ title	subtable	description	toggle
 [And here we get rid of the "score notification" setting, because we don't want anyone to try turning it on.]
 When play begins:
 	choose row 2 in Table of Setting Options;
-	change title entry to "[if novice mode is functioning]Novice mode on[otherwise]Novice mode off[end if]";
-	change toggle entry to the switch novice mode rule.
+	now title entry is "[if novice mode is functioning]Novice mode on[otherwise]Novice mode off[end if]";
+	now toggle entry is the switch novice mode rule.
 
 This is the switch novice mode rule:
-	if novice mode is functioning, change novice mode to dead;
-	otherwise change novice mode to functioning.
+	if novice mode is functioning, now novice mode is dead;
+	otherwise now novice mode is functioning.
 	
 Understand "credits" as asking for help. 
 

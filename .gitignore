@@ -3,4 +3,4 @@
 *.inform/Release.blurb
 *.inform/Settings.plist
 *.inform/Skein.skein
-* Materials/Release
+*.materials/Release
