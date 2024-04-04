@@ -1,21 +1,17 @@
 # Bronze
 
-_Here is some useful information from the Bronze manual._
+When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
+	
+'Don't go back,' they say, and 'When will we ever see you again?' But you imagine they will find consolation somewhere.
+	
+Your father hangs back, silent and moody. He has spent the week as far from you as possible, working until late at night. Now he speaks only to ask whether the Beast treated you 'properly.' Since he obviously has his own ideas about what must have taken place over the past few years, you do not reply beyond a shrug.
+	
+You breathe more easily once you're back in the forest, alone.
 
-## About the Making of _Bronze_
+Bronze is a puzzle-oriented adaptation of Beauty and the Beast with an expansive geography for the inveterate explorer. 
 
-_Bronze_ was written in part as a demonstration of Inform 7, a programming language created by Graham Nelson for interactive fiction. The annotated source code and design diary for Bronze are available online, and may be of interest to anyone who would like to try his hand at writing interactive fiction.
+Features help for novice players, a detailed adaptive hint system to assist players who get lost, and a number of features to make navigating a large space more pleasant.
 
-This game would also not have been possible without the efforts of its beta-testing team; for a complete set of credits, accurate for the latest version, consult the menu in the game.
+## Development
 
-We have of course done our best to stomp out problems, but if you do find any errors, feel free to contact the author (Emily Short, emshort@mindspring.com) to report them (and earn your own place in the testing credits...).
-
-## Distribution
-
-While _Bronze_ remains copyright of its author, anyone is welcome to make copies and distribute them freely, in physical or electronic form, without charge, as long as the following conditions are met:
-
-You may not alter the game or remove the authorship attribution.
-
-You may not distribute the game for profit without the author’s explicit written permission. Charging a fee to cover physical media or shipping is acceptable.
-
-Notifying the author before including _Bronze_ in any compilations would be a welcome courtesy, but not required.
+Bronze has been updated for compatibility with Inform 7 build 6M62.
