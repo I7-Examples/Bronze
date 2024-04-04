@@ -1,7 +1,5 @@
 "Bronze" by Emily Short
 
-Include (- Serial "201217"; -).
-
 The story genre is "Fairy Tale". The release number is 13. The story headline is "A fractured fairy tale". The story description is "When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
 	
 'Don't go back,' they say, and 'When will we ever see you again?' But you imagine they will find consolation somewhere.
