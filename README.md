@@ -1,5 +1,9 @@
 # Bronze
 
+An Inform 7 Standard Example
+
+## Description
+
 When the seventh day comes and it is time for you to return to the castle in the forest, your sisters cling to your sleeves. 
 	
 'Don't go back,' they say, and 'When will we ever see you again?' But you imagine they will find consolation somewhere.
@@ -14,4 +18,4 @@ Features help for novice players, a detailed adaptive hint system to assist play
 
 ## Development
 
-Bronze has been updated for compatibility with Inform 7 build 6M62.
+Bronze is currently compatible with Inform 7 build 6M62.
