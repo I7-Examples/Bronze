@@ -12,7 +12,7 @@ Bronze is a puzzle-oriented adaptation of Beauty and the Beast with an expansive
 
 Features help for novice players, a detailed adaptive hint system to assist players who get lost, and a number of features to make navigating a large space more pleasant." The story creation year is 2006.
 
-Release along with a solution,
+Release along with [a solution,]
 	source text,
 	a website, 
 	cover art, 
