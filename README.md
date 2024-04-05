@@ -19,4 +19,5 @@ Features help for novice players, a detailed adaptive hint system to assist play
 ## Development
 
 The Source Text is compatible with Inform 7 build 6M62.
+
 The Story File Format should be set to Blorbed Glulx.
