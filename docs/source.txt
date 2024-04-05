@@ -21,7 +21,7 @@ Release along with [a solution,]
 	a file of "Walkthrough" called "Walkthrough.txt", 
 	a file of "Making of..." called "Overview.html".
 
-Index map with room-shape set to "square" and room-size set to 60 and room-name-size set to 9 and room-name-length set to 13 and route-thickness set to 15 and room-outline set to off and map-outline set to off and route-colour set to "White" and room-colour set to "White" and font set to "Trebuchet-MS-Regular" and EPS file.
+[Index map with room-shape set to "square" and room-size set to 60 and room-name-size set to 9 and room-name-length set to 13 and route-thickness set to 15 and room-outline set to off and map-outline set to off and route-colour set to "White" and room-colour set to "White" and font set to "Trebuchet-MS-Regular" and EPS file.]
 
 Include Singing Reloaded by Shin.
 
